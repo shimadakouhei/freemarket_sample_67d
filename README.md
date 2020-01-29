@@ -73,7 +73,7 @@ Things you may want to cover:
 
 ## Association
 - belongs_to:user
-- belongs_to:categorie
+- belongs_to:category
 - belongs_to:brand
 - has_many:images
 - has_many:favorites
