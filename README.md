@@ -73,8 +73,8 @@ Things you may want to cover:
 
 ## Association
 - belongs_to:user
-- belongs_to:categories
-- belongs_to:brands
+- belongs_to:categorie
+- belongs_to:brand
 - has_many:images
 - has_many:favorites
 - has_many:comments
@@ -164,7 +164,7 @@ Things you may want to cover:
 ## comennts テーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text||
+|text|text|null:false|
 |user_id|integer|null: false, foreign_key: true|
 |product_id|integer|null: false, foreign_key: true|
 
