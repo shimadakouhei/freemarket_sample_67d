@@ -43,8 +43,7 @@ Things you may want to cover:
 
 ## Association
 - has_many:cards
-- has_many:images
-- has_many:address
+- has_one :address
 - has_many:comennts
 - has_many:favorites
 - has_many:products
@@ -74,11 +73,11 @@ Things you may want to cover:
 
 ## Association
 - belongs_to:user
+- belongs_to:categories
+- belongs_to:brands
 - has_many:images
-- has_many:categories
-- has_many:brands
 - has_many:favorites
-- has_many:comennts
+- has_many:comments
 
 
 
@@ -134,7 +133,7 @@ Things you may want to cover:
 
 
 ## Association
-- belongs_to:product
+- has_many:product
 
 
 ## brands テーブル
@@ -144,7 +143,7 @@ Things you may want to cover:
 
 
 ## Association
-- belongs_to:product
+- has_many:product
 
 
 
@@ -158,8 +157,6 @@ Things you may want to cover:
 
 
 ## Association
-- has_many:users
-- has_many:products
 - belongs_to:user
 - belongs_to:product
 
@@ -169,21 +166,9 @@ Things you may want to cover:
 |------|----|-------|
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
-|products_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 
 ## Association
-- has_many:users
-- has_many:products
 - belongs_to:user
 - belongs_to:product
-
-
-
-
-
-
-
-
-
-
