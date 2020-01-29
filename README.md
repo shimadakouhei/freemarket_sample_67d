@@ -27,6 +27,7 @@ Things you may want to cover:
 ##  usersテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |nickname|string|null:false|
 |email|string|null: false、unique:ture|
 |password|string|null:false|
@@ -41,14 +42,12 @@ Things you may want to cover:
 |tel|integer|null:false,unique:ture|
 
 ## Association
-
-
-has_many:cards
-has_many:images
-has_many:address
-has_many:comennts
-has_many:favorites
-has_many:products
+- has_many:cards
+- has_many:images
+- has_many:address
+- has_many:comennts
+- has_many:favorites
+- has_many:products
 
 
 
@@ -61,6 +60,7 @@ has_many:products
 
 ## products テーブル
 |Column|Type|Options|
+|------|----|-------|
 |name|string|null:false|
 |conditions|string|null:false|
 |delivery_charge|integer|null:false|
@@ -73,15 +73,12 @@ has_many:products
 |brand_id|integer|null:false,foreign_key: true|
 
 ## Association
-
-belongs_to:user
-
-
-has_many:images
-has_many:categories
-has_many:brands
-has_many:favorites
-has_many:comennts
+- belongs_to:user
+- has_many:images
+- has_many:categories
+- has_many:brands
+- has_many:favorites
+- has_many:comennts
 
 
 
@@ -89,6 +86,7 @@ has_many:comennts
 
 ## cards テーブル
 |Column|Type|Options|
+|------|----|-------|
 |card_number|integer|null:false|
 |expiration_date|integer|null:false
 |security_code|integer|null:false|
@@ -96,21 +94,23 @@ has_many:comennts
 
 
 ## Association
-belongs_to:user
+- belongs_to:user
 
 
 ## images テーブル
+|------|----|-------|
 |Column|Type|Options|
 |picture|references|null:false|
 |products_id|integer|null:false,foreign_key: true|
 
 
 ## Association
-belongs_to:product
+- belongs_to:product
 
 
 ## address テーブル
 |Column|Type|Options|
+|------|----|-------|
 |postal_code|integer|null:false|
 |administrative＿divisions|string|null:false|
 |city|string|null:false|
@@ -120,20 +120,21 @@ belongs_to:product
 
 
 ## Association
-belongs_to:user
+- belongs_to:user
 
 
 
 
 ## categories テーブル
 |Column|Type|Options|
+|------|----|-------|
 |theme|string|null:false|
 |variety|string|null:false|
 |detail|string|null:false|
 
 
 ## Association
-belongs_to:product
+- belongs_to:product
 
 
 ## brands テーブル
@@ -143,7 +144,7 @@ belongs_to:product
 
 
 ## Association
-belongs_to:product
+- belongs_to:product
 
 
 
@@ -157,10 +158,10 @@ belongs_to:product
 
 
 ## Association
-has_many:users
-has_many:products
-belongs_to:user
-belongs_to:product
+- has_many:users
+- has_many:products
+- belongs_to:user
+- belongs_to:product
 
 
 ## comennts テーブル
@@ -172,10 +173,10 @@ belongs_to:product
 
 
 ## Association
-has_many:users
-has_many:products
-belongs_to:user
-belongs_to:product
+- has_many:users
+- has_many:products
+- belongs_to:user
+- belongs_to:product
 
 
 
