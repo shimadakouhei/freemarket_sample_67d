@@ -94,6 +94,7 @@ has_many:comennts
 |security_code|integer|null:false|
 |user_id|integer|null:false foreign_key: true|
 
+
 ## Association
 belongs_to:user
 
@@ -102,6 +103,8 @@ belongs_to:user
 |Column|Type|Options|
 |picture|references|null:false|
 |products_id|integer|null:false,foreign_key: true|
+
+
 ## Association
 belongs_to:product
 
@@ -114,6 +117,7 @@ belongs_to:product
 |street_number|string|null:false|
 |apartment|string|null:false|
 |user_id|integer|null:false,foreign_key: true|
+
 
 ## Association
 belongs_to:user
@@ -130,6 +134,7 @@ belongs_to:user
 
 ## Association
 belongs_to:product
+
 
 ## brands テーブル
 |Column|Type|Options|
@@ -149,6 +154,8 @@ belongs_to:product
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |products_id|integer|null: false, foreign_key: true|
+
+
 ## Association
 has_many:users
 has_many:products
@@ -162,6 +169,9 @@ belongs_to:product
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
 |products_id|integer|null: false, foreign_key: true|
+
+
+## Association
 has_many:users
 has_many:products
 belongs_to:user
