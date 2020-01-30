@@ -1,0 +1,31 @@
+.headerBox {
+  &__upperBox {
+    background-color: red;
+    width: 100vw;
+    height: 130px;
+    display: flex;
+    &__furimaIcon {
+    background-color:yellow;
+    width: 160px;
+    height: 60px;
+    }
+    &__seach {
+    background-color: greenyellow;
+    width: 850px;
+    height: 40px;
+    }
+    &__searchIcon {
+    background-color: skyblue;
+    width: 40px;
+    height: 40px;
+    }
+  }
+  &__leftBox{
+    &__category{}
+    &__brand{}
+  }
+  &__rightBox{
+    &__login {}
+    &__registration {}
+  }
+}
