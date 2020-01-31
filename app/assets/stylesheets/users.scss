@@ -10,7 +10,9 @@
     margin: 0 auto;
     background-color: red;
     width: 1000px;
+    height: 75px;
     .freem-header-top{
+      width: 1000px;
       height: 75px;
       background:yellow;
       .freem-header-form {
@@ -21,4 +23,22 @@
     }
   }
 }
-.icon-llist freem
+.ul{
+  padding-inline-start: 40px;
+  margin-block-end: 1em;
+  margin-block-start: 1em;
+}
+.icon-arorows-right{
+  width: 100%;
+  height: 50px;
+  color:black
+}
+.freem-bread-crumb{
+  width: 100%;
+  height: 50px;
+  background-color: red;
+  .title{
+    font-size:14px;
+    color:black;
+  }
+}
