@@ -32,7 +32,7 @@ Things you may want to cover:
 |email|string|null: false、unique:ture|
 |password|string|null:false|
 |password_confiramation|string|null:false|
-|family_name|stringnull:false|
+|family_name|string|null:false|
 |first_name|string|null:false|
 |hurigana_family_name|string|null:false|
 |hurigana_first_name|string|null:false|
