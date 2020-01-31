@@ -1,0 +1,71 @@
+.body
+  .hedar
+    .hedar_img
+      = image_tag 'logo.png'
+  .main
+    %section.content
+      .content_text
+        会員情報入力
+
+
+
+
+
+       
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          %label{:for => "nickname"} ニックネーム
+          %span.form-require 必須
+          %input.input-default{:name => "nickname", :placeholder => "例) フリマ", :type => "text", :value => ""}/
+        = f.text_field :nickname, autofocus: true
+        .field
+          %label{:for => "email"} メールアドレス
+          %span.form-require 必須
+          .input-default{:name => "email", :placeholder => "PC・携帯どちらでも可", :type => "email", :value => ""}/
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+        .field
+          %label{:for => "password"} パスワード
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password"
+
+        .field
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password"
+        
+        .field
+          %label{:for => "family_name"}お名前
+          %span.form-require 必須
+        %input.input-default.half{:name => "family_name", :placeholder => "例) 橋本", :type => "text", :value => ""}/
+        %input.input-default.half{:name => "first_name", :placeholder => "例) 遊大", :type => "text", :value => ""}/
+        .field
+          %label{:for => "hurigana_family_name"} お名前ふりがな
+          %span.form-require 必須
+        %input.input-default.half{:name => "hurigana_family_name", :placeholder => "例) フリマ", :type => "text", :value => ""}/
+        %input.input-default.half{:name => "hurigana_first_name", :placeholder => "例) タロウ", :type => "text", :value => ""}/
+      
+        .field
+          %label{for: "birthday"} 生年月日
+          %span.form-require
+          .pulldown
+            .select-wrap
+             
+             
+
+
+        
+        .actions
+          = f.submit "Sign up"
+
+      = render "devise/shared/links"
+    
+
+
+
+
+
+
