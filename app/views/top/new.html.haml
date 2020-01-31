@@ -1,0 +1,37 @@
+.exhibition__header
+  = image_tag "logo.png", size: "185x49"
+
+.exhibition__contents__main
+  .exhibition__contents__main__middle
+    .exhibition__contents__main__middle__head
+      商品の情報を入力
+    .exhibition__contents__main__middle__heart
+      .exhibition__contents__main__middle__heart__upload-box
+        .exhibition__contents__main__middle__heart__upload-box__title
+          出品画像
+        .exhibition__contents__main__middle__heart__upload-box__explain
+          最大10枚までアップロードできます
+        .exhibition__contents__main__middle__heart__upload-box__item
+          %b
+            ドラッグアンドドロップ
+            %br 
+            またはクリックしてファイルをアップロード
+      .exhibition__contents__main__middle__heart__sell-content
+        .exhibition__contents__main__middle__heart__sell-content__form-one
+          商品名
+          = form_for "aaa" do |f|
+            = f.text_field :content, class: 'exhibition__contents__main__middle__heart__sell-content__form-group__name', placeholder: '  商品名 (必須40文字まで)'
+        .exhibition__contents__main__middle__heart__sell-content__form-group
+          商品の説明
+          = form_for "aaa" do |f|
+            = f.text_area :content, class: 'exhibition__contents__main__middle__heart__sell-content__form-group__explain', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
+      .exhibition__contents__main__middle__heart__detail
+        商品の詳細
+        .exhibition__contents__main__middle__heart__detail__sell-form-box
+          .exhibition__contents__main__middle__heart__detail__sell-form-box__group
+          カテゴリー
+          = form_for 'aa' do |f|
+            = f.select :content, class: 'あああ'
+
+.exhibition__footer
+
