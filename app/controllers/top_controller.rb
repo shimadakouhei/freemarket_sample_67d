@@ -7,5 +7,8 @@ class TopController < ApplicationController
 
   def create
   end
+
+  def show
+  end  
   
 end
