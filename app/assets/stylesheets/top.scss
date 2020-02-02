@@ -3,69 +3,93 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .headerBox {
-  background-color: red;
   width: 100vw;
   height: 130px;
   &__upperBox {
-    background-color: plum;
     width: 100vw;
     height: 50px;
     display: flex;
     &__furimaIcon {
-    background-color:yellow;
     width: 160px;
     height: 60px;
     }
-    &__seach {
-    background-color: greenyellow;
-    width: 850px;
+    &__search {
+    width: 510px;
     height: 40px;
+      &__text {
+      width: 500px;
+      height: 40px;
+      }
     }
     &__searchIcon {
-    background-color: skyblue;
     width: 40px;
     height: 40px;
+    background-color: #3CCACE;
     }
   }
   &__lowerBox {
-    background-color: blue;
     width: 100vw;
     height: 60px;
     display: flex;
     justify-content: space-between;
     &__leftBox{
-      background-color: pink;
       width: 230px;
       height: 60px;
       display: flex;
       justify-content: space-around;
       &__category{
-        background-color: goldenrod;
         width: 80px;
         height: 45px;
     }
       &__brand{
-        background-color: goldenrod;
         width: 80px;
         height: 45px;
       }
   }
     &__rightBox{
-      background-color: pink;
       width: 230px;
       height: 60px;
       display: flex;
       justify-content: space-between;
       &__login {
-        background-color: goldenrod;
         width: 80px;
         height: 45px;
       }
       &__registration {
-        background-color: goldenrod;
-        width: 80px;
+        width: 100px;
         height: 45px;
       }
     }
   }
+}
+
+.TopImage {
+position: relative;
+&__mainMessage {
+width: 200px;
+height: 200px;
+position: absolute;
+top: 300px;
+left: 60px;
+}
+&__subMessage {
+width: 200px;
+height: 200px;
+position: absolute;
+top: 330px;
+left: 60px;
+}
+&__app-googleBox {
+width: 200px;
+height: 200px;
+display: flex;
+&__app-storeIcon {
+width: 100px;
+height: 100px;
+}
+&__google-playIcon {
+width: 100px;
+height: 100px;
+}
+}
 }

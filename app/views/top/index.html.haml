@@ -2,13 +2,29 @@
   .headerBox__upperBox
     .headerBox__upperBox__furimaIcon
       = image_tag "logo.png", hight:"45px", width: "140px"
-    .headerBox__upperBox__seach
+    .headerBox__upperBox__search
+      = form_tag("#", method: :get) do
+        = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "headerBox__upperBox__search__text"})
     .headerBox__upperBox__searchIcon 
-    
+      = image_submit_tag "icon-search 1.png",width: "40px", height: "40px"
   .headerBox__lowerBox  
     .headerBox__lowerBox__leftBox
       .headerBox__lowerBox__leftBox__category
+        カテゴリー
       .headerBox__lowerBox__leftBox__brand
+        ブランド
     .headerBox__lowerBox__rightBox
       .headerBox__lowerBox__rightBox__login
+        ログイン
       .headerBox__lowerBox__rightBox__registration
+        新規会員登録
+.TopImage
+  = image_tag "bg-mainVisual-pict_pc.jpg", height:"550px", width: "100%"
+  .TopImage__mainMessage
+    人生を変えるフリマアプリ
+  .TopImage__subMessage
+    FURIMAはだれでもかんたんに出品・購入できる
+    フリマアプリです
+  .TopImage__app-googleBox
+    .TopImage__app-googleBox__app-storeIcon
+    .TopImage__app-googleBox__google-playIcon
