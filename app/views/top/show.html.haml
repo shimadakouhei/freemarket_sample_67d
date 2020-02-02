@@ -11,31 +11,7 @@
           出品画像
         .confirmation__contents__main__middle__heart__upload-box__explain
           最大10枚までアップロードできます
-        .confirmation__contents__main__middle__heart__upload-box__item
-          %b
-            ドラッグアンドドロップ
-            %br 
-            またはクリックしてファイルをアップロード
-      .confirmation__contents__main__middle__heart__sell-content
-        .confirmation__contents__main__middle__heart__sell-content__form-one
-          商品名
-          = form_for "aaa" do |f|
-            = f.text_field :content, class: 'confirmation__contents__main__middle__heart__sell-content__form-group__name', placeholder: '  商品名 (必須40文字まで)'
-        .confirmation__contents__main__middle__heart__sell-content__form-group
-          商品の説明
-          = form_for "aaa" do |f|
-            = f.text_area :content, class: 'confirmation__contents__main__middle__heart__sell-content__form-group__explain', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
-      .confirmation__contents__main__middle__heart__detail
-        商品の詳細
-        .confirmation__contents__main__middle__heart__detail__sell-form-box
-          .confirmation__contents__main__middle__heart__detail__sell-form-box__category
-            カテゴリー
-            = form_for 'aa' do |f|
-              = f.select :theme, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---", id: 'aa_theme'
-          .confirmation__contents__main__middle__heart__detail__sell-form-box__status
-            商品の状態
-            = form_for 'aa' do |f|
-              = f.select :theme, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], prompt: "---", id: 'aa_theme'
+      
       .confirmation__contents__main__middle__heart__delivery
         配送について
         .confirmation__contents__main__middle__heart__delivery__sell-form-box
@@ -50,8 +26,6 @@
             発送までの日数
             = form_for 'aa' do |f|
               = f.select :theme, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], prompt: "---", id: 'aa_theme'
-      .confirmation__contents__main__middle__heart__money
-        販売価格(300~9,999,999)
         .confirmation__contents__main__middle__heart__money__sell-box
           .confirmation__contents__main__middle__heart__money__sell-box__form-group
             .confirmation__contents__main__middle__heart__money__sell-box__form-group__left
@@ -61,19 +35,5 @@
               .confirmation__contents__main__middle__heart__money__sell-box__form-group__right__money
                 = form_for "aaa" do |f|
                   = f.text_field :content, class: 'right__money', placeholder: '例） 300   '
-          .confirmation__contents__main__middle__heart__money__sell-box__margin
-            .confirmation__contents__main__middle__heart__money__sell-box__margin__left
-              販売手数料(10%)
-            .confirmation__contents__main__middle__heart__money__sell-box__margin__right
-              あああ
-          .confirmation__contents__main__middle__heart__money__sell-box__benefit
-            .confirmation__contents__main__middle__heart__money__sell-box__benefit__left
-              販売利益
-            .confirmation__contents__main__middle__heart__money__sell-box__benefit__right
-              ¥ あああ
-          .confirmation__contents__main__middle__heart__money__sell-box__bene
-
-
-
 .confirmation__footer
 
