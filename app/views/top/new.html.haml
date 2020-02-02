@@ -71,9 +71,30 @@
               販売利益
             .exhibition__contents__main__middle__heart__money__sell-box__benefit__right
               ¥ あああ
-          .exhibition__contents__main__middle__heart__money__sell-box__bene
-
-
-
+      .exhibition__contents__main__middle__heart__bottom
+        = link_to '禁止されている出品', '/#/'
+        、
+        = link_to '行為', '/#/'
+        を必ずご確認ください。
+        %br
+        またブランド品でシリアルナンバー等がある場合はご記載ください。
+        = link_to '偽ブランドの販売'
+        は犯罪であり処罰される可能性があります。
+        %br
+        また、出品をもちまして
+        = link_to '加盟店規約', '/#/'
+        に同意したことになります。
+        .exhibition__contents__main__middle__heart__bottom__display
+          = link_to '出品する', '/#/', class: 'hoge-hoge'
+        .exhibition__contents__main__middle__heart__bottom__back
+          = link_to 'もどる', '/#/', class: 'hoge-hoge'
 .exhibition__footer
-
+  .exhibition__footer__content
+    = link_to 'プライバシーポリシー', '/#', class: 'hoge'
+    = link_to 'メルカリ利用規約', '/#', class: 'hoge'
+    = link_to '特定商取引に関する表記', '/#', class: 'hoge'
+    %br
+    = image_tag "logo-white.png", size: "185x49", class: 'hoge'
+    %br
+    %small © FURIMA, Inc.
+  

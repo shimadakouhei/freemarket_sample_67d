@@ -7,14 +7,14 @@
 }
 .exhibition__contents__main {
   background-color: rgb(245, 245, 245);
-  height: 300vh;
+  height: 250vh;
   width: 100%;
   &__middle {
     width: 700px;
     margin: 0 auto;
-    height: 300vh;
+    height: 250vh;
     background-color: white;
-    .exhibition__contents__main__middle__head {
+    &__head {
       padding: 32px 16px;
       font-size: 22px;
       text-align:center;
@@ -22,19 +22,19 @@
       height: 32px;
       line-height: 32px;
     }
-    .exhibition__contents__main__middle__heart {
-      .exhibition__contents__main__middle__heart__upload-box {
+    &__heart {
+      &__upload-box {
         width: 620px;
         padding: 40px;
         height: 223px;
         border-bottom: solid 1px rgb(245, 245, 245);
-        .exhibition__contents__main__middle__heart__upload-box__title {
+        &__title {
           font-size: 16px;
         }
-        .exhibition__contents__main__middle__heart__upload-box__explain {
+        &__explain {
           margin: 8px 0 0;
         }
-        .exhibition__contents__main__middle__heart__upload-box__item {
+        &__item {
           padding: 56px 40px 24px;
           height: 82px;
           width: 540px;
@@ -43,21 +43,21 @@
           background: #F5F5F5;
         }
       }
-      .exhibition__contents__main__middle__heart__sell-content {
+      &__sell-content {
         padding: 40px;
         height: 315px;
         width: 620px;
         border-bottom: solid 1px rgb(245, 245, 245);
-        .exhibition__contents__main__middle__heart__sell-content__form-one {
-          .exhibition__contents__main__middle__heart__sell-content__form-group__name {
+        &__form-one {
+          &__name {
             width: 100%;
             height: 48px;
             font-size: 16px;
           }
         }
-        .exhibition__contents__main__middle__heart__sell-content__form-group {
+        &__form-group {
           margin: 40px 0 0;
-          .exhibition__contents__main__middle__heart__sell-content__form-group__explain {
+          &__explain {
             height: 132px;
             width: 600px;
             font-size: 16px;
@@ -66,75 +66,75 @@
           }
         }
       }
-      .exhibition__contents__main__middle__heart__detail {
+      &__detail {
         padding: 40px;
         height: 181px;
         width: 620px;
         border-bottom: solid 1px rgb(245, 245, 245);
         color: #888;
         font-size: 14px;
-        .exhibition__contents__main__middle__heart__detail__sell-form-box {
+        &__sell-form-box {
           height: 180px;
           width: 400px;
           float: right;
-          .exhibition__contents__main__middle__heart__detail__sell-form-box__category {
+          &__category {
             color: black;
           }
-          .exhibition__contents__main__middle__heart__detail__sell-form-box__status {
+          &__status {
             color: black;
             margin: 40px 0 0;
           }
         }
       }
-      .exhibition__contents__main__middle__heart__delivery {
+      &__delivery {
         padding: 40px;
         height: 291px;
         width: 620px;
         border-bottom: solid 1px rgb(245, 245, 245);
         color: #888;
         font-size: 14px;
-        .exhibition__contents__main__middle__heart__delivery__sell-form-box {
+        &__sell-form-box {
           float: right;
           height: 290px;
           width: 400px;
           color: black;
-          .exhibition__contents__main__middle__heart__delivery__sell-form-box__area {
+          &__area {
             margin: 40px 0 0;
           }
-          .exhibition__contents__main__middle__heart__delivery__sell-form-box__date {
+          &__date {
             margin: 40px 0 0;
           }
         }
       }
-      .exhibition__contents__main__middle__heart__money {
+      &__money {
         padding: 40px;
         border-bottom: solid 1px rgb(245, 245, 245);
         color: #888;
         font-size: 14px;
         height: 219px;
         width: 620px;
-        .exhibition__contents__main__middle__heart__money__sell-box {
+         &__sell-box {
           float: right;
           height: 218px;
           width: 400px;
-          .exhibition__contents__main__middle__heart__money__sell-box__form-group {
+          &__form-group {
             justify-content: space-between;
             display: flex;
             padding: 0 0 24px;
             border-bottom: solid 1px rgb(245, 245, 245);
-            .exhibition__contents__main__middle__heart__money__sell-box__form-group__left {
+            &__left {
               height: 48px;
               width: 200px;
               line-height: 48px;
               color: black;
             }
-            .exhibition__contents__main__middle__heart__money__sell-box__form-group__right {
+            &__right {
               height: 48px;
               width: 200px;
               color: black;
               line-height: 48px;
               padding-left: 20px;
-              .exhibition__contents__main__middle__heart__money__sell-box__form-group__right__money {
+              &__money {
                 display: inline-block;
                 padding-left: 10px;
                 .right__money {
@@ -176,11 +176,56 @@
           }
         }
       }
+      .exhibition__contents__main__middle__heart__bottom {
+        padding: 40px;
+        height: 249px;
+        width: 620px;
+        font-size: 14px;
+        .exhibition__contents__main__middle__heart__bottom__display {
+          margin: 40px 0 0;
+          height: 50px;
+          width: 100%;
+          background-color: red;
+          text-align: center;
+          line-height: 50px;
+          color: white;
+        }
+        .exhibition__contents__main__middle__heart__bottom__back {
+          height: 50px;
+          width: 279px;
+          background: #aaa;
+          text-align: center;
+          margin: 24px auto 0;
+          color: white;
+          line-height: 50px;
+        }
+      }
     }
   }
+}
+.exhibition__footer {
+  width: 100%;
+  height: 220px;
+  background-color: rgb(245, 245, 245);
+  &__content {
+    height: 140px;
+    width: 456px;
+    margin: 0 auto;
+    padding: 40px 0px;
+    text-align:center
+  }
+
 }
 
 #aa_theme {
   height: 48px;
   width: 400px;
+}
+
+.hoge-hoge {
+  text-decoration: none;
+}
+.hoge {
+  font-size: 12px;
+  text-decoration: none;
 }
