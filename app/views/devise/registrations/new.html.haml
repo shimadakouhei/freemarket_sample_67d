@@ -10,26 +10,25 @@
         = render "devise/shared/error_messages", resource: resource
         .form_box
           .field
-            %label{:for => "nickname"} ニックネーム
+            %label{for: "nickname"}} ニックネーム
             %span.form-require 必須
             %br/
             = f.text_field :nickname, autofocus: true,value:"",autocomplete: "nickname",placeholder:")フリマ"
           .field
-            %label{:for => "email"} メールアドレス
+            %label{for: "email"} メールアドレス
             %span.form-require 必須
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"PC・携帯どちらでも可",value:""
           .field
-            %label{:for => "password"} パスワード
+            %label{for: "password"} パスワード
             %span.form-require 必須
             - if @minimum_password_length
-              -# %em
-                -# (#{@minimum_password_length} )
+              %em
             %br/
             = f.password_field :password, autocomplete: "new-password",placeholder:"",placeholder:"7文字以上の半角英数字"
 
           .field
-            %label{:for => ":password_confirmation"} パスワード確認
+            %label{for: ":password_confirmation"} パスワード確認
             %span.form-require 必須
             %br/
             = f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"7文字以上の半角英数字"
@@ -40,13 +39,13 @@
                 
           .field_box
             %div
-              %label{:for => "family_name"}お名前
+              %label{for: "family_name"}お名前
               %span.form-require 必須
             = f.text_field :family_name, autofocus: true, autocomplete: "email",placeholder:"例) 橋本",value:""
             = f.text_field :first_name,  autofocus: true, placeholder: "例) 遊大",type: "text", value: ""
           .field
             %div
-              %label{:for => "hurigana_family_name"} お名前ふりがな
+              %label{for: "hurigana_family_name"} お名前ふりがな
               %span.form-require 必須
             = f.text_field :hurigana_family_name,  autofocus: true, placeholder: "例) フリマ",type: "text", value: "" 
             = f.text_field :hurigana_first_name,  autofocus: true, placeholder: "例) タロウ",type: "text", value: ""

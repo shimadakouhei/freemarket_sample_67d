@@ -14,8 +14,6 @@
           .login-form__captcha
           .login-submit
             = f.submit "送信する", class: "login-submit__btn"
-
-
   .user-footer
     %nav
       %ul
@@ -26,19 +24,3 @@
         %li
           %a 特定商品に関する表記
       = image_tag 'logo-white.png',size: '250x100'
-
-
-
-
-
-
--# %h2 Forgot your password?
--# = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
--#   = render "devise/shared/error_messages", resource: resource
--#   .field
--#     = f.label :email
--#     %br/
--#     = f.email_field :email, autofocus: true, autocomplete: "email"
--#   .actions
--#     = f.submit "Send me reset password instructions"
--# = render "devise/shared/links"
