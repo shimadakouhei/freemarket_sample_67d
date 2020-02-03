@@ -76,17 +76,10 @@
       border: 1px solid #ea352d;
       color: #fff;
       width: 100%
-      
-     
       }
-      }
-   }
+    }
   }
-
-  
-  
-  
-  
+}
   #user_nickname{
     width: 300px;
     margin: 8px 0 0;
@@ -98,8 +91,6 @@
     line-height: 1.5;
     font-size: 16px;
   }
-  
-  
   #user_email {
     width: 300px;
     margin: 8px 0 0;
@@ -111,29 +102,27 @@
     line-height: 1.5;
     font-size: 16px;
   }
-
   #user_password {
-    width: 300px;
-    margin: 8px 0 0;
-    height: 20px;
-    padding: 10px 16px 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background: #fff;
-    line-height: 1.5;
-    font-size: 16px;
+  width: 300px;
+  margin: 8px 0 0;
+  height: 20px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
   }
   #user_password_confirmation{
-    width: 300px;
-    margin: 8px 0 0;
-    height: 20px;
-    padding: 10px 16px 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background: #fff;
-    line-height: 1.5;
-    font-size: 16px;
-
+  width: 300px;
+  margin: 8px 0 0;
+  height: 20px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
   }
   #user_family_name{
     width: 100%;
@@ -194,7 +183,6 @@
     font-size: 16px;
     width: calc(50% - 120px);
   }
-  
   #user_birth_month{width: 300px;
     margin: 8px 0 0;
     height: 20px;
@@ -206,7 +194,6 @@
     font-size: 16px;
     width: calc(50% - 150px);
   }
-  
   #user_birth_date{width: 300px;
     margin: 8px 0 0;
     height: 20px;
@@ -218,4 +205,3 @@
     font-size: 16px;
     width: calc(50% - 150px);
   }
-  
