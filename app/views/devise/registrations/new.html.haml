@@ -66,18 +66,15 @@
             = f.submit "次へ進む", class: 'btn_btn'
 
 
-  .user-footer
-    %nav
-      %ul
-        %li
-          %a プライバシーポリシー 
-        %li
-          %a フリマ利用規約
-        %li
-          %a 特定商品に関する表記 
-      = image_tag 'logo-white.png',size: '250x100'
-
-
+  .exhibition__footer
+    .exhibition__footer__content
+      = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'
+      = link_to 'フリマ利用規約', '/#', class: 'hoge-last'
+      = link_to '特定商取引に関する表記', '/#', class: 'hoge-last'
+      %br
+      = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
+      %br
+      %small © FURIMA, Inc.
     
   
 
