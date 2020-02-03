@@ -1,67 +1,160 @@
 .headerBox {
-  background-color: red;
   width: 100vw;
   height: 130px;
   &__upperBox {
-    background-color: plum;
     width: 100vw;
-    height: 60px;
+    height: 50px;
     display: flex;
     &__furimaIcon {
-    background-color:yellow;
     width: 160px;
     height: 60px;
     }
-    &__seach {
-    background-color: greenyellow;
-    width: 850px;
+    &__search {
+    width: 510px;
     height: 40px;
+      &__text {
+      width: 500px;
+      height: 40px;
+      }
     }
     &__searchIcon {
-    background-color: skyblue;
     width: 40px;
     height: 40px;
+    background-color: #3CCACE;
     }
   }
   &__lowerBox {
-    background-color: blue;
     width: 100vw;
     height: 60px;
     display: flex;
     justify-content: space-between;
     &__leftBox{
-      background-color: pink;
       width: 230px;
       height: 60px;
       display: flex;
       justify-content: space-around;
       &__category{
-        background-color: goldenrod;
         width: 80px;
         height: 45px;
     }
       &__brand{
-        background-color: goldenrod;
         width: 80px;
         height: 45px;
       }
   }
     &__rightBox{
-      background-color: pink;
       width: 230px;
       height: 60px;
       display: flex;
       justify-content: space-between;
       &__login {
-        background-color: goldenrod;
         width: 80px;
         height: 45px;
       }
       &__registration {
-        background-color: goldenrod;
-        width: 80px;
+        width: 100px;
         height: 45px;
       }
     }
   }
 }
+
+.TopImage {
+position: relative;
+  &__mainMessage {
+  width: 100vw;
+  height: 200px;
+  font-size: 60px;
+  position: absolute;
+  top: 200px;
+  left: 60px;
+  }
+  &__subMessage {
+  width: 370px;
+  height: 200px;
+  font-size: 18px;
+  position: absolute;
+  top: 300px;
+  left: 60px;
+  }
+  &__app-googleBox {
+  width: 380px;
+  height: 100px;
+  position: absolute;
+  top: 370px;
+  display: flex;
+  &__app-storeIcon {
+  width: 100px;
+  height: 100px;
+  }
+  &__google-playIcon {
+  width: 100px;
+  height: 100px;
+  }
+  }
+  }
+  .MiddleTop {
+    font-size: 24px;
+    width: 370px;
+    height: 40px;
+    margin-left: 282px;
+    margin-top: 55px;
+    padding-bottom: 50px;
+  }
+  .MiddleTop:after {
+    content:'________';
+    margin-left: 100px;
+    color:#3CCACE;
+
+  }
+  .PicBox{
+    display: flex;
+    justify-content: space-around;
+    &__ImageLeft {
+    width: 300px;
+    height: 300px;
+    position: relative;
+      &__PicNum1 {
+      position: absolute;
+      top: 0px;
+      width: 30px;
+      height: 30px;
+      }
+    }
+    &__ImageMiddle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+      &__PicNum2 {
+      position: absolute;
+      top: 0px;
+      width: 50px;
+      height: 50px;
+      }
+    }
+    &__ImageRight {
+    position: relative;
+    width: 300px;
+    height: 300px;
+      &__PicNum3 {
+      position: absolute;
+      top: 0px;
+      width: 30px;
+      height: 30px;
+      }
+    }
+  }
+  .MainMessageBox {
+    display: flex;
+    justify-content: space-around;
+    &__LeftMessage {}
+    &__MiddleMessage {}
+    &__RightMessage {}
+  }
+  .SubMessageBox { 
+    display: flex;
+    justify-content: space-around;
+    &__LeftSubText {}
+    &__MiddleSubText {}
+    &__RightSubText {}
+  }
