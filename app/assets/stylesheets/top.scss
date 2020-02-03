@@ -107,6 +107,8 @@ position: relative;
 
   }
   .PicBox{
+    display: flex;
+    justify-content: space-around;
     &__ImageLeft {
     width: 278px;
     height: 278px;
@@ -133,11 +135,15 @@ position: relative;
     }
   }
   .MainMessageBox {
+    display: flex;
+    justify-content: space-around;
     &__LeftMessage {}
     &__MiddleMessage {}
     &__RightMessage {}
   }
   .SubMessageBox { 
+    display: flex;
+    justify-content: space-around;
     &__LeftSubText {}
     &__MiddleSubText {}
     &__RightSubText {}
