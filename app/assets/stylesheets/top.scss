@@ -98,8 +98,17 @@ position: relative;
   }
   }
   .MiddleTop {
-    width: 100px;
-  height: 100px;
+    font-size: 24px;
+    width: 370px;
+    height: 40px;
+    margin-left: 282px;
+    margin-top: 55px;
+  }
+  .MiddleTop:after {
+    content:'________';
+    margin-left: 100px;
+    color:#3CCACE;
+
   }
   .PicBox{
     &__ImageLeft {
