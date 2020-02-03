@@ -1,0 +1,24 @@
+.freem-header {
+  font-family: Arial;
+  font-weight: 500;
+  position: relative;
+  z-index: 1001;
+  height: 150px;
+  width: 100%;
+  background:blue;
+  .freem-header.inner{
+    margin: 0 auto;
+    background-color: red;
+    width: 1000px;
+    .freem-header-top{
+      height: 75px;
+      background:yellow;
+      .freem-header-form {
+        width: 40px;
+        height: 40px;
+
+      }
+    }
+  }
+}
+// .icon-llist
