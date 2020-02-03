@@ -99,6 +99,7 @@ position: relative;
     height: 40px;
     margin-left: 282px;
     margin-top: 55px;
+    padding-bottom: 50px;
   }
   .MiddleTop:after {
     content:'________';
@@ -107,37 +108,52 @@ position: relative;
 
   }
   .PicBox{
+    display: flex;
+    justify-content: space-around;
     &__ImageLeft {
-    width: 278px;
-    height: 278px;
+    width: 300px;
+    height: 300px;
+    position: relative;
       &__PicNum1 {
+      position: absolute;
+      top: 0px;
       width: 30px;
       height: 30px;
       }
     }
     &__ImageMiddle {
-    width: 278px;
-    height: 278px;
+    position: relative;
+    width: 300px;
+    height: 300px;
       &__PicNum2 {
-      width: 30px;
-      height: 30px;
+      position: absolute;
+      top: 0px;
+      width: 50px;
+      height: 50px;
       }
     }
     &__ImageRight {
-    width: 278px;
-    height: 278px;
+    position: relative;
+    width: 300px;
+    height: 300px;
       &__PicNum3 {
+      position: absolute;
+      top: 0px;
       width: 30px;
       height: 30px;
       }
     }
   }
   .MainMessageBox {
+    display: flex;
+    justify-content: space-around;
     &__LeftMessage {}
     &__MiddleMessage {}
     &__RightMessage {}
   }
   .SubMessageBox { 
+    display: flex;
+    justify-content: space-around;
     &__LeftSubText {}
     &__MiddleSubText {}
     &__RightSubText {}
