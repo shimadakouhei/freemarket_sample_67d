@@ -1,17 +1,31 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.body
+  .hedar
+    .hedar_img
+      = image_tag 'logo.png'
+  .login-panel
+    .login-panel_main
+      .login-panel__new-account
+        %p アカウントをお持ちでない方はこちら
+        = render "devise/shared/links"
+      %h2 
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field_login
+          = f.email_field :email, class: "",autofocus: true, autocomplete: "email",placeholder: "メールアドレス", value: ""
+        .field_login
+          = f.password_field :password, class: "field_login_input",autocomplete: "current-password", placeholder: "パスワード", value: ""
+        - if devise_mapping.rememberable?
+          .login-submit
+            = f.submit "ログイン",class: "login-submit__btn"
+
+          - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+            = link_to "パスワードをお忘れの方", new_password_path(resource_name)
+        %footer.single-footer
+  .exhibition__footer
+    .exhibition__footer__content
+      = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'
+      = link_to 'フリマ利用規約', '/#', class: 'hoge-last'
+      = link_to '特定商取引に関する表記', '/#', class: 'hoge-last'
+      %br
+      = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
+      %br
+      %small © FURIMA, Inc.
