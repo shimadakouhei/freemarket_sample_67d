@@ -2,7 +2,6 @@
   font-family: Arial;
   font-weight: 500;
   position: relative;
-  z-index: 1001;
   height: 150px;
   width: 100%;
   background:blue;
@@ -13,12 +12,175 @@
     .freem-header-top{
       height: 75px;
       background:yellow;
-      .freem-header-form {
-        width: 40px;
-        height: 40px;
-
+    }
+  } 
+}
+.freem-l-container-creafix{
+  height: 1254px;
+  width: 100%;
+  background-color: fuchsia;
+  .freem-l-side{
+    margin: 80px 0 0 80px;
+    height: 1250px;
+    width: 300px;
+    background-color:#333333;
+    .freem-mypage-nav{
+      height: 1250px;
+      width: 200px;
+      background-color:blue;
+      .freem-mypage-nav-list-item{
+        height: 48px;
+        width: 300px;
+        background-color: chartreuse;
+        text-align: center;
+        line-height: 50px;
+        border: 1px solid black; 
+}
+      .mypage-nav-header{
+        height: 50px;
+        width: 300px;
+        background-color: red;
+        line-height:80px;
+        border: 1px solid black; 
+    }
+  }
+}
+  .freem-l-contect{
+    width: 705px;
+    height: 1200px;
+    background-color: cornflowerblue;
+    float: right;
+    margin: 0 80px;
+    border: 1px solid black; 
+    .freem-little1{
+    height: 75px;
+    width: 350px;
+    background-color: indigo;
+    float: left;
+    text-align: center;
+    line-height:80px;
+    border: 1px solid black; 
+}
+    .freem-item-link{
+      height: 75px;
+      background-color: royalblue;
+      border: 1px solid black; 
+}
+    .freem-item-list{
+      height: 80px;
+      background-color: slateblue;
+      text-align: center;
+      line-height:80px;
+      border: 1px solid black; 
+}
+    .freem-tab{
+      margin: 30px 0 0 0;
+      height: 70px;
+      background-color: tomato;
+      text-align: center;
+      line-height:70px;
+      border: 1px solid black; 
+}
+    .freem-little2{
+      height: 75px;
+      width: 350px;
+      background-color:red;
+      float:left;
+      text-align: center;
+      line-height:80px;
+      border: 1px solid black; 
+}
+    .freem-to{
+      height: 475px;
+      background-color:blueviolet;
+      text-align: center;
+      
+      
+}
+    .freem-icon{
+      height: 200px;
+      background-color: gold;
+      align-items: center; 
+      .freem-on{
+        height: 110px;
+        width: 705px;
+        background-color: green;
+        position: absolute;
+        margin: 40px 0 0 0;
+        .freem-lll{
+          height: 60px;
+          width: 705px;
+          background-color:black;
+          position: absolute;
+          margin: 25px 0 0 0;
+          text-align: center;
+        }
+        .freemーii{
+          margin: 70px;
+        }
+        
       }
     }
   }
 }
-.icon-llist freem
+.freem-footer{
+  height: 350px;
+  width: 100%;
+  background-color: coral;
+  position: absolute;
+  .freem-content{
+    height: 170px;
+    background-color: crimson;
+    line-height: 350px;
+    margin: 100px 0;
+    .freem-li{
+      position: absolute;
+      height: 100px;
+      width: 250px;
+      background-color: chartreuse;
+      margin: 30px 0 0 300px;
+      .a{
+        color: cornsilk;
+      }
+    }
+    .freem-oo{
+      position: absolute;
+      height: 100px;
+      width: 250px;
+      background-color: black;
+      margin: 30px 0 0 550px;
+    }
+    .freem-lo{
+      position: absolute;
+      height: 100px;
+      width: 250px;
+      background-color: yellow;
+      margin: 30px 0 0 800px; 
+    }
+    .freem-popo{
+      height: 100px;
+      width: 100%;
+      background-color: blue;
+      position: absolute;
+      margin: 135px 0 0 0; 
+      text-align: center;
+      .aaa{
+        position: absolute;
+        margin: 0 0 50px 0; 
+      }
+    }
+  }
+}
+.freem-sell{
+  position: fixed;
+  height: 160px;
+  width: 160px;
+  background-color: cornflowerblue;
+  bottom: 10px; 
+  right: 10px;
+  padding: 6px 40px;
+  .freem-lp{
+    text-align: center;
+    margin: 20px;
+  }
+}
