@@ -1,28 +1,3 @@
-.headerBox
-  .headerBox__upperBox
-    .headerBox__upperBox__furimaIcon
-      = image_tag "logo.png", hight:"45px", width: "140px"
-    .headerBox__upperBox__search
-      = form_tag("#", method: :get) do
-        = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "headerBox__upperBox__search__text"})
-    .headerBox__upperBox__searchIcon 
-      = image_submit_tag "icon-search 1.png",width: "40px", height: "40px"
-  .headerBox__lowerBox  
-    .headerBox__lowerBox__leftBox
-      .headerBox__lowerBox__leftBox__category
-        カテゴリー
-      .headerBox__lowerBox__leftBox__brand
-        ブランド
-    .headerBox__lowerBox__rightBox
-      .headerBox__lowerBox__rightBox__login
-        ログイン
-        - if user_signed_in?
-          = link_to "ログアウト", '/users/sign_out', method: :delete
-        - else
-          = link_to "ログイン", 'new_user_session_path'
-          = link_to "新規登録", 'new_user_registration_path'
-      .headerBox__lowerBox__rightBox__registration
-        新規会員登録
 .TopImage
   = image_tag "bg-mainVisual-pict_pc.jpg", height:"550px", width: "100%"
   .TopImage__mainMessage
@@ -107,3 +82,130 @@
     午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
   .SubMessageBox2__RightSubText2
     お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+.PicUpCategory
+  ピックアップカテゴリー
+.ProsBox
+  .ProsBox__MainTopTopic
+    新規投稿商品
+  .ProsBox__ProsBoxU
+    .ProsBox__ProsBoxU__ProLeft
+      .ProsBox__ProsBoxU__ProLeft__Pic1
+        = image_tag "a007.png", height:"150px", width: "200px"
+      .ProsBox__ProsBoxU__ProLeft__Info1
+        .ProsBox__ProsBoxU__ProLeft__Info1__ProName1
+          Prodect1
+        .ProsBox__ProsBoxU__ProLeft__Info1__UnderInfo1
+          %ul
+            %li.z 3000円 
+            %li ★０
+    .ProsBox__ProsBoxU__ProMiddle
+      .ProsBox__ProsBoxU__ProMiddle__Pic2
+        = image_tag "a004.png", height:"150px", width: "200px"
+      .ProsBox__ProsBoxU__ProMiddle__Info2
+        .ProsBox__ProsBoxU__ProMiddle__Info2__ProName2
+          Prodect2
+        .ProsBox__ProsBoxU__ProMiddle__Info2__UnderInfo2
+          %ul
+            %li.z 3000円 
+            %li ★０
+    .ProsBox__ProsBoxU__ProRight
+      .ProsBox__ProsBoxU__ProRight__Pic3
+        = image_tag "a001.png", height:"150px", width: "200px"
+      .ProsBox__ProsBoxU__ProRight__Info3
+        .ProsBox__ProsBoxU__ProRight__Info3__ProName3
+          Prodect3
+        .ProsBox__ProsBoxU__ProRight__Info3__UnderInfo3
+          %ul
+            %li.z 3000円 
+            %li ★０
+.PicUpBrand
+  ピックアップブランド
+.ProsBox
+  .ProsBox__Archiver
+    アーカイバ
+  .ProsBox__ProsBoxU
+    .ProsBox__ProsBoxU__ProLeft
+      .ProsBox__ProsBoxU__ProLeft__Pic1
+        = image_tag "a007.png", height:"150px", width: "200px"
+      .ProsBox__ProsBoxU__ProLeft__Info1
+        .ProsBox__ProsBoxU__ProLeft__Info1__ProName1
+          Prodect1
+        .ProsBox__ProsBoxU__ProLeft__Info1__UnderInfo1
+          %ul
+            %li.z 3000円 
+            %li ★０
+    .ProsBox__ProsBoxU__ProMiddle
+      .ProsBox__ProsBoxU__ProMiddle__Pic2
+        = image_tag "a004.png", height:"150px", width: "200px"
+      .ProsBox__ProsBoxU__ProMiddle__Info2
+        .ProsBox__ProsBoxU__ProMiddle__Info2__ProName2
+          Prodect2
+        .ProsBox__ProsBoxU__ProMiddle__Info2__UnderInfo2
+          %ul
+            %li.z 3000円 
+            %li ★０
+    .ProsBox__ProsBoxU__ProRight
+      .ProsBox__ProsBoxU__ProRight__Pic3
+        = image_tag "a001.png", height:"150px", width: "200px"
+      .ProsBox__ProsBoxU__ProRight__Info3
+        .ProsBox__ProsBoxU__ProRight__Info3__ProName3
+          Prodect3
+        .ProsBox__ProsBoxU__ProRight__Info3__UnderInfo3
+          %ul
+            %li.z 3000円 
+            %li ★０
+.ContenrMainImage3
+  = image_tag "bg-appBanner-pict.jpg", height:"500px", width: "100%"
+  .ContenrMainImage3__ContentMainMessage3
+    %h1 だれでもかんたん、人生を変えるフリマアプリ
+  .ContenrMainImage3__ContentSubMessage3
+    %h2 今すぐ無料ダウンロード！
+  .ContenrMainImage3__app-googleBox3
+    ._ContenrMainImage3_app-googleBox3__app-storeIcon3
+      = image_tag "AppleStore-icon-438x129.png", width: "180px", height: "54px"
+    .ContenrMainImage3__app-googleBox3__google-playIcon3
+      = image_tag "google-play-badge.png",width: "200px", height: "70px"
+.TopPageFooter
+  %ul.TopPageFooter
+    %li.F1
+      %h1.AboutFURIMA
+        FURIMAについて
+      %ul 
+        %li 
+          = link_to "会社概要", "#"
+        %li 
+          = link_to "プライバシーポリシー", "#"
+        %li
+          = link_to "FURIMA規約", "#"
+        %li 
+          = link_to "ポイントに関する規約", "#"
+    %li.F2
+      %h1.SeeFURIMA
+        FURIMAを見る
+      %ul 
+        %li 
+          = link_to "カテゴリー一覧", "#"
+        %li 
+          = link_to "ブランド一覧", "#"
+    %li.F3
+      %h1.HelpGuide
+        ヘルプ＆ガイド
+      %ul 
+        %li 
+          = link_to "FURIMAガイド", "#"
+        %li 
+          = link_to "FURIMAロゴ利用ガイドライン", "#"
+        %li
+          = link_to "お知らせ", "#"
+.WhiteFURIMAicon
+  = image_submit_tag "logo-white.png", height:"47px", width: "160px"
+  %p.sub © FURIMA
+
+    
+
+
+
+
+
+
+      

@@ -1,0 +1,25 @@
+.headerBox
+  .headerBox__upperBox
+    .headerBox__upperBox__furimaIcon
+      = image_tag "logo.png", hight:"45px", width: "140px"
+    .headerBox__upperBox__search
+      = form_tag("#", method: :get) do
+        = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "headerBox__upperBox__search__text"})
+    .headerBox__upperBox__searchIcon 
+      = image_submit_tag "icon-search 1.png",width: "40px", height: "40px"
+  .headerBox__lowerBox  
+    .headerBox__lowerBox__leftBox
+      .headerBox__lowerBox__leftBox__category
+        カテゴリー
+      .headerBox__lowerBox__leftBox__brand
+        ブランド
+    .headerBox__lowerBox__rightBox
+      .headerBox__lowerBox__rightBox__login
+        ログイン
+        - if user_signed_in?
+          = link_to "ログアウト", '/users/sign_out', method: :delete
+        - else
+          = link_to "ログイン", 'new_user_session_path'
+          = link_to "新規登録", 'new_user_registration_path'
+      .headerBox__lowerBox__rightBox__registration
+        新規会員登録
