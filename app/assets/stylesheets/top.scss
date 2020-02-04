@@ -100,10 +100,11 @@ position: relative;
     margin-left: 282px;
     margin-top: 55px;
     padding-bottom: 50px;
+    text-align: center;
   }
   .MiddleTop:after {
     content:'________';
-    margin-left: 100px;
+    display: block;
     color:#3CCACE;
 
   }
@@ -114,11 +115,16 @@ position: relative;
     width: 300px;
     height: 300px;
     position: relative;
+
       &__PicNum1 {
       position: absolute;
       top: 0px;
-      width: 30px;
-      height: 30px;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      color: white;
+      background-color: #3CCACE;
+      text-align: center;
       }
     }
     &__ImageMiddle {
@@ -128,8 +134,12 @@ position: relative;
       &__PicNum2 {
       position: absolute;
       top: 0px;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      color: white;
+      background-color: #3CCACE;
+      text-align: center;
       }
     }
     &__ImageRight {
@@ -139,22 +149,150 @@ position: relative;
       &__PicNum3 {
       position: absolute;
       top: 0px;
-      width: 30px;
-      height: 30px;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      color: white;
+      background-color: #3CCACE;
+      text-align: center;
       }
     }
   }
   .MainMessageBox {
     display: flex;
     justify-content: space-around;
-    &__LeftMessage {}
-    &__MiddleMessage {}
-    &__RightMessage {}
+    &__LeftMessage {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .s {
+      color: #3CCACE;
+    }
+    &__MiddleMessage {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    &__RightMessage {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
   }
   .SubMessageBox { 
     display: flex;
     justify-content: space-around;
-    &__LeftSubText {}
-    &__MiddleSubText {}
-    &__RightSubText {}
+    &__LeftSubText {
+      width: 280px;
+    }
+    &__MiddleSubText {
+      width: 280px;
+    }
+    &__RightSubText {
+      width: 280px;
+    }
+  }
+  .ContenrMainImage {
+    position: relative;
+    width: 100vw;
+    &__ContentMainMessage {
+    width: 100vw;
+    height: 200px;
+    font-size: 30px;
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    }
+    &__ContentSubMessage {
+    width: 100vw;
+    height: 200px;
+    font-size: 20px;
+    position: absolute;
+    top: 150px;
+    left: 60px;
+    }
+    &__app-googleBox2 {
+      width: 380px;
+      height: 100px;
+      position: absolute;
+      top: 300px;
+      display: flex;
+      &__app-storeIcon2 {
+      width: 100px;
+      height: 100px;
+      }
+      &__google-playIcon2 {
+      width: 100px;
+      height: 100px;
+      }
+      }
+  }
+  .MiddleTop2 {
+    font-size: 24px;
+    width: 370px;
+    height: 40px;
+    margin-left: 360px;
+    margin-top: 55px;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+  .MiddleTop2::after {
+    content:'_______';
+    color:#3CCACE;
+    display: block;
+
+  }
+  .PicBox2{
+    display: flex;
+    justify-content: space-around;
+    &__ImageLeft2 {
+    width: 300px;
+    height: 300px;
+    position: relative;
+
+      
+    }
+    &__ImageMiddle2 {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    }
+    &__ImageRight2 {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    }
+  }
+  .MainMessageBox2 {
+    display: flex;
+    justify-content: space-around;
+    &__LeftMessage2 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+    &__MiddleMessage2 {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    &__RightMessage2 {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .SubMessageBox2 { 
+    display: flex;
+    justify-content: space-around;
+    &__LeftSubText2 {
+      width: 260px;
+    }
+    &__MiddleSubText2 {
+      width: 260px;
+    }
+    &__RightSubText2 {
+      width: 260px;
+    }
   }

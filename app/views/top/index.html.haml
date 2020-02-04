@@ -16,6 +16,11 @@
     .headerBox__lowerBox__rightBox
       .headerBox__lowerBox__rightBox__login
         ログイン
+        - if user_signed_in?
+          = link_to "ログアウト", '/users/sign_out', method: :delete
+        - else
+          = link_to "ログイン", 'new_user_session_path'
+          = link_to "新規登録", 'new_user_registration_path'
       .headerBox__lowerBox__rightBox__registration
         新規会員登録
 .TopImage
@@ -49,11 +54,14 @@
       3
 .MainMessageBox
   .MainMessageBox__LeftMessage
-    3分 ですぐに出品
+    %span.s 3分 
+    ですぐに出品
   .MainMessageBox__MiddleMessage
-    シンプル で使いやすい
+    %span.s シンプル 
+    で使いやすい
   .MainMessageBox__RightMessage
-    手数料 業界最安
+    %span.s 手数料 
+    業界最安
 .SubMessageBox
   .SubMessageBox__LeftSubText
     スマホで入力するだけで簡単に出品できる！
@@ -61,3 +69,41 @@
     めんどくさい入力は必要なく、検索も購入もスムーズ！
   .SubMessageBox__RightSubText
     最大3%でお得に出品&購入！
+.ContenrMainImage
+  = image_tag "bg-topMiddleDl-pict.jpg", height:"500px", width: "100%"
+  %h.ContenrMainImage__ContentMainMessage
+    会員数日本一位
+  .ContenrMainImage__ContentSubMessage
+    FURIMAは、フリマアプリで最も人気。
+    %br 
+    出品・購入回数も業界最多です！
+    %br 
+    ほしかったあの商品に出会えるかもしれません。
+  .ContenrMainImage__app-googleBox2
+    ._ContenrMainImage_app-googleBox2__app-storeIcon2
+      = image_tag "AppleStore-icon-438x129.png", width: "180px", height: "54px"
+    .ContenrMainImage__app-googleBox2__google-playIcon2
+      = image_tag "google-play-badge.png",width: "200px", height: "70px"
+.MiddleTop2
+  FURIMAの特徴
+.PicBox2
+  .PicBox2__ImageLeft2
+    = image_tag "icon-01.png", height:"300px", width: "300px"
+  .PicBox2__ImageMiddle2
+    = image_tag "icon-03.png", height:"300px", width: "300px"
+  .PicBox2__ImageRight2
+    = image_tag "icon-04.png", height:"300px", width: "300px"
+.MainMessageBox2
+  .MainMessageBox2__LeftMessage2
+    簡単に売り買いできる
+  .MainMessageBox2__MiddleMessage2
+    売上金は即日振込みに対応
+  .MainMessageBox2__RightMessage2
+    様々な支払いに対応
+.SubMessageBox2
+  .SubMessageBox2__LeftSubText2
+    スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+  .SubMessageBox2__MiddleSubText2
+    午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+  .SubMessageBox2__RightSubText2
+    お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
