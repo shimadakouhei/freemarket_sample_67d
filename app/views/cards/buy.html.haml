@@ -1,0 +1,22 @@
+.confirmation
+  .confirmation__header
+    = image_tag "logo.png", size: "185x49"
+
+  .confirmation__contents__main
+    .confirmation__contents__main__middle
+      .confirmation__contents__main__middle__head
+        購入内容の確認
+      .confirmation__contents__main__middle__heart
+        .confirmation__contents__main__middle__heart__upload-box
+        
+        .confirmation__contents__main__middle__heart__delivery
+
+  .confirmation__footer
+    .confirmation__footer__content
+      = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'
+      = link_to 'フリマ利用規約', '/#', class: 'hoge-last'
+      = link_to '特定商取引に関する表記', '/#', class: 'hoge-last'
+      %br
+      = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
+      %br
+      %small © FURIMA, Inc.
