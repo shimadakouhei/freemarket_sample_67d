@@ -1,6 +1,5 @@
 .exhibition__header
   = image_tag "logo.png", size: "185x49"
-
 .exhibition__contents__main
   .exhibition__contents__main__middle
     .exhibition__contents__main__middle__head
@@ -15,7 +14,7 @@
         .exhibition__contents__main__middle__heart__upload-box__item
           %b
             ドラッグアンドドロップ
-            %br 
+            %br
             またはクリックしてファイルをアップロード
       .exhibition__contents__main__middle__heart__sell-content
         .exhibition__contents__main__middle__heart__sell-content__form-one
@@ -70,26 +69,14 @@
               .exhibition__contents__main__middle__heart__money__sell-box__form-group__right__money
                 = form_for "aaa" do |f|
                   = f.text_field :content, class: 'right__money', placeholder: '例） 300   '
-          .exhibition__contents__main__middle__heart__money__sell-box__margin
-            .exhibition__contents__main__middle__heart__money__sell-box__margin__left
-              販売手数料(10%)
-            .exhibition__contents__main__middle__heart__money__sell-box__margin__right
-              あああ
-          .exhibition__contents__main__middle__heart__money__sell-box__benefit
-            .exhibition__contents__main__middle__heart__money__sell-box__benefit__left
-              販売利益
-            .exhibition__contents__main__middle__heart__money__sell-box__benefit__right
-              ¥ あああ
       .exhibition__contents__main__middle__heart__bottom
         = link_to '禁止されている出品', '/#/', class: 'hoge-hoge'
         、
         = link_to '行為', '/#/', class: 'hoge-hoge'
         を必ずご確認ください。
-        %br
         またブランド品でシリアルナンバー等がある場合はご記載ください。
         = link_to '偽ブランドの販売', '/#', class: 'hoge-hoge'
         は犯罪であり処罰される可能性があります。
-        %br
         また、出品をもちまして
         = link_to '加盟店規約', '/#/', class: 'hoge-hoge'
         に同意したことになります。
