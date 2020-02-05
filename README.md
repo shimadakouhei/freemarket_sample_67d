@@ -62,6 +62,7 @@ Things you may want to cover:
 |user_id|integer|null:false,foreign_key: true|
 |caregory_id|referencesinteger|null:false,foreign_key: true|
 |brand_id|integer|null:false,foreign_key: true|
+|price|integer|null:false|
 
 ## Association
 - belongs_to:user
