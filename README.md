@@ -54,14 +54,20 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null:false|
 |conditions|string|null:false|
-|delivery_charge|integer|null:false|
+|delivery_charge|string|null:false|
 |prefecture|string|null:false|
-|delicery_day|integer|null:false|
-|size|string|null:false|
+|delivery_day|integer|null:false|
 |text|text|null:false|
+<<<<<<< Updated upstream
 |user_id|integer|null:false,foreign_key: true|
 |caregory_id|referencesinteger|null:false,foreign_key: true|
 |brand_id|integer|null:false,foreign_key: true|
+=======
+|user_id|references|null:false,foreign_key: true|
+|category_id|references|null:false,foreign_key: true|
+|brand_id|references|null:true,foreign_key: true|
+|price|integer|null:false|
+>>>>>>> Stashed changes
 
 ## Association
 - belongs_to:user
