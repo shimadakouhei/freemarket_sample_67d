@@ -6,7 +6,43 @@
     .confirmation__contents__box
       .confirmation__contents__box__head
         購入内容の確認
+      .confirmation__contents__box__items
+        .confirmation__contents__box__items__inner
+          .confirmation__contents__box__items__inner__box1
+            .confirmation__contents__box__items__inner__box1__image
+              = image_tag "logo.png", size: "80x80"
+            .confirmation__contents__box__items__inner__box1__detail
+              .confirmation__contents__box__items__inner__box1__detail__name
+                %p サロンドアルファードファーハンドバッグ
+              .confirmation__contents__box__items__inner__box1__detail__price
+                %p ¥5000 (税込み)送料込み
+      .confirmation__contents__box__info
+        .confirmation__contents__box__info__paybox
+          .confirmation__contents__box__info__paybox__pay
+            %p 支払い金額
+          .confirmation__contents__box__info__paybox__money
+            %p ¥5000
+        .confirmation__contents__box__info__paybox__point
+          %p □ ポイントを使用 (所持ポイント: P0)
 
+        .confirmation__contents__box__info__methodbox
+          .confirmation__contents__box__info__methodbox__method
+            %p 支払い方法
+          .confirmation__contents__box__info__methodbox__registration
+            = link_to "➕登録してください", '/#' , class: 'aaa'
+
+        .confirmation__contents__box__info__addressbox
+          .confirmation__contents__box__info__addressbox__deli
+            %p 配送先
+          .confirmation__contents__box__info__addressbox__change
+            = link_to "変更する", '/#' , class: 'bbb'
+        .confirmation__contents__box__info__individual
+          %p 〒631-0811
+          %p 奈良県 奈良市 秋篠町872
+          %p 嶋田 幸平
+        .confirmation__contents__box__info__purchase
+          .confirmation__contents__box__info__purchase__button
+            = link_to "購入する", "/#" , class: 'ccc'
 
   .confirmation__footer
     .confirmation__footer__content
