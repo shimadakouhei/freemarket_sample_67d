@@ -54,14 +54,14 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null:false|
 |conditions|string|null:false|
-|delivery_charge|integer|null:false|
+|delivery_charge|string|null:false|
 |prefecture|string|null:false|
-|delicery_day|integer|null:false|
-|size|string|null:false|
+|delivery_day|integer|null:false|
 |text|text|null:false|
 |user_id|integer|null:false,foreign_key: true|
-|caregory_id|referencesinteger|null:false,foreign_key: true|
-|brand_id|integer|null:false,foreign_key: true|
+|category_id|integer|null:false,foreign_key: true|
+|brand_id|integer|null:true,foreign_key: true|
+|price|integer|null:false|
 
 ## Association
 - belongs_to:user
@@ -99,8 +99,8 @@ Things you may want to cover:
 |administrative＿divisions|string|null:false|
 |city|string|null:false|
 |street_number|string|null:false|
-|apartment|string|null:nullT NULL|
-|tel|integer|null:false,unique:ture|
+|apartment|string|null:true|
+|tel|integer|null:true,unique:ture|
 |user_id|integer|null:false,foreign_key: true|
 
 ## Association
@@ -150,4 +150,8 @@ Things you may want to cover:
 ## trade テーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id|
+|product_id|integer|null: false, foreign_key: true|
+|buyer_id｜integer|null: false, foreign_key: true|
+
+## Association
+- has_one :product
