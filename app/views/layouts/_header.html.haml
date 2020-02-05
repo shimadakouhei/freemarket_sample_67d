@@ -7,12 +7,11 @@
         = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "headerBox__upperBox__search__text"})
     .headerBox__upperBox__searchIcon 
       = image_submit_tag "icon-search 1.png",width: "40px", height: "40px"
-  %script{:src => "events.js"}
   .headerBox__lowerBox  
     .headerBox__lowerBox__leftBox
       .headerBox__lowerBox__leftBox__category
-        イベント
-          
+        %button 
+          カテゴリー
       .headerBox__lowerBox__leftBox__brand
         ブランド
     .headerBox__lowerBox__rightBox
