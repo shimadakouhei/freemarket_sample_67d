@@ -1,5 +1,5 @@
 .confirmation {
-  height: 100%;
+  height: 100vh;
   background-color: rgb(245, 245, 245);
   &__header {
     height: 130px;
@@ -8,59 +8,115 @@
     text-align: center;
     line-height: 170px;
   }
-  &__contents__main {
-    background-color: rgb(245, 245, 245);
+
+  &__contents{
     width: 100%;
-    &__middle {
+    background-color: rgb(245, 245, 245);
+    &__box{
       width: 700px;
       margin: 0 auto;
       background-color: white;
-      &__head {
+      &__head{
         padding: 32px 16px;
         font-size: 22px;
-        font-weight: bold;
-        text-align:center;
+        text-align: center;
         border-bottom: solid 1px rgb(245, 245, 245);
         height: 32px;
         line-height: 32px;
+        font-weight: bold;
       }
-      &__heart {
-        &__upload-box {
-          width: 620px;
-          padding: 40px;
-          border-bottom: solid 1px rgb(245, 245, 245);
-          &__title {
-            font-size: 16px;
-          }
-          &__explain {
-            margin: 8px 0;
-          }
-        
+      &__items {
+        font-size: 14px;
+        border-bottom: solid 1px rgb(245, 245, 245);
+        height: 100px;
+        padding: 40px 0 20px;
+        &__inner {
+          margin: 0 auto;
+          padding: 0 180px;
+          height: 80px;
+          &__box1{
+            display: flex;
+            &__image{
+              
+            }
+            &__detail{
+              height: 80px;
+              padding-left: 14px;
+              &__name {
+                font-size: 14px;
+              }
+              &__price{
+                font-size: 14px;
+                font-weight: bold;
+              }
+            }
+          } 
         }
-
-        &__delivery {
-          padding: 40px;
-          height: 291px;
-          width: 620px;
+      }  
+      &__info {
+        font-size: 22px;
+        height: 500px;
+        margin: 0 auto;
+        padding: 40px 180px;
+        &__paybox{
+          display: flex;
+          justify-content: space-between;
+          &__pay {
+            font-size: 18px;
+            font-weight: bold;
+          }
+          &__money {
+            font-size: 30px;
+          }
+        &__point{
+          padding:20px 0 20px;
+          color: gray;
+          font-size: 16px;
           border-bottom: solid 1px rgb(245, 245, 245);
-          color: #888;
+        }  
+          
+        }
+        &__methodbox {
+          &__method {
+            padding-top: 40px;
+            font-size: 18px;
+            font-weight: bold;
+          }
+          &__registration {
+            border-bottom: solid 1px rgb(245, 245, 245);
+            padding-bottom: 40px;
+          }
+        }
+        &__addressbox{
+          display: flex;
+          justify-content: space-between;
+          line-height: 22px;
+          padding: 40px 0 5px;
+          &__deli {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          &__change {
+            font-size: 14px;
+          }
+        }
+        &__individual {
           font-size: 14px;
-          &__sell-form-box {
-            float: right;
-            height: 290px;
-            width: 400px;
-            color: black;
-            &__area {
-              margin: 40px 0;
-            }
-            &__date {
-              margin: 40px 0;
-            }
+          border-bottom: solid 1px rgb(245, 245, 245);
+          padding-bottom: 20px;
+        }
+        &__purchase {
+          padding-top: 20px;  
+          &__button{
+            border: 1px solid #ea352d;
+            background: #ea352d;
           }
         }
       }
     }
   }
+  
+  
   &__footer {
     width: 100%;
     height: 220px;
@@ -70,7 +126,7 @@
       width: 456px;
       margin: 0 auto;
       padding: 40px 0px;
-      text-align:center
+      text-align: center;
     }
   }
 }
@@ -80,4 +136,25 @@
   text-decoration: none;
   margin: 0 0 0 8px;
   color: black;
+}
+
+.aaa {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(12, 170, 218);
+}
+.bbb {
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(12, 170, 218);
+}
+.ccc {
+  padding: 15px 50px;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-weight: bolder;
 }
