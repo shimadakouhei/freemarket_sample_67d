@@ -1,0 +1,39 @@
+.TopPageFooter
+  %ul.TopPageFooter
+    %li.F1
+      %h1.AboutFURIMA
+        FURIMAについて
+      %ul 
+        %li 
+          = link_to "会社概要", "#"
+        %li 
+          = link_to "プライバシーポリシー", "#"
+        %li
+          = link_to "FURIMA規約", "#"
+        %li 
+          = link_to "ポイントに関する規約", "#"
+    %li.F2
+      %h1.SeeFURIMA
+        FURIMAを見る
+      %ul 
+        %li 
+          = link_to "カテゴリー一覧", "#"
+        %li 
+          = link_to "ブランド一覧", "#"
+    %li.F3
+      %h1.HelpGuide
+        ヘルプ＆ガイド
+      %ul 
+        %li 
+          = link_to "FURIMAガイド", "#"
+        %li 
+          = link_to "FURIMAロゴ利用ガイドライン", "#"
+        %li
+          = link_to "お知らせ", "#"
+.WhiteFURIMAicon
+  = image_submit_tag "logo-white.png", height:"47px", width: "160px"
+  %p.sub © FURIMA
+
+%button.fixed_btn
+  %h1 出品する
+  = image_tag "icon_camera.png", height: "62%", width: "62%"
