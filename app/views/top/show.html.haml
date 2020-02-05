@@ -1,0 +1,90 @@
+= render 'layouts/header'
+.top-show-main
+  .top-show-main__middle
+    .top-show-main__middle__name
+      あいうえお
+    .top-show-main__middle__item-box
+      .top-show-main__middle__item-box__main
+      = image_tag "pict-reason-01.jpg", size: "560x346"
+      .top-show-main__middle__item-box__left
+        = image_tag "pict-reason-01.jpg", size: "140x77", class: 'pic-left'
+        = image_tag "pict-reason-02.jpg", size: "140x77", class: 'pic-left'
+        = image_tag "pict-reason-03.jpg", size: "140x77", class: 'pic-left'
+    .top-show-main__middle__price
+      .top-show-main__middle__price__main
+        ¥ 30000
+      .top-show-main__middle__price__sub
+        (税込)送料込み
+    .top-show-main__middle__title
+      product3
+    .top-show-main__middle__big-table
+      %table.top-show-main-table
+        %tr.top-show-main-record
+          %th.top-show-main-head
+            出品者
+          %td.top-show-main-date
+            hoge
+        %tr.top-show-main-record
+          %th.top-show-main-head
+            カテゴリー
+          %td.top-show-main-date
+            = link_to 'メンズ', '/#/', class: 'table-category'
+            %br
+            = link_to 'ジャケット/アウター', '/#/', class: 'table-category'
+            %br
+            = link_to 'ノーカラージャケット', '/#/', class: 'table-category'
+        %tr.top-show-main-record
+          %th.top-show-main-head
+            ブランド
+          %td.top-show-main-date
+            hoge
+        %tr.top-show-main-record
+          %th.top-show-main-head
+            出品のサイズ
+          %td.top-show-main-date
+            hoge
+        %tr.top-show-main-record
+          %th.top-show-main-head
+            商品の状態
+          %td.top-show-main-date
+            新品/未使用
+        %tr.top-show-main-record
+          %th.top-show-main-head
+            配送料の負担
+          %td.top-show-main-date
+            着払い（購入者負担）
+        %tr.top-show-main-record
+          %th.top-show-main-head
+            発送元の地域
+          %td.top-show-main-date
+            青森県
+        %tr.top-show-main-record
+          %th.top-show-main-head
+            発送日の目安
+          %td.top-show-main-date
+            1-2日で発送
+    .top-show-main__middle__option
+      %li.top-show-main__middle__option__left
+        お気に入り
+      %li.top-show-main__middle__option__right
+        = link_to '不適切な商品の通報', '/#/', class: 'report-btn'
+  .top-show-main__comment-box
+    .top-show-main__comment-box__main
+      .top-show-main__comment-box__main__center
+        .top-show-main__comment-box__main__center__super-area
+          = form_for "aaa" do |f|
+            = f.text_area :content, class: 'top-show-main__comment-box__main__area'
+        .top-show-main__comment-box__main__attention
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        .top-show-main__comment-box__main__comment-btn
+          コメントする
+  .top-show-main__next
+    %li.top-show-main__next__left
+      = link_to '< 前の商品', '/#/', class: 'back-next-btn'
+    %li.top-show-main__next__right
+      = link_to '> 次の商品', '/#/' , class: 'back-next-btn'
+  .top-show-main__more
+    = link_to 'メンズをもっと見る', '/#/', class: 'more-mens'
+= render 'layouts/footer'
