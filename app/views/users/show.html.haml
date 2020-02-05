@@ -1,18 +1,98 @@
-%header.freem-header
-  %div.freem-header.inner
-    %div.freem-header-top
-      %h1
-        %a{:href => '＃'}
-          %img{:alt => "FURIMA", :height => "36", :src => "logo.png", :width => "134"}
-        %from{:action => "#", :class => "freem-header-form"}
-        %input{:name => "keyword", :type => "search" }
-          %div.i-con.search
-      %div{:class => "freem-header.navbox>"}
-        %nav{:class => "l-left>"}
-          %ul{:class=>"freem-header.nav"}
-            %li
-              %h2
-                %a{:href =>"#", :class=>"freem-header.list-parent"}
-                  %i{:class=>"icon-list freem"}
-                    %span カテゴリーを探す。
-                  
+.freem-header
+  .freem-header.inner
+    .freem-header-top
+.freem-l-container-creafix
+  .freem-l-contect
+    .freem-icon
+      .freem-on
+        .freem-lll
+          = image_tag 'member_photo_noimage_thumb.png', height: '60px', width: '60px'
+          .freem-ii
+            aaaaaaa
+          .freem-qq
+            評価数0 出品数0
+    .freem-little1
+      お知らせ
+    .freem-little2
+      やることリスト
+    .freem-item-link
+    .freem-item-link
+    .freem-item-link
+    .freem-item-link
+    .freem-item-link
+    .freem-item-list
+      =link_to "一覧を見る" 
+    .freem-tab
+      購入した商品
+    .freem-little1
+      取引中
+    .freem-little2
+      過去の取引
+    .freem-to
+      =image_tag  "logo-white.png",height:"200px",width:"200px"
+  .freem-l-side
+    .freem-mypage-nav
+      %ul
+        %li.freem-mypage-nav-list-item
+          = link_to 'マイページ', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'お知らせ', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'やる事リスト', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'いいね一覧', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '出品する', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '出品中', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '取引中', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '売却済み', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '取引中', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '過去の取引', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'ニュース一覧', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '評価一覧', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'ガイド', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'お問い合わせ', "https://www.mercari.com/jp/mypage/"
+        .mypage-nav-header
+          メルペイ
+        %li.freem-mypage-nav-list-item
+          = link_to '振り込み申請', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'ポイント', "https://www.mercari.com/jp/mypage/"
+        .mypage-nav-header
+          設定
+        %li.freem-mypage-nav-list-item
+          = link_to 'プロフィール', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '住所変更', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '支払い方法', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'メール', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '本人情報', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to '電話番号確認', "https://www.mercari.com/jp/mypage/"
+        %li.freem-mypage-nav-list-item
+          = link_to 'ログアウト', "https://www.mercari.com/jp/mypage/"
+.freem-footer
+  .freem-content
+    .freem-li
+    .freem-oo
+    .freem-lo
+    .freem-popo
+      = image_tag 'logo.png', height: '100px', width: '100px',class:"aaa"
+.freem-sell
+  .freem-lp
+    出品する
+    = image_submit_tag 'icon_camera.png',  height: '100px', width: '100px'
+
+    

@@ -1,0 +1,56 @@
+.l-chapter-head{
+  height: 50px;
+  width: 700px;
+  background-color: gray;
+  margin: 10px 0 0 100px;
+  text-align: center;
+  font-size: 30px;
+}
+.l-single-inner{
+  height: 380px;
+  width: 700px;
+  background-color: grey;
+  margin: 0 0 0 100px;
+  .form-group{
+    height: 130px;
+    width: 350px;
+    background-color: white;
+    margin: 0 auto;
+    .label{
+      float: left;
+    }
+    .form-reqire{
+      background: #ea352d;
+      float: left;
+      color: white;
+      width: 35px;
+    }
+    .hoge-1{
+      height: 50px;
+      width: 346px;
+    }
+  }
+  .form-group1{
+    height: 70px;
+    width: 350px;
+    background-color:white;
+    margin: 0 auto;
+    .label1{
+      float: left;
+    }
+    .form-reqire1{
+      background: #ea352d;
+      float: left;
+      color: white;
+      width: 35px;
+    }
+  }
+  .form-last{
+    height: 50px;
+    width: 350px;
+    background-color: red;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+}
+}

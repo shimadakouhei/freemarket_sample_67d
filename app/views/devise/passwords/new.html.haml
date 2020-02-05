@@ -1,10 +1,26 @@
-%h2 Forgot your password?
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .actions
-    = f.submit "Send me reset password instructions"
-= render "devise/shared/links"
+.password_body
+  .password_hedar
+    .password_hedar_img
+      = image_tag 'logo.png' 
+  .password-panel
+    .password-panel_main
+      %h2 パスワードをお忘れの方
+      = form_for(resource, as: resource_name, url: session_path(resource_name),html: { class: "password_form"})do |f|
+        .login-form
+          %p メールアドレス
+          .field
+            = f.email_field :email, class: "field__input", autocomplete: "email", placeholder: "ご登録されたメールアドレス"
+          %p.description ご登録されたメールアドレスにパスワード再設定のご案内が送信されます
+          .login-form__captcha
+          .login-submit
+            = f.submit "送信する", class: "login-submit__btn"
+  .user-footer
+    %nav
+      %ul
+        %li
+          %a プライバシーポリシー 
+        %li
+          %a フリマ利用規約
+        %li
+          %a 特定商品に関する表記
+      = image_tag 'logo-white.png',size: '250x100'
