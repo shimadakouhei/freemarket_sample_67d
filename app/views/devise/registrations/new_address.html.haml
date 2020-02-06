@@ -1,12 +1,12 @@
-.body
+.address_body
   .hedar
     .hedar_img
       = image_tag 'logo.png'
-  .main
+  .address_main
     %section.content
       .content_text
         住所情報登録
-      = form_for(@address, html: { class: "form_group"}) do |f|
+      = form_for(@address, html: { class: "address_group"}) do |f|
         = render "devise/shared/error_messages", resource: @address
         .form_box
           .field
