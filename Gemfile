@@ -73,7 +73,7 @@ gem 'haml-rails'
 gem 'devise' 
 gem 'font-awesome-sass', '~> 5.4.1'
 
-gem 'rails-i18n'
-gem 'pry-rails'
-gem 'rspec-rails'
+gem 'sprockets'
 gem 'payjp'
+gem 'ancestry'
+
