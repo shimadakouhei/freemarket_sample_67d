@@ -39,7 +39,7 @@ Things you may want to cover:
 |birth_year|integer|null:false|
 |birth_month|integer|null:false|
 |birth_date|integer|null:false|
-|tel|integer|null:false,unique:ture|
+
 
 ## Association
 - has_many:cards
@@ -75,9 +75,7 @@ Things you may want to cover:
 ## cards テーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null:false|
-|expiration_date|integer|null:false
-|security_code|integer|null:false|
+|pay_id|integer|null:false|
 |user_id|integer|null:false foreign_key: true|
 
 ## Association
@@ -101,7 +99,8 @@ Things you may want to cover:
 |administrative＿divisions|string|null:false|
 |city|string|null:false|
 |street_number|string|null:false|
-|apartment|string|null:false|
+|apartment|string|null:true|
+|tel|integer|null:true,unique:ture|
 |user_id|integer|null:false,foreign_key: true|
 
 ## Association
@@ -112,8 +111,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |theme|string|null:false|
-|variety|string|null:false|
-|detail|string|null:false|
 
 ## Association
 - has_many:product
@@ -122,7 +119,7 @@ Things you may want to cover:
 ## brands テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null:true|
 
 ## Association
 - has_many:product
@@ -149,3 +146,12 @@ Things you may want to cover:
 ## Association
 - belongs_to:user
 - belongs_to:product
+
+## trade テーブル
+|Column|Type|Options|
+|------|----|-------|
+|product_id|integer|null: false, foreign_key: true|
+|buyer_id｜integer|null: false, foreign_key: true|
+
+## Association
+- has_one :product
