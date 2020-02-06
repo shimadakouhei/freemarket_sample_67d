@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
 
 
   private
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,:family_name,:hurigana_family_name,:hurigana_first_name,:birth_year,:birth_month,:birth_date,:first_name])
+  end
 
   def production?
     Rails.env.production?
