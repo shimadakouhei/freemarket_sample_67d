@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'top#index'
   get 'cards/buy'
+  devise_for :users
+  root 'top#index'
+  #root 'products#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -11,4 +14,4 @@ Rails.application.routes.draw do
   resources :top, only: [:index, :new, :create, :show]
   resources :users, only: [:show,:logout]
   resources :cards, only: [:index, :new]
-end
+  resources :products, except: :show
