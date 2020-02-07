@@ -8,7 +8,12 @@
       .exhibition__contents__main__middle__heart__upload-box
         .exhibition__contents__main__middle__heart__upload-box__title
           出品画像
+
           %span.exhibition-essential 必須
+          = form_for @product do |f|
+          = f.fields_for :images do |i| 
+          = i.file_field :src 
+            %br
         .exhibition__contents__main__middle__heart__upload-box__explain
           最大10枚までアップロードできます
         .exhibition__contents__main__middle__heart__upload-box__item
@@ -20,7 +25,6 @@
         .exhibition__contents__main__middle__heart__sell-content__form-one
           商品名
           %span.exhibition-essential 必須
-          = form_for "aaa" do |f|
             = f.text_field :content, class: 'exhibition__contents__main__middle__heart__sell-content__form-one__name', placeholder: '  商品名 (必須40文字まで)'
         .exhibition__contents__main__middle__heart__sell-content__form-group
           商品の説明
