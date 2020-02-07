@@ -16,13 +16,10 @@ height: 100vh;
         .freem-mypage-nav-list-item{
           height: 48px;
           width: 300px;
-          background-color:blue;
+          background-color:#3CCACE;
           text-align: center;
           line-height: 50px;
           border: 1px solid black; 
-          .nisida{
-            color: blue;
-          }
         }
         .mypage-nav-header{
           height: 50px;
@@ -173,4 +170,8 @@ height: 100vh;
     margin: 20px;
   }
  }
+}
+
+.nisida{
+  color: black;
 }
