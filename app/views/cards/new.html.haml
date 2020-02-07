@@ -1,7 +1,9 @@
-.l-chapter-head
-  支払い方法設定
-.l-single-inner 
-  クレジットカード一覧
-  %script.payjp-button{"data-key" => "公開鍵", :src => "https://checkout.pay.jp", :type => "text/javascript"}
-
-        
+= render 'layouts/header'
+.chapter
+  .chapter__box
+    .chapter__box__head
+      支払い方法設定
+    .chapter__box__single
+      クレジットカード一覧
+      %script.payjp-button{"data-key" => "公開鍵", :src => "https://checkout.pay.jp", :type => "text/javascript"}
+= render 'layouts/footer'
