@@ -48,8 +48,8 @@
       display: flex;
       justify-content: space-between;
       &__login {
-        width: 80px;
-        height: 45px;
+        display: flex;
+        height: 45px; 
       }
       &__registration {
         width: 100px;
@@ -515,4 +515,8 @@ p.sub {
   right: 32px;
   position: fixed;
   padding: 15px;
+}
+
+.logaut_btn{
+  color:black;
 }

@@ -1,0 +1,25 @@
+.signup_body
+  .signup_hedar
+    .signup_hedar_img
+      = image_tag 'logo.png'
+  .signup-panel
+    .signup-panel_main
+      %p.signup-panel_title--address 会員登録完了
+      #new_user
+        .signup-panel_side
+          .thankyou
+            %p ありがとうございます。
+            %p 会員登録が完了しました。
+          .sign-up-btn
+            %button{type: "submit",class: "btn-red"}
+              = link_to "トップへ戻る", root_path
+    .user-footer
+      %nav
+        %ul
+          %li
+            %a プライバシーポリシー 
+          %li
+            %a フリマ利用規約
+          %li
+            %a 特定商品に関する表記 
+        = image_tag 'logo-white.png',size: '250x100'

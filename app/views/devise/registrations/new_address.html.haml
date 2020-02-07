@@ -1,0 +1,56 @@
+.address_body
+  .hedar
+    .hedar_img
+      = image_tag 'logo.png'
+  .address_main
+    %section.content
+      .content_text
+        住所情報登録
+      = form_for(@address, html: { class: "address_group"}) do |f|
+        = render "devise/shared/error_messages", resource: @address
+        .form_box
+          .field
+            %label{for: "postal_code"} 郵便番号（ハイフンなし）
+            %span.form-require 必須
+            %br/
+            = f.number_field :postal_code,autofocus: true, placeholder: "郵便番号", value: ""
+          .field 
+            %label{for: "administrative＿divisions"} 都道府県
+            %span.form-require 必須
+            %br/
+            = f.text_field :administrative＿divisions,autofocus: true,value:"",autocomplete: "administrative＿divisions",placeholder:"都道府県"
+          .field
+            %label{for: "city"} 市区町村
+            %span.form-require 必須
+            %br/
+            = f.text_field :city,autofocus: true, placeholder: "市区町村",type: "text", value: ""
+          .field
+            %label{for: "street_number"} 番地
+            %span.form-require 必須
+            %br/
+            = f.text_field :street_number,autofocus: true, placeholder: "番地",type: "text", value: ""
+          .field
+            %label{for: "apartment"} マンションまたはビル
+            %span.form-require 任意
+            %br/
+            = f.text_field :apartment,autofocus: true, placeholder: "マンションまたはビル",type: "text"
+          .field
+            %label{for: "tel"} 電話番号（ハイフンなし）
+            %span.form-require 任意
+            %br/
+            = f.number_field :tel,autofocus: true
+          .actions
+            = f.submit "登録完了", class: 'btn_btn'
+
+
+  .exhibition__footer
+    .exhibition__footer__content
+      = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'
+      = link_to 'フリマ利用規約', '/#', class: 'hoge-last'
+      = link_to '特定商取引に関する表記', '/#', class: 'hoge-last'
+      %br
+      = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
+      %br
+      %small © FURIMA, Inc.
+    
+

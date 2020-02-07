@@ -17,14 +17,24 @@ ActiveRecord::Schema.define(version: 2020_02_07_032055) do
     t.string "administrative＿divisions", null: false
     t.string "city", null: false
     t.string "street_number", null: false
-    t.string "apartment", null: false
+    t.string "apartment"
     t.integer "user_id", null: false
-    t.integer "tel", null: false
+    t.integer "tel"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.string "name", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
+  end
+
+  create_table "categoris", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "theme"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "src"

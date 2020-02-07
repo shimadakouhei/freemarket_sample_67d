@@ -1,16 +1,16 @@
-.body
+.user_body
   .hedar
     .hedar_img
       = image_tag 'logo.png'
-  .main
+  .user_main
     %section.content
       .content_text
         会員情報入力
-      = form_for(resource, as: resource_name, url: registration_path(resource_name),html: { class: "form_group"}) do |f|
-        = render "devise/shared/error_messages", resource: resource
+      = form_for(@user, url: user_registration_path,html: { class: "form_group"}) do |f|
+        = render "devise/shared/error_messages", resource: @user
         .form_box
           .field
-            %label{for: "nickname"}} ニックネーム
+            %label{for: "nickname"} ニックネーム
             %span.form-require 必須
             %br/
             = f.text_field :nickname, autofocus: true,value:"",autocomplete: "nickname",placeholder:")フリマ"
@@ -41,8 +41,9 @@
             %div
               %label{for: "family_name"}お名前
               %span.form-require 必須
-            = f.text_field :family_name, autofocus: true, autocomplete: "email",placeholder:"例) 橋本",value:""
-            = f.text_field :first_name,  autofocus: true, placeholder: "例) 遊大",type: "text", value: ""
+            %div
+            = f.text_field :family_name, autofocus: true, autocomplete: "email",placeholder:"例) 西田",value:""
+            = f.text_field :first_name,  autofocus: true, placeholder: "例) 太郎",type: "text", value: ""
           .field
             %div
               %label{for: "hurigana_family_name"} お名前ふりがな
