@@ -85,7 +85,7 @@ Things you may want to cover:
 ## images テーブル
 |Column|Type|Options|
 |------|----|-------|
-|picture|references|null:false|
+|picture|string|null:false|
 |products_id|integer|null:false,foreign_key: true|
 
 ## Association
