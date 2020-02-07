@@ -17,8 +17,10 @@
     .headerBox__lowerBox__rightBox
       .headerBox__lowerBox__rightBox__login
         - if user_signed_in?
-          = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "logaut_btn"
-          = link_to "マイページ",user_path(current_user),class: "logaut_btn"
+          .headerBox__lowerBox__rightBox__registration
+            = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "logaut_btn"
+          .headerBox__lowerBox__rightBox__registration
+            = link_to "マイページ",user_path(current_user),class: "logaut_btn"
         - else
           .headerBox__lowerBox__rightBox__registration
             = link_to "ログイン", new_user_session_path, class: "logaut_btn"

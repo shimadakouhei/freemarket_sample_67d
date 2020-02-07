@@ -75,5 +75,7 @@ gem 'font-awesome-sass', '~> 5.4.1'
 
 gem 'sprockets'
 gem 'payjp'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'ancestry'
 
