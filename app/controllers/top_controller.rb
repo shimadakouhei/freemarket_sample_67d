@@ -11,6 +11,11 @@ class TopController < ApplicationController
     Product.create(product_params)
   end
 
+
+
+
+  
+
   def show
     
   end  
