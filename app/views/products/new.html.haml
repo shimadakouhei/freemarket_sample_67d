@@ -73,6 +73,8 @@
                 ¥
                 .exhibition__contents__main__middle__heart__money__sell-box__form-group__right__money
                   = f.text_field :price, class: 'right__money', placeholder: '例） 300   '
+                  = f.text_field :created_at, class:"created_at"
+                  = f.text_field :updated_at, class:"updated_at"
         .exhibition__contents__main__middle__heart__bottom
           = link_to '禁止されている出品', '/#/', class: 'hoge-hoge'
           、
