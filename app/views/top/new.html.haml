@@ -9,7 +9,6 @@
         .exhibition__contents__main__middle__heart__upload-box
           .exhibition__contents__main__middle__heart__upload-box__title
             出品画像
-
             %span.exhibition-essential 必須
             = f.fields_for :images do |f| 
               = f.file_field :src 
