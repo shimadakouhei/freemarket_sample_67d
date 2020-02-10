@@ -71,7 +71,7 @@ position: relative;
   color: white;
   }
   &__subMessage {
-  width: 370px;
+  // width: 370px;
   height: 200px;
   font-size: 18px;
   position: absolute;
@@ -80,18 +80,17 @@ position: relative;
   color: white;
   }
   &__app-googleBox {
-  width: 380px;
+  width: 500px;
   height: 100px;
   position: absolute;
   top: 370px;
   display: flex;
+  justify-content: space-between;
   &__app-storeIcon {
-  width: 100px;
-  height: 100px;
+
   }
   &__google-playIcon {
-  width: 100px;
-  height: 100px;
+    
   }
   }
   }
@@ -482,6 +481,7 @@ height:400px;
   justify-content: space-around;
   background-color: #272727;
   color: white;
+  margin-top: 20px;
 }
 
 .WhiteFURIMAicon {
@@ -519,4 +519,13 @@ p.sub {
 
 .logaut_btn{
   color:black;
+}
+
+.yyy {
+  height: 80px;
+  width: 200px;
+}
+.zzz {
+  // height: 140px;
+  width: 200px;
 }
