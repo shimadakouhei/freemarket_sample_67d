@@ -2,7 +2,8 @@
 .headerBox
   .headerBox__upperBox
     .headerBox__upperBox__furimaIcon
-      = image_tag "logo.png", hight:"45px", width: "140px"
+      = link_to root_path do
+        = image_tag "logo.png", hight:"45px", width: "140px"
     .headerBox__upperBox__search
       = form_tag("#", method: :get) do
         = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "headerBox__upperBox__search__text"})
@@ -37,9 +38,9 @@
     フリマアプリです
   .TopImage__app-googleBox
     .TopImage__app-googleBox__app-storeIcon
-    = image_tag "AppleStore-icon-438x129.png", width: "180px", height: "54px"
+    = image_tag "AppleStore-icon-438x129.png", class:"yyy"
     .TopImage__app-googleBox__google-playIcon
-    = image_tag "google-play-badge.png",width: "200px", height: "70px"
+    = image_tag "google-play-badge.png", class:"zzz"
 .MiddleTop
   FURIMAが選ばれる3つの理由
 .PicBox
