@@ -1,5 +1,5 @@
-.body {
-  height:100%;
+.user_body {
+  height:1200px;
   width: 100vw;
   background-color: #f5f5f5;
   .hedar{
@@ -19,7 +19,7 @@
       }
     }
   }
-  .main{
+  .user_main{
     width: 700px;
     height: 1100px;
     margin: 0 auto;
@@ -27,6 +27,7 @@
       height: 100%;
       background: #fff;
       line-height: 1.5;
+      overflow: scroll;
       &_text{
         font-size: 22px;
         padding: 32px;
@@ -204,4 +205,7 @@
     line-height: 1.5;
     font-size: 16px;
     width: calc(50% - 150px);
+  }
+  .field_with_errors {
+    display: inline;
   }

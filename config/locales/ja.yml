@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "お名前"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+        email: "メールアドレス"
+        family_name: "苗字"
+        first_name: "名前"
+        hurigana_family_name: "ふりがな名前"
+        hurigana_first_name: "ふりがな下の名前"
+        birth_year: "年"
+        birth_month: "月"
+        birth_date: "日"
+        postal_code: "郵便番号"
+        administrative＿divisions,: "都道府県"
+        city: "市区町村"
+        street_number: "番地"

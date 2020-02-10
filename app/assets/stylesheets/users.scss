@@ -1,127 +1,115 @@
-.freem-header {
-  font-family: Arial;
-  font-weight: 500;
-  position: relative;
-  height: 150px;
-  width: 100%;
-  background:blue;
-  .freem-header.inner{
-    margin: 0 auto;
-    background-color: red;
-    width: 1000px;
-    .freem-header-top{
-      height: 75px;
-      background:＃333;
-    }
-  } 
-}
-.freem-l-container-creafix{
-  height: 1254px;
-  width: 100%;
-  background-color: grey;
-  .freem-l-side{
-    margin: 80px 0 0 80px;
-    height: 1250px;
-    width: 300px;
-    background-color:＃333;
-    .freem-mypage-nav{
+.my_body{
+height: 100vh;
+  .freem-l-container-creafix{
+    height: 1254px;
+    width: 100%;
+    background-color: rgb(239, 239, 239);
+    .freem-l-side{
+      margin: 0 0 0 80px;
       height: 1250px;
-      width: 200px;
+      width: 300px;
       background-color:＃333;
-      .freem-mypage-nav-list-item{
-        height: 48px;
-        width: 300px;
-        background-color: ＃333;
-        text-align: center;
-        line-height: 50px;
-        border: 1px solid black; 
-}
-      .mypage-nav-header{
-        height: 50px;
-        width: 300px;
-        background-color: ＃333;
-        line-height:80px;
-        border: 1px solid black; 
+      .freem-mypage-nav{
+        height: 1250px;
+        width: 200px;
+        background-color:＃333;
+        .freem-mypage-nav-list-item{
+          height: 48px;
+          width: 300px;
+          background-color:#3CCACE;
+          text-align: center;
+          line-height: 50px;
+          border: 1px solid black; 
+        }
+        .mypage-nav-header{
+          height: 50px;
+          width: 300px;
+          background-color: ＃333;
+          line-height:80px;
+          border: 1px solid black; 
+          text-align: center;
+        }
+      }
     }
-  }
-}
-  .freem-l-contect{
-    width: 705px;
-    height: 1200px;
-    background-color:white;
-    float: right;
-    margin: 0 80px;
-    border: 1px solid black; 
-    .freem-little1{
-    height: 75px;
+    .freem-l-contect{
+      width: 705px;
+      height: 1200px;
+      background-color:white;
+      float: right;
+      margin: 0 80px;
+      border: 1px solid black; 
+      .freem-little1{
+        height: 75px;
     width: 350px;
     background-color: ＃333;
     float: left;
     text-align: center;
     line-height:80px;
     border: 1px solid ＃333; 
-}
-    .freem-item-link{
-      height: 75px;
+  }
+  .freem-item-link{
+    height: 75px;
+    background-color: ＃333;
+    border: 1px solid black; 
+    font-size: 50px;
+    text-align: center;
+  }
+  .freem-item-list{
+    height: 80px;
+    background-color: ＃333;
+    text-align: center;
+    line-height:80px;
+    border: 1px solid black; 
+  }
+  .freem-tab{
+    margin: 30px 0 0 0;
+    height: 70px;
+    background-color: ＃333;
+    text-align: center;
+    line-height:70px;
+    border: 1px solid black; 
+  }
+  .freem-little2{
+    height: 75px;
+    width: 350px;
+    background-color:＃333;
+    float:left;
+    text-align: center;
+    line-height:80px;
+    border: 1px solid black; 
+  }
+  .freem-to{
+    height: 475px;
+    background-color:gray;
+    text-align: center;
+    line-height: 10px;
+    display: table-cell;
+    vertical-align: middle;
+    width:705px;
+    border: 1px solid b＃333;
+  }
+  .freem-icon{
+    height: 200px;
+    background-color: ＃333;
+    align-items: center; 
+    .freem-on{
+      height: 110px;
+      width: 705px;
       background-color: ＃333;
-      border: 1px solid black; 
-}
-    .freem-item-list{
-      height: 80px;
-      background-color: ＃333;
-      text-align: center;
-      line-height:80px;
-      border: 1px solid black; 
-}
-    .freem-tab{
-      margin: 30px 0 0 0;
-      height: 70px;
-      background-color: ＃333;
-      text-align: center;
-      line-height:70px;
-      border: 1px solid black; 
-}
-    .freem-little2{
-      height: 75px;
-      width: 350px;
-      background-color:＃333;
-      float:left;
-      text-align: center;
-      line-height:80px;
-      border: 1px solid black; 
-}
-    .freem-to{
-      height: 475px;
-      background-color:gray;
-      text-align: center;
-      line-height: 10px;
-      display: table-cell;
-      vertical-align: middle;
-      width:705px;
-      border: 1px solid b＃333;
-}
-    .freem-icon{
-      height: 200px;
-      background-color: ＃333;
-      align-items: center; 
-      .freem-on{
-        height: 110px;
+      position: absolute;
+      margin: 40px 0 0 0;
+      .freem-lll{
+        height: 60px;
         width: 705px;
-        background-color: ＃333;
+        background-color:＃333;
         position: absolute;
-        margin: 40px 0 0 0;
-        .freem-lll{
-          height: 60px;
-          width: 705px;
-          background-color:＃333;
-          position: absolute;
-          margin: 25px 0 0 0;
-          text-align: center;
-          z-index: 1000;
-        }
-        
+        margin: 25px 0 0 0;
+        text-align: center;
+        z-index: 1000;
       }
+      
     }
+  }
   }
 }
 .freem-footer{
@@ -181,4 +169,9 @@
     text-align: center;
     margin: 20px;
   }
+ }
+}
+
+.nisida{
+  color: black;
 }

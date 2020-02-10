@@ -1,7 +1,8 @@
 .headerBox
   .headerBox__upperBox
     .headerBox__upperBox__furimaIcon
-      = image_tag "logo.png", hight:"45px", width: "140px"
+      = link_to root_path do
+        = image_tag "logo.png", hight:"45px", width: "140px"
     .headerBox__upperBox__search
       = form_tag("#", method: :get) do
         = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "headerBox__upperBox__search__text"})
@@ -16,12 +17,13 @@
         ブランド
     .headerBox__lowerBox__rightBox
       .headerBox__lowerBox__rightBox__login
-        ログイン
         - if user_signed_in?
-          = link_to "ログアウト", '/users/sign_out', method: :delete
+          .headerBox__lowerBox__rightBox__registration
+            = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "logaut_btn"
+          .headerBox__lowerBox__rightBox__registration
+            = link_to "マイページ",user_path(current_user),class: "logaut_btn"
         - else
-          = link_to "ログイン", 'new_user_session_path'
-          = link_to "新規登録", 'new_user_registration_path'
-      .headerBox__lowerBox__rightBox__registration
-        新規会員登録
-  
+          .headerBox__lowerBox__rightBox__registration
+            = link_to "ログイン", new_user_session_path, class: "logaut_btn"
+          .headerBox__lowerBox__rightBox__registration
+            = link_to "新規登録", new_user_registration_path,class: "logaut_btn"
