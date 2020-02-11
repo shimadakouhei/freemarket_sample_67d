@@ -1,6 +1,7 @@
 .confirmation
   .confirmation__header
-    = image_tag "logo.png", size: "185x49"
+    = link_to root_path do
+      = image_tag "logo.png", size: "185x49"
 
   .confirmation__contents
     .confirmation__contents__box
@@ -10,7 +11,7 @@
         .confirmation__contents__box__items__inner
           .confirmation__contents__box__items__inner__box1
             .confirmation__contents__box__items__inner__box1__image
-              = image_tag "logo.png", size: "80x80"
+              = image_tag "a007.png", size: "80x80"
             .confirmation__contents__box__items__inner__box1__detail
               .confirmation__contents__box__items__inner__box1__detail__name
                 %p サロンドアルファードファーハンドバッグ
@@ -37,9 +38,9 @@
           .confirmation__contents__box__info__addressbox__change
             = link_to "変更する", '/#' , class: 'bbb'
         .confirmation__contents__box__info__individual
-          %p 〒631-0811
-          %p 奈良県 奈良市 秋篠町872
-          %p 嶋田 幸平
+          %p 〒123-4567
+          %p aaa県 bbb市 ccc町123
+          %p あいう えお 
         .confirmation__contents__box__info__purchase
           .confirmation__contents__box__info__purchase__button
             = link_to "購入する", "/#" , class: 'ccc'

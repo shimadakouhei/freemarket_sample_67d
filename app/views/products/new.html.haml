@@ -1,7 +1,8 @@
 = form_for @product do |f|
 
   .exhibition__header
-  = image_tag "logo.png", size: "185x49"
+    = link_to root_path do
+      = image_tag "logo.png", size: "185x49"
   .exhibition__contents__main
     .exhibition__contents__main__middle
       .exhibition__contents__main__middle__head

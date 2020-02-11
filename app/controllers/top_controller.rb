@@ -1,5 +1,7 @@
 class TopController < ApplicationController
   def index
+    @products = Product.all.includes(:images)
+   
 
   end
 
@@ -20,10 +22,11 @@ class TopController < ApplicationController
     
   end  
   
-end
 
-private
 
-def product_params
-  params.require(:products).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :price)
+ private
+
+  def product_params
+    params.require(:products).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :price)
+  end
 end
