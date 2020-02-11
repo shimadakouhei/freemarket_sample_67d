@@ -1,0 +1,2 @@
+class Categori < ApplicationRecord
+end
