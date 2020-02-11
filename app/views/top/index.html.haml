@@ -54,7 +54,7 @@
           2
       .PicBox__ImageRight
         = image_tag "pict-reason-03.jpg", height:"300px", width: "300px"
-        
+
         .PicBox__ImageRight__PicNum3
           3
     .MainMessageBox
@@ -129,23 +129,23 @@
               円
               %br
               = product.text
-.PicUpBrand
-  ピックアップブランド
-.ProsBox
-  .ProsBox__Archiver
-    アーカイバ
-  .ProsBox__ProsBoxU
-    - @products.last(3).each do |product|
-      = link_to "/top/show" do
-        .ProsBox__ProsBoxU__ProLeft
-          = product.name
-          = image_tag "#{product.images[0][:src]}", size: "185x100", class: "aaaaa"
-          = product.conditions
-          %br
-          = product.price
-          円
-          %br
-          = product.text
+    .PicUpBrand
+      ピックアップブランド
+    .ProsBox
+      .ProsBox__Archiver
+        アーカイバ
+      .ProsBox__ProsBoxU
+        - @products.last(3).each do |product|
+          = link_to "/top/show" do
+            .ProsBox__ProsBoxU__ProLeft
+              = product.name
+              = image_tag "#{product.images[0][:src]}", size: "185x100", class: "aaaaa"
+              = product.conditions
+              %br
+              = product.price
+              円
+              %br
+              = product.text
      
     .ContenrMainImage3
       = image_tag "bg-appBanner-pict.jpg", height:"500px", width: "100%"
