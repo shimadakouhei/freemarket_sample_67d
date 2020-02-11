@@ -35,6 +35,9 @@
       &__sub {
         font-size: 16px;
       }
+      &__purchase {
+        height: 200px;
+      }
     }
     &__title {
       margin-bottom: 30px;
@@ -161,4 +164,7 @@
 .more-mens {
   text-decoration: none;
   color: #3CCACE;
+}
+.btn1 {
+  color: black;
 }

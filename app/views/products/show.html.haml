@@ -1,11 +1,12 @@
 = render 'layouts/header'
+
 .top-show-main
   .top-show-main__middle
     .top-show-main__middle__name
       あいうえお
     .top-show-main__middle__item-box
       .top-show-main__middle__item-box__main
-      = image_tag "pict-reason-01.jpg", size: "560x346"
+        = image_tag @image[0].src, class:"dddddd"
       .top-show-main__middle__item-box__left
         = image_tag "pict-reason-01.jpg", size: "140x77", class: 'pic-left'
         = image_tag "pict-reason-02.jpg", size: "140x77", class: 'pic-left'
@@ -15,6 +16,8 @@
         ¥ 30000
       .top-show-main__middle__price__sub
         (税込)送料込み
+      .top-show-main__middle__purchase 
+        = link_to "購入画面に進む", cards_buy_path, class: "btn1"
     .top-show-main__middle__title
       product3
     .top-show-main__middle__big-table
