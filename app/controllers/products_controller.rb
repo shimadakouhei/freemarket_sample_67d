@@ -12,7 +12,9 @@ class ProductsController < ApplicationController
   
     def create
       @product = Product.new(product_params)
+      binding.pry
       if @product.save
+        
         redirect_to root_path
       else
         render :new
@@ -36,7 +38,7 @@ class ProductsController < ApplicationController
     private
     
     def product_params
-      params.require(:product).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :created_at, :updated_at, :price, images_attributes:  [:src, :_destroy, :product_id]).merge(user_id: current_user.id)
+      params.require(:product).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :price, images_attributes:  [:src, :_destroy, :product_id]).merge(user_id: current_user.id)
     end
 
     def set_product
