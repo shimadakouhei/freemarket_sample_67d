@@ -9,32 +9,32 @@
       = form_for(@address, html: { class: "address_group"}) do |f|
         = render "devise/shared/error_messages", resource: @address
         .form_box
-          .field
+          .field_address
             %label{for: "postal_code"} 郵便番号（ハイフンなし）
             %span.form-require 必須
             %br/
             = f.number_field :postal_code,autofocus: true, placeholder: "郵便番号", value: ""
-          .field 
+          .field_address
             %label{for: "administrative＿divisions"} 都道府県
             %span.form-require 必須
             %br/
             = f.text_field :administrative＿divisions,autofocus: true,value:"",autocomplete: "administrative＿divisions",placeholder:"都道府県"
-          .field
+          .field_address
             %label{for: "city"} 市区町村
             %span.form-require 必須
             %br/
             = f.text_field :city,autofocus: true, placeholder: "市区町村",type: "text", value: ""
-          .field
+          .field_address
             %label{for: "street_number"} 番地
             %span.form-require 必須
             %br/
             = f.text_field :street_number,autofocus: true, placeholder: "番地",type: "text", value: ""
-          .field
+          .field_address
             %label{for: "apartment"} マンションまたはビル
             %span.form-require 任意
             %br/
             = f.text_field :apartment,autofocus: true, placeholder: "マンションまたはビル",type: "text"
-          .field
+          .field_address
             %label{for: "tel"} 電話番号（ハイフンなし）
             %span.form-require 任意
             %br/
