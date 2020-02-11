@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_061557) do
     t.datetime "updated_at", null: false
     t.integer "buyer_id"
     t.integer "seller_id"
+    t.integer "image_id", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
