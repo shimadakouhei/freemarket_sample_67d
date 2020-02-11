@@ -78,4 +78,5 @@ gem 'payjp'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
+gem "pry-rails"
 
