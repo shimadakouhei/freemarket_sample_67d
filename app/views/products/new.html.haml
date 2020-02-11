@@ -11,22 +11,25 @@
           
           .exhibition__contents__main__middle__heart__upload-box__title
             出品画像
-
             %span.exhibition-essential
               必須
-            = f.fields_for :images do |image|
-              -# .js-file_group{"data-index":"#{image.index}"} 
-              = image.file_field :src, class: 'js-file'
               
 
-            
-          .exhibition__contents__main__middle__heart__upload-box__explain
-            最大10枚までアップロードできます
-          -# .js-file_group{"data-exhibition__contents__main__middle__heart__upload-box__item":"#{image.index}"}
-            -# %b
-              -# ドラッグアンドドロップ
-              -# %br
-              -# またはクリックしてファイルをアップロード
+                          
+            .exhibition__contents__main__middle__heart__upload-box__explain
+              最大10枚までアップロードできます
+          
+              %b
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
+
+
+            = f.fields_for :images do |image|
+              .js-file_group{"data-index":"#{image.index}"} 
+                = image.file_field :src, class: 'js-file'
+
+
         .exhibition__contents__main__middle__heart__sell-content
           %span.js-remove 削除
           .exhibition__contents__main__middle__heart__sell-content__form-one
@@ -73,8 +76,6 @@
                 ¥
                 .exhibition__contents__main__middle__heart__money__sell-box__form-group__right__money
                   = f.text_field :price, class: 'right__money', placeholder: '例） 300   '
-                  = f.text_field :created_at, class:"created_at"
-                  = f.text_field :updated_at, class:"updated_at"
         .exhibition__contents__main__middle__heart__bottom
           = link_to '禁止されている出品', '/#/', class: 'hoge-hoge'
           、
