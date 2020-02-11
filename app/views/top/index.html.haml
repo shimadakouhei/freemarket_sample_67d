@@ -119,7 +119,7 @@
         新規投稿商品
       .ProsBox__ProsBoxU
         - @products.first(3).each do |product|
-          = link_to "/top/show" do
+          = link_to top_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
               = product.name
               = image_tag "#{product.images[0][:src]}", size: "185x100", class: "aaaaa"
@@ -136,7 +136,7 @@
         アーカイバ
       .ProsBox__ProsBoxU
         - @products.last(3).each do |product|
-          = link_to "/top/show" do
+          = link_to top_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
               = product.name
               = image_tag "#{product.images[0][:src]}", size: "185x100", class: "aaaaa"
