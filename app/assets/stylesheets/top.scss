@@ -1,41 +1,52 @@
+.top_body{
+  width: 100vw;
+  overflow-x: hidden;
+}
 .headerBox {
   width: 100vw;
   height: 130px;
   &__upperBox {
-    width: 100vw;
-    height: 50px;
+    width:900px;
+    height: 70px;
     display: flex;
+    margin: auto;
+    padding-top: 10px;
     &__furimaIcon {
+    padding-right: 30px;
     width: 160px;
     height: 60px;
     }
     &__search {
-    width: 510px;
+    width: 900px;
     height: 40px;
+    display: flex;
       &__text {
-      width: 500px;
+      width: 600px;
       height: 40px;
       }
     }
     &__searchIcon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 44px;
     background-color: #3CCACE;
+
     }
   }
   &__lowerBox {
-    width: 100vw;
+    width: 900px;
     height: 60px;
     display: flex;
     justify-content: space-between;
+    margin: auto;
     &__leftBox{
       width: 230px;
       height: 60px;
       display: flex;
-      justify-content: space-around;
+      
       &__category{
         width: 80px;
         height: 45px;
+        padding-right: 30px;
     }
       &__brand{
         width: 80px;
@@ -58,7 +69,9 @@
     }
   }
 }
-
+.TopImage_main{
+  height: 3520px;
+  
 .TopImage {
 position: relative;
   &__mainMessage {
@@ -80,18 +93,26 @@ position: relative;
   color: white;
   }
   &__app-googleBox {
-  width: 380px;
+  width: 400px;
   height: 100px;
   position: absolute;
   top: 370px;
   display: flex;
+  justify-content:space-around;
+
   &__app-storeIcon {
   width: 100px;
   height: 100px;
+  padding-top: 30px;
   }
   &__google-playIcon {
   width: 100px;
   height: 100px;
+  padding-top: 19px;
+  }
+  .google-play{
+    width: 180px;
+    height: 65px;
   }
   }
   }
@@ -103,6 +124,7 @@ position: relative;
     margin-top: 55px;
     padding-bottom: 50px;
     text-align: center;
+    margin: auto;
   }
   .MiddleTop:after {
     content:'________';
@@ -217,14 +239,20 @@ position: relative;
     color: white;
     }
     &__app-googleBox2 {
-      width: 380px;
+      width: 400px;
       height: 100px;
       position: absolute;
-      top: 300px;
+      top: 260px;
+      left: 68px;
       display: flex;
+
       &__app-storeIcon2 {
       width: 100px;
       height: 100px;
+    }
+      .app-store{
+        padding-top: 12px;
+      
       }
       &__google-playIcon2 {
       width: 100px;
@@ -240,6 +268,7 @@ position: relative;
     margin-top: 55px;
     padding-bottom: 50px;
     text-align: center;
+    margin: auto;
   }
   .MiddleTop2::after {
     content:'_______';
@@ -443,7 +472,7 @@ height:400px;
   position: relative;
   width: 100vw;
   &__ContentMainMessage3 {
-  width: 100vw;
+  width: 1350px;
   height: 200px;
   font-size: 30px;
   position: absolute;
@@ -451,9 +480,10 @@ height:400px;
   left: 60px;
   text-align: center;
   color: white;
+ 
   }
   &__ContentSubMessage3 {
-  width: 100vw;
+  width: 1300px;
   height: 200px;
   font-size: 20px;
   position: absolute;
@@ -466,17 +496,22 @@ height:400px;
     width: 380px;
     height: 100px;
     position: absolute;
-    top: 300px;
+    top: 240px;
+    left: 500px;
     display: flex;
     &__app-storeIcon3 {
     width: 100px;
     height: 100px;
+    }
+    .app-store2{
+      padding-top: 11px;
     }
     &__google-playIcon3 {
     width: 100px;
     height: 100px;
     }
     }
+}
 }
 .TopPageFooter{
   width: 100vw;

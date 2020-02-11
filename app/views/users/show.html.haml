@@ -1,72 +1,38 @@
-.my_body
+.a
   = render 'layouts/header'
-  .freem-l-container-creafix
-    .freem-l-contect
-      .freem-icon
-        .freem-on
-          .freem-lll
+  .mypage
+    .mypage__free
+      .mypage__free__icon
+        .mypage__free__icon__box
+          .mypage__free__icon__box__profile
             = image_tag 'member_photo_noimage_thumb.png', height: '60px', width: '60px'
-            .freem-ii
-              aaaaaaa
-            .freem-qq
+            .mypage__free__icon__box__profile__name
+              = current_user.nickname
+              さん
+            .mypage__free__icon__box__profile__detail
               評価数0 出品数0
-      .freem-little1
-        お知らせ
-      .freem-little2
-        やることリスト
-      .freem-item-link
-        西田
-      .freem-item-link
-      .freem-item-link
-      .freem-item-link
-      .freem-item-link
-      .freem-item-list
-        =link_to "一覧を見る" 
-      .freem-tab
-        購入した商品
-      .freem-little1
-        取引中
-      .freem-little2
-        過去の取引
-      .freem-to
-        =image_tag  "logo-white.png",height:"100px",width:"200px"
-    .freem-l-side
-      .freem-mypage-nav
-        %ul
-          %li.freem-mypage-nav-list-item
-            = link_to 'マイページ', "#", class:"nisida"
-          %li.freem-mypage-nav-list-item
-            = link_to '出品中', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to '取引中', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to '売却済み', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to '過去の取引', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to 'ガイド', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to 'お問い合わせ', "#"
-          .mypage-nav-header
-            メルペイ
-          %li.freem-mypage-nav-list-item
-            = link_to '振り込み申請', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to 'ポイント', "#"
-          .mypage-nav-header
-            設定
-          %li.freem-mypage-nav-list-item
-            = link_to 'プロフィール',"#"
-          %li.freem-mypage-nav-list-item
-            = link_to '住所変更', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to '支払い方法設定', "/cards/new"
-          %li.freem-mypage-nav-list-item
-            = link_to 'メール', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to '本人情報', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to '電話番号確認', "#"
-          %li.freem-mypage-nav-list-item
-            = link_to 'ログアウト', "/#/"
+            .mypage__free__card
+              = link_to '➕ クレジットカード登録', "/cards/new", class: "method"
+      .mypage__free__item
+        出品商品
+      .mypage__free__items
+        =image_tag  "a007.png"
+        =image_tag  "a001.png"
+        =image_tag  "a004.png"
+        =image_tag  "a001.png"
+        =image_tag  "a004.png"
+        =image_tag  "a007.png"
+        =image_tag  "a004.png"
+        =image_tag  "a007.png"
+        =image_tag  "a001.png"
+        =image_tag  "a007.png"
+        =image_tag  "a001.png"
+        =image_tag  "a004.png"
+        =image_tag  "a001.png"
+        =image_tag  "a004.png"
+        =image_tag  "a007.png"
+        =image_tag  "a004.png"
+        =image_tag  "a007.png"
+        =image_tag  "a001.png"
+
   = render 'layouts/footer'

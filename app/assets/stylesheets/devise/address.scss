@@ -42,7 +42,7 @@
           margin: 0 auto;
           
           
-          .field{ 
+          .field_address{ 
             width: 100%;
             margin: 8px 0 0;
             height: 100px;
@@ -81,4 +81,70 @@
 }
   .field_with_errors {
     display: inline;
+  }
+  #address_administrative＿divisions{
+    width: 300px;
+    margin: 8px 0 0;
+    height: 20px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  #address_postal_code{
+    width: 300px;
+    margin: 8px 0 0;
+    height: 20px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  #address_city{
+    width: 300px;
+    margin: 8px 0 0;
+    height: 20px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  #address_street_number{
+    width: 300px;
+    margin: 8px 0 0;
+    height: 20px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  #address_apartment{
+    width: 300px;
+    margin: 8px 0 0;
+    height: 20px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  #address_tel{
+    width: 300px;
+    margin: 8px 0 0;
+    height: 20px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
   }
