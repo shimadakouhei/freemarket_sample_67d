@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-    def index
+  before_action :set_product, except: [:index, :new, :create]
+  
+  def index
       @products = Product.includes(:images).order('created_at DESC')
     end
   
@@ -21,6 +23,11 @@ class ProductsController < ApplicationController
     end
   
     def update
+      if @product.update(product_params)
+        redirect_to root_path
+      else
+        render :edit
+      end
     end
   
     def destroy
@@ -29,6 +36,10 @@ class ProductsController < ApplicationController
     private
     
     def product_params
-      params.require(:product).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :created_at, :updated_at, :price, images_attributes:  [:src, :product_id]).merge(user_id: current_user.id)
+      params.require(:product).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :created_at, :updated_at, :price, images_attributes:  [:src, :_destroy, :product_id]).merge(user_id: current_user.id)
+    end
+
+    def set_product
+      @product = Product.find(params[:id])
     end
 end
