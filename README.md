@@ -62,6 +62,9 @@ Things you may want to cover:
 |category_id|integer|null:false,foreign_key: true|
 |brand_id|integer|null:true,foreign_key: true|
 |price|integer|null:false|
+|buyer_id|integer|null:true,foreign_key: true|
+|seller_id|integer|null:true,foreign_key: true|
+
 
 ## Association
 - belongs_to:user
@@ -146,12 +149,3 @@ Things you may want to cover:
 ## Association
 - belongs_to:user
 - belongs_to:product
-
-## trade テーブル
-|Column|Type|Options|
-|------|----|-------|
-|product_id|integer|null: false, foreign_key: true|
-|buyer_id｜integer|null: false, foreign_key: true|
-
-## Association
-- has_one :product

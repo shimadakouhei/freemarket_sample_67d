@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true
-  validates :email, presence: true,format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  validates :email, presence: true
   validates :password, presence: true
   validates :family_name, presence: true,format: { with: /\A[一-龥]+\z/, message: 'は漢字を入力してください'}
   validates :first_name, presence: true,format:{ with: /\A[一-龥]+\z/, message: 'は漢字を入力してください'}

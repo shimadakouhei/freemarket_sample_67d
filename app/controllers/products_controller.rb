@@ -21,4 +21,9 @@ class ProductsController < ApplicationController
     @product = Product.find(1)
     @product.destroy
   end
+
+  def show
+    @product = Product.find(params[:id])
+    @images = @product.images
+  end
 end
