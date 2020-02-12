@@ -10,12 +10,15 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @products = Product.find(params[:id])
   end
 
   def update
   end
 
   def destroy
+    binding.pry
+    # @product = Product.find(params[:id])
+    @product = Product.find(1)
+    @product.destroy
   end
 end
