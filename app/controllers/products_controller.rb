@@ -21,6 +21,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @image = @product.src
+    @images = @product.images
   end
 end

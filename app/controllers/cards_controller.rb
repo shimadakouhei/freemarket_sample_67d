@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   def buy
   end
-  def  new
+  def new
   end
   def index
   end
