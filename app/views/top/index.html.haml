@@ -138,6 +138,7 @@
         - @products.last(3).each do |product|
           = link_to product_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
+              - binding.pry
               = product.name
               = image_tag "#{product.images[0][:src]}", size: "185x100", class: "aaaaa"
               = product.conditions
@@ -146,7 +147,7 @@
               円
               %br
               = product.text
-     
+    
     .ContenrMainImage3
       = image_tag "bg-appBanner-pict.jpg", height:"500px", width: "100%"
       .ContenrMainImage3__ContentMainMessage3
