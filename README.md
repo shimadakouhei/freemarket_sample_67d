@@ -77,6 +77,8 @@ Things you may want to cover:
 |------|----|-------|
 |pay_id|integer|null:false|
 |user_id|integer|null:false foreign_key: true|
+|customer_id|istring|null:false|
+
 
 ## Association
 - belongs_to:user

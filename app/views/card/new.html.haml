@@ -1,0 +1,88 @@
+.card_body
+  = render 'layouts/header'
+  .credit-update
+    .credit-update__box
+      .credit-update__label
+        クレジットカード情報入力
+      .card-form
+        .card-form__box
+          = form_for(pay_cards_path, method: :post, html: { class: "form_card" }, name: "inputForm") do |f|
+            .card-form__box__number
+              %label{class:'box-group--label', for: 'card_number'} カード番号
+              %span.input-require
+                必須
+              = f.text_field :card_number, class: 'card-number--input', type: "text", maxlength: "16", placeholder: "半角数字のみ", id: "_cards_card_number"
+              .registration-error{type: "hidden", value: "必須項目です"}
+              %ul.card-list
+                %li.card-list--item{ style: "margin-left: 0;"}
+                  = image_tag "card.PNG",size: "377x70"
+                
+            .card-form__box__expire
+              %label.box-group--label 有効期限
+              %span.input-require
+                必須
+              .card-expire
+                .card-expire__select-month
+                  = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} ,name: "exp_month", type: "text", class: "select_select",id:"_cards_exp_month"
+                  %i.card-form-expire-icon
+                  %span{class: "month"} 月
+                .card-expire__select-year
+                  = f.select :exp_year,[["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} ,name: "exp_year", type: "text", id: "exp_year"
+                  %i.card-form-expire-icon
+                  %span{class:"year"} 年
+            .card-form__box__security-code
+              %label.box-group--label{for: "cvc"} セキュリティーコード
+              %span.input-require
+                必須
+              = f.text_field :cvc, class: 'payment__security-code', type: "text", id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
+              .question-form
+                %span.question-form__mark ?
+                %span.question-form__text 
+                  カード裏面の番号とは？
+            #card_token
+            = f.submit "追加する", class: "card-form__box__add", id: "token_submit", type: 'button'
+  .exhibition__footer
+    .exhibition__footer__content
+      = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'
+      = link_to 'フリマ利用規約', '/#', class: 'hoge-last'
+      = link_to '特定商取引に関する表記', '/#', class: 'hoge-last'
+      %br
+      = image_tag "logo-white.png", size: "85x49", class: 'hoge-last'
+      %br
+      %small © FURIMA, Inc.
+
+
+:javascript
+  document.addEventListener(
+  "DOMContentLoaded", (e) => {
+    Payjp.setPublicKey("pk_test_8b290bb46d1e1db9a3ed5529");
+    const btn = document.getElementById('token_submit'); //IDがtoken_submitの場合に取得されます
+    btn.addEventListener("click", (e) => {//ボタンが押されたときに作動します
+      e.preventDefault();//ボタンを一旦無効化します
+      
+      //カード情報生成
+      const card = {
+        number: document.getElementById("_cards_card_number").value,
+        cvc: document.getElementById("cvc").value,
+        exp_month: document.getElementById("_cards_exp_month").value,
+        exp_year: document.getElementById("exp_year").value
+      }; //入力されたデータを取得します。
+
+      //トークン生成
+      Payjp.createToken(card, (status, response) => {
+        if (status === 200) { //成功した場合
+          $("#_cards_card_number").removeAttr("name");
+          $("#cvc").removeAttr("name");
+          $("#_cards_exp_month").removeAttr("name");
+          $("#exp_year").removeAttr("name"); //カード情報を自分のサーバにpostせず削除します
+          $("#card_token").append(
+            $('<input type="hidden" name="payjp-token">').val(response.id)
+          ); //トークンを送信できるように隠しタグを生成
+          $('form').submit();
+          alert("登録が完了しました"); //確認用
+        } else {
+          alert("カード情報が正しくありません。"); //確認用
+        }
+      });
+    });
+  },false);

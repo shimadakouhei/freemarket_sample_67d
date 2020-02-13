@@ -12,6 +12,18 @@ Rails.application.routes.draw do
   end
   resources :top, only: [:index, :new, :create, :show]
   resources :users, only: [:show,:logout]
-  resources :cards, only: [:index, :new]
   resources :products, except: :show
+  
+  
+  resources :cards, only: [:new, :show,:index ,:delete] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
+
+
+  
+  
 end
