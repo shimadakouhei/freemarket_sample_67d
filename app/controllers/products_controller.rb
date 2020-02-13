@@ -16,8 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    binding.pry
-    # @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
     @product = Product.find(1)
     @product.destroy
   end
