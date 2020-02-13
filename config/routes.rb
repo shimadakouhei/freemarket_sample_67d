@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :top, only: [:index, :new, :create, :show, :edit, :update]
   resources :users, only: [:show,:logout]
-  resources :cards, only: [:index, :new]
-  resources :products, only: [:index, :new, :create, :show, :edit, :update]
+  resources :cards, only: [:index, :new, :show]
+  resources :products do
+  end
 end

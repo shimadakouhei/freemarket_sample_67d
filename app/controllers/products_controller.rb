@@ -10,10 +10,7 @@ class ProductsController < ApplicationController
 
   end
 
- 
-  def show
-  end
-  
+
   def edit
     @product = Product.find(params[:id])
     @images = @product.images
@@ -40,3 +37,8 @@ class ProductsController < ApplicationController
 end
 
  
+  def show
+    @product = Product.find(params[:id])
+    @images = @product.images
+  end
+end
