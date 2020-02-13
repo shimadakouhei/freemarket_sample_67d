@@ -1,74 +1,67 @@
 .top_body{
   width: 100vw;
   overflow-x: hidden;
-}
-.headerBox {
-  width: 100vw;
-  height: 130px;
-  &__upperBox {
-    width:900px;
-    height: 70px;
-    display: flex;
-    margin: auto;
-    padding-top: 10px;
-    &__furimaIcon {
-    padding-right: 30px;
-    width: 160px;
-    height: 60px;
-    }
-    &__search {
-    width: 900px;
-    height: 40px;
-    display: flex;
-      &__text {
-      width: 600px;
-      height: 40px;
-      }
-    }
-    &__searchIcon {
-    width: 50px;
-    height: 44px;
-    background-color: #3CCACE;
-
-    }
-  }
-  &__lowerBox {
-    width: 900px;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    &__leftBox{
-      width: 230px;
-      height: 60px;
+  .headerBox {
+    width: 100vw;
+    height: 130px;
+    &__upperBox {
+      width:900px;
+      height: 70px;
       display: flex;
-      
-      &__category{
-        width: 80px;
-        height: 45px;
-        padding-right: 30px;
-    }
-      &__brand{
-        width: 80px;
-        height: 45px;
+      margin: auto;
+      padding-top: 10px;
+      &__furimaIcon {
+      padding-right: 30px;
+      width: 160px;
+      height: 60px;
       }
-  }
-    &__rightBox{
-      width: 230px;
+      &__search {
+        width: 900px;
+        height: 40px;
+        display: flex;     
+        &__searchIcon {
+        width: 50px;
+        height: 44px;
+        background-color: #3CCACE;
+        }
+      }
+    }
+    &__lowerBox {
+      width: 900px;
       height: 60px;
       display: flex;
       justify-content: space-between;
-      &__login {
-        display: flex;
-        height: 45px; 
+      margin: auto;
+      &__leftBox {
+        width: 230px;
+        height: 60px;
+        display: flex;     
+        &__category{
+          width: 80px;
+          height: 45px;
+          padding-right: 30px;
+        }
+        &__brand{
+          width: 80px;
+          height: 45px;
+        }
       }
-      &__registration {
-        width: 100px;
-        height: 45px;
+      &__rightBox{
+        width: 230px;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        &__login {
+          display: flex;
+          height: 45px;       
+          &__registration {
+            width: 100px;
+            height: 45px;
+          }
+        }
       }
     }
   }
-}
 .TopImage_main{
   height: 3520px;
   
@@ -82,6 +75,7 @@ position: relative;
   top: 200px;
   left: 60px;
   color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
   }
   &__subMessage {
   width: 370px;
@@ -91,6 +85,7 @@ position: relative;
   top: 300px;
   left: 60px;
   color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
   }
   &__app-googleBox {
   width: 400px;
@@ -120,21 +115,20 @@ position: relative;
     font-size: 24px;
     width: 370px;
     height: 40px;
-    margin-left: 282px;
-    margin-top: 55px;
-    padding-bottom: 50px;
+    padding: 50px 0 70px;
     text-align: center;
     margin: auto;
+    font-weight: bold;
   }
   .MiddleTop:after {
-    content:'________';
+    content:'___________';
     display: block;
     color:#3CCACE;
-
   }
   .PicBox{
     display: flex;
     justify-content: space-around;
+    padding: 0 100px;
     &__ImageLeft {
     width: 300px;
     height: 300px;
@@ -149,6 +143,7 @@ position: relative;
       color: white;
       background-color: #3CCACE;
       text-align: center;
+      border-radius: 3px;
       }
     }
     &__ImageMiddle {
@@ -164,6 +159,7 @@ position: relative;
       color: white;
       background-color: #3CCACE;
       text-align: center;
+      border-radius: 3px;
       }
     }
     &__ImageRight {
@@ -179,12 +175,15 @@ position: relative;
       color: white;
       background-color: #3CCACE;
       text-align: center;
+      border-radius: 3px;
       }
     }
   }
   .MainMessageBox {
     display: flex;
     justify-content: space-around;
+    padding: 0 100px;
+    font-weight: bold;
     &__LeftMessage {
       font-size: 24px;
       margin-top: 20px;
@@ -207,14 +206,18 @@ position: relative;
   .SubMessageBox { 
     display: flex;
     justify-content: space-around;
+    padding: 0 100px 40px;
     &__LeftSubText {
       width: 280px;
+      text-align: center;
     }
     &__MiddleSubText {
       width: 280px;
+      text-align: center;
     }
     &__RightSubText {
       width: 280px;
+      text-align: center;
     }
   }
   .ContenrMainImage {
@@ -228,6 +231,7 @@ position: relative;
     top: 100px;
     left: 60px;
     color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
     }
     &__ContentSubMessage {
     width: 100vw;
@@ -237,6 +241,7 @@ position: relative;
     top: 150px;
     left: 60px;
     color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
     }
     &__app-googleBox2 {
       width: 400px;
@@ -264,14 +269,13 @@ position: relative;
     font-size: 24px;
     width: 370px;
     height: 40px;
-    margin-left: 360px;
-    margin-top: 55px;
-    padding-bottom: 50px;
     text-align: center;
     margin: auto;
+    padding: 50px 0 70px;
+    font-weight: bold;
   }
   .MiddleTop2::after {
-    content:'_______';
+    content:'___________';
     color:#3CCACE;
     display: block;
 
@@ -279,27 +283,27 @@ position: relative;
   .PicBox2{
     display: flex;
     justify-content: space-around;
+    padding: 0 100px;
     &__ImageLeft2 {
-    width: 300px;
-    height: 300px;
+    // width: 300px;
+    // height: 300px;
     position: relative;
-
-      
     }
     &__ImageMiddle2 {
     position: relative;
-    width: 300px;
-    height: 300px;
+    // width: 300px;
+    // height: 300px;
     }
     &__ImageRight2 {
     position: relative;
-    width: 300px;
-    height: 300px;
+    // width: 300px;
+    // height: 300px;
     }
   }
   .MainMessageBox2 {
     display: flex;
     justify-content: space-around;
+    padding: 0 100px;
     &__LeftMessage2 {
     font-size: 24px;
     margin-top: 20px;
@@ -319,14 +323,18 @@ position: relative;
   .SubMessageBox2 { 
     display: flex;
     justify-content: space-around;
+    padding: 0 100px;
     &__LeftSubText2 {
       width: 260px;
+      text-align: center;
     }
     &__MiddleSubText2 {
       width: 260px;
+      text-align: center;
     }
     &__RightSubText2 {
       width: 260px;
+      text-align: center;
     }
   }
 
@@ -339,19 +347,17 @@ position: relative;
   background-color: gainsboro
 }
 .ProsBox {
-width: 100vw;
-height:800px;
+
 background-color: gainsboro;
   &__MainTopTopic {
   font-size: 24px;
-  width: 100vw;
   height:30px;
   text-align: center;
   color: #3CCACE;
 
   }
   &__ProsBoxU {
-  width: 100vw;
+  // width: 100vw;
   height:250px;
   display: flex;
   justify-content: space-around;
@@ -513,6 +519,11 @@ height:400px;
     }
 }
 }
+}
+.text111 {
+  width: 600px;
+  height: 40px;
+}
 .TopPageFooter{
   width: 100vw;
   height: 150px;
@@ -559,5 +570,5 @@ p.sub {
   color:black;
 }
 .aaaaa {
-  margin-left: 7px;
+  // margin-left: 7px;
 }
