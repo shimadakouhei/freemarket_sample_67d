@@ -5,8 +5,8 @@
         = image_tag "logo.png", hight:"60px", width: "160px"
       .headerBox__upperBox__search
         = form_tag("#", method: :get) do
-          = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "headerBox__upperBox__search__text"})
-        .headerBox__upperBox__searchIcon 
+          = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "text111"})
+        .headerBox__upperBox__search__searchIcon 
           = image_submit_tag "icon-search 1.png",width: "50px", height: "44px"
     .headerBox__lowerBox  
       .headerBox__lowerBox__leftBox
@@ -17,14 +17,14 @@
       .headerBox__lowerBox__rightBox
         .headerBox__lowerBox__rightBox__login
           - if user_signed_in?
-            .headerBox__lowerBox__rightBox__registration
+            .headerBox__lowerBox__rightBox__login__registration
               = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "logaut_btn"
-            .headerBox__lowerBox__rightBox__registration
+            .headerBox__lowerBox__rightBox__login__registration
               = link_to "マイページ",user_path(current_user),class: "logaut_btn"
           - else
-            .headerBox__lowerBox__rightBox__registration
+            .headerBox__lowerBox__rightBox__login__registration
               = link_to "ログイン", new_user_session_path, class: "logaut_btn"
-            .headerBox__lowerBox__rightBox__registration
+            .headerBox__lowerBox__rightBox__login__registration
               = link_to "新規登録", new_user_registration_path,class: "logaut_btn"
         
   .TopImage_main
@@ -33,8 +33,9 @@
       .TopImage__mainMessage
         人生を変えるフリマアプリ
       .TopImage__subMessage
-        FURIMAはだれでもかんたんに出品・購入できる
-        フリマアプリです
+        FURIMAはだれでもかんたんに
+        %br
+        出品・購入できるフリマアプリです
       .TopImage__app-googleBox
         .TopImage__app-googleBox__app-storeIcon
           = image_tag "AppleStore-icon-438x129.png", width: "200px", height: "54px"
@@ -46,16 +47,19 @@
       .PicBox__ImageLeft
         = image_tag "pict-reason-01.jpg", height:"300px", width: "300px"
         .PicBox__ImageLeft__PicNum1
+          %p{style: 'padding-top: 10px;'}
           1
       .PicBox__ImageMiddle
         = image_tag "pict-reason-02.jpg", height:"300px", width: "300px"
 
         .PicBox__ImageMiddle__PicNum2
+          %p{style: 'padding-top: 10px;'}
           2
       .PicBox__ImageRight
         = image_tag "pict-reason-03.jpg", height:"300px", width: "300px"
 
         .PicBox__ImageRight__PicNum3
+          %p{style: 'padding-top: 10px;'}
           3
     .MainMessageBox
       .MainMessageBox__LeftMessage
@@ -69,13 +73,15 @@
         業界最安
     .SubMessageBox
       .SubMessageBox__LeftSubText
-        スマホで入力するだけで簡単に出品できる！
+        スマホで入力するだけで簡単に出品！
       .SubMessageBox__MiddleSubText
-        めんどくさい入力は必要なく、検索も購入もスムーズ！
+        面倒な入力は必要なく
+        %br
+        検索も購入もスムーズ！
       .SubMessageBox__RightSubText
-        最大3%でお得に出品&購入！
+        最大3%でお得に出品と購入が可能！
     .ContenrMainImage
-      = image_tag "bg-topMiddleDl-pict.jpg", height:"500px", width: "100%"
+      = image_tag "bg-topMiddleDl-pict.jpg", height:"400px", width: "100%"
       %h.ContenrMainImage__ContentMainMessage
         会員数日本一位
       .ContenrMainImage__ContentSubMessage
@@ -93,16 +99,16 @@
       FURIMAの特徴
     .PicBox2
       .PicBox2__ImageLeft2
-        = image_tag "icon-01.png", height:"300px", width: "300px"
+        = image_tag "icon-01.png", height:"230px", width: "150px"
       .PicBox2__ImageMiddle2
-        = image_tag "icon-03.png", height:"300px", width: "300px"
+        = image_tag "icon-03.png", height:"230px", width: "150px"
       .PicBox2__ImageRight2
-        = image_tag "icon-04.png", height:"300px", width: "300px"
+        = image_tag "icon-04.png", height:"230px", width: "150px"
     .MainMessageBox2
       .MainMessageBox2__LeftMessage2
         簡単に売り買いできる
       .MainMessageBox2__MiddleMessage2
-        売上金は即日振込みに対応
+        売上金は即日振込み対応
       .MainMessageBox2__RightMessage2
         様々な支払いに対応
     .SubMessageBox2
@@ -121,14 +127,13 @@
         - @products.first(3).each do |product|
           = link_to product_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
+              = image_tag "#{product.images[0][:src]}", size: "200x140", class: "aaaaa"
               = product.name
-              = image_tag "#{product.images[0][:src]}", size: "185x100", class: "aaaaa"
               = product.conditions
               %br
               = product.price
               円
               %br
-              = product.text
     .PicUpBrand
       ピックアップブランド
     .ProsBox
@@ -138,14 +143,13 @@
         - @products.last(3).each do |product|
           = link_to product_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
+              = image_tag "#{product.images[0][:src]}", size: "200x140", class: "aaaaa"
               = product.name
-              = image_tag "#{product.images[0][:src]}", size: "185x100", class: "aaaaa"
               = product.conditions
               %br
               = product.price
               円
               %br
-              = product.text
      
     .ContenrMainImage3
       = image_tag "bg-appBanner-pict.jpg", height:"500px", width: "100%"
