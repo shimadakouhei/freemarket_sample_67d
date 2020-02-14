@@ -1,0 +1,20 @@
+.SyouhinnSyousai
+  %p 
+    = product.name
+  %p
+    = product.price
+  - product.images.each do |image|
+    = image_tag image.src.url
+    = link_to '編集', root_path
+    -# = link_to '編集', edit_product_path(product_id)
+
+
+
+-# <%# <div class="SyouhinnSyousai">
+-#   <p><%= product.name %></p>
+-#   <p><%= product.price %>円</p>
+-#   <% product.images.each do |image| %>
+-#     <%= image_tag image.src.url %>
+-#     <%= link_to '編集', edit_product_path(product) %>
+-#   <% end %>
+-# </div> %>

@@ -1,22 +1,40 @@
 class ProductsController < ApplicationController
-  def index
-    @products = Product.includes(:images).order('created_at DESC')
-  end
+  before_action :set_product, except: [:index, :new, :create, :update]
+  
+    def index
+      @products = Product.includes(:images).order('created_at DESC')
+    end
+  
+    def new
+      @product = Product.new
+      @product.images.new
+    end
+  
+    
+    def create
+      @product = Product.new(product_params)
+      if @product.save
+        redirect_to root_path
+      else
+        render :new
+      end
+    end
 
-  def new
-  end
+    def destroy
+      if @product.user_id = current_user.id && @product.destroy
+        flash[:notice] = "削除しました。"
+      else
+        flash[:notice] = "削除失敗しました。"
+      end
+      redirect_to  root_path
+    end
 
-  def create
-
-  end
   
   def show
-    @product = Product.find(params[:id])
     @images = @product.images
   end
 
   def edit
-    @product = Product.find(params[:id])
     @images = @product.images
   end
 
@@ -32,13 +50,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
   def product_params
     params.require(:product).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :price, images_attributes:  [:src, :_destroy, :product_id]).merge(user_id: current_user.id)
   end
 
  
+    def set_product
+      @product = Product.find(params[:id])
+    end
 end

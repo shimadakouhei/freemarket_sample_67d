@@ -33,11 +33,17 @@ ActiveRecord::Schema.define(version: 2020_02_14_032709) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "src"
-    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_images_on_product_id"
+    t.string "src"
+    t.integer "product_id"
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "prefecture_id"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,5 +83,4 @@ ActiveRecord::Schema.define(version: 2020_02_14_032709) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "images", "products"
 end

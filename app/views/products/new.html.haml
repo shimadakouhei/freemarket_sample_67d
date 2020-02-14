@@ -1,0 +1,115 @@
+= form_for @product do |f|
+
+  .exhibition__header
+    = link_to root_path do
+      = image_tag "logo.png", size: "185x49"
+  .exhibition__contents__main
+    .exhibition__contents__main__middle
+      .exhibition__contents__main__middle__head
+        商品の情報を入力
+      .exhibition__contents__main__middle__heart
+        .exhibition__contents__main__middle__heart__upload-box
+          
+          .exhibition__contents__main__middle__heart__upload-box__title
+            出品画像
+            %span.exhibition-essential
+              必須
+              
+
+                          
+            .exhibition__contents__main__middle__heart__upload-box__explain
+              最大10枚までアップロードできます
+          
+              %b
+                ドラッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
+              
+
+            = f.fields_for :images do |image|
+              .js-file_group{"data-index":"#{image.index}"} 
+                = image.file_field :src, class: 'js-file'
+                %span.js-remove 削除
+              - if @product.persisted? 
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy' 
+
+              - if @product.persisted?
+                .js-file_group{"data-index" => "#{@product.images.count}"}
+                  = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
+                  .js-remove 削除
+
+
+        .exhibition__contents__main__middle__heart__sell-content
+          
+          .exhibition__contents__main__middle__heart__sell-content__form-one
+            商品名
+            %span.exhibition-essential 必須
+            = f.text_field :name, class: 'exhibition__contents__main__middle__heart__sell-content__form-one__name', placeholder: '  商品名 (必須40文字まで)'
+          .exhibition__contents__main__middle__heart__sell-content__form-group
+            商品の説明
+            %span.exhibition-essential 必須
+            = f.text_area :text, class: 'exhibition__contents__main__middle__heart__sell-content__form-group__explain', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
+        .exhibition__contents__main__middle__heart__detail
+          商品の詳細
+          .exhibition__contents__main__middle__heart__detail__sell-form-box
+            -# ①↓のクラスにカスタムデータ属性を与える
+            -# ②それをcategory.jsにほぼそのまま持ってくる
+            .exhibition__contents__main__middle__heart__detail__sell-form-box__category.js-category_box
+              カテゴリー
+              %span.exhibition-essential 必須
+              = f.collection_select :category_id, Category.roots, :id, :name,  {prompt: "---"}, class: "js-category"
+              -# .exhibition__contents__main__middle__heart__detail__sell-form-box__category__1
+              -# = f.select :category_id, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---", id: 'aa_theme'
+            .exhibition__contents__main__middle__heart__detail__sell-form-box__status
+              商品の状態
+              %span.exhibition-essential 必須
+              = f.select :conditions, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], prompt: "---", id: 'aa_theme'
+        .exhibition__contents__main__middle__heart__delivery
+          配送について
+          .exhibition__contents__main__middle__heart__delivery__sell-form-box
+            配送料の負担
+            %span.exhibition-essential 必須
+            = f.select :delivery_charge, [ ["送料込み(出品者負担)",1], ["着払い(購入者負担)", 2] ], prompt: "---", id: 'aa_theme'
+            .exhibition__contents__main__middle__heart__delivery__sell-form-box__area
+              発送元の地域
+              %span.exhibition-essential 必須
+              = f.collection_select :prefecture, Prefecture.all, :id, :name, {prompt: "---"}
+            .exhibition__contents__main__middle__heart__delivery__sell-form-box__date
+              発送までの日数
+              %span.exhibition-essential 必須
+              = f.select :delivery_day, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], prompt: "---", id: 'aa_theme'
+        .exhibition__contents__main__middle__heart__money
+          販売価格(300~9,999,999)
+          .exhibition__contents__main__middle__heart__money__sell-box
+            .exhibition__contents__main__middle__heart__money__sell-box__form-group
+              .exhibition__contents__main__middle__heart__money__sell-box__form-group__left
+                価格
+                %span.exhibition-essential 必須
+              .exhibition__contents__main__middle__heart__money__sell-box__form-group__right
+                ¥
+                .exhibition__contents__main__middle__heart__money__sell-box__form-group__right__money
+                  = f.text_field :price, class: 'right__money', placeholder: '例） 300   '
+        .exhibition__contents__main__middle__heart__bottom
+          = link_to '禁止されている出品', '/#/', class: 'hoge-hoge'
+          、
+          = link_to '行為', '/#/', class: 'hoge-hoge'
+          を必ずご確認ください。
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          = link_to '偽ブランドの販売', '/#', class: 'hoge-hoge'
+          は犯罪であり処罰される可能性があります。
+          また、出品をもちまして
+          = link_to '加盟店規約', '/#/', class: 'hoge-hoge'
+          に同意したことになります。
+          .exhibition__contents__main__middle__heart__bottom__display
+            = f.submit "出品する"
+          .exhibition__contents__main__middle__heart__bottom__back
+            = link_to 'もどる', '/#/', class: 'hoge-btn'
+  .exhibition__footer
+  .exhibition__footer__content
+    = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'
+    = link_to 'メルカリ利用規約', '/#', class: 'hoge-last'
+    = link_to '特定商取引に関する表記', '/#', class: 'hoge-last'
+    %br
+    = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
+    %br
+    %small © FURIMA, Inc.
