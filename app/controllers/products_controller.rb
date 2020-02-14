@@ -9,7 +9,11 @@ class ProductsController < ApplicationController
   def create
 
   end
-
+  
+  def show
+    @product = Product.find(params[:id])
+    @images = @product.images
+  end
 
   def edit
     @product = Product.find(params[:id])
@@ -23,7 +27,8 @@ class ProductsController < ApplicationController
       redirect_to
     else
       flash[:notice] = "必須項目が空欄です。"
-      render :edit
+      # render :edit
+      redirect_to edit_product_path(product.id)
     end
   end
 
@@ -34,11 +39,6 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :price, images_attributes:  [:src, :_destroy, :product_id]).merge(user_id: current_user.id)
   end
-end
 
  
-  def show
-    @product = Product.find(params[:id])
-    @images = @product.images
-  end
 end

@@ -15,35 +15,26 @@
             .exhibition__contents__main__middle__heart__upload-box__title_a  
               最大10枚までアップロードできます
             .exhibition__contents__main__middle__heart__upload-box__explain
+            .exhibition__contents__main__middle__heart__upload-box__item
               - @images.each do |image|
                 = image_tag "#{image[:src]}", size: "114x85", class: "aaaaa"
-            .exhibition__contents__main__middle__heart__upload-box__item
-            = f.fields_for :images do |i|
-              =i.file_field :images
-              %b
-                ドラッグアンドドロップ
-                %br
-                またはクリックしてファイルをアップロード
-            -# = f.fields_for :images do |image|
-            -#   .js-file_group{"data-index":"#{image.index}"}
-            -#     = image.file_field :src, class: 'js-file'
-            -#     %span.js-remove 削除
-            -#   - if @product.persisted?
-            -#     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-            -#   - if @product.persisted?
-            -#     .js-file_group{"data-index" => "#{@product.images.count}"}
-            -#       = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
-            -#       .js-remove 削除
-        -# .exhibition__contents__main__middle__heart__sell-content
-        -#   .exhibition__contents__main__middle__heart__sell-content__form-one
-        -#     商品名
-        -#     %span.exhibition-essential 必須
-        -#     = f.text_field :name, class: 'exhibition__contents__main__middle__heart__sell-content__form-one__name', placeholder: '  商品名 (必須40文字まで)'
-        -#   .exhibition__contents__main__middle__heart__sell-content__form-group
-        -#     商品の説明
-        -#     %span.exhibition-essential 必須
-        -#     = f.text_area :text, class: 'exhibition__contents__main__middle__heart__sell-content__form-group__explain', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
-        -# .exhibition__contents__main__middle__heart__detail
+            -# = f.fields_for :images do |i|
+            -#   =i.file_field :images
+            -#   %b
+            -#     ドラッグアンドドロップ
+            -#     %br
+            -#     またはクリックしてファイルをアップロード
+       
+        .exhibition__contents__main__middle__heart__sell-content
+          .exhibition__contents__main__middle__heart__sell-content__form-one
+            商品名
+            %span.exhibition-essential 必須
+            = f.text_field :name, class: 'exhibition__contents__main__middle__heart__sell-content__form-one__name', placeholder: '  商品名 (必須40文字まで)'
+          .exhibition__contents__main__middle__heart__sell-content__form-group
+            商品の説明
+            %span.exhibition-essential 必須
+            = f.text_area :text, class: 'exhibition__contents__main__middle__heart__sell-content__form-group__explain', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
+        .exhibition__contents__main__middle__heart__detail
           商品の詳細
           .exhibition__contents__main__middle__heart__detail__sell-form-box
             .exhibition__contents__main__middle__heart__detail__sell-form-box__category

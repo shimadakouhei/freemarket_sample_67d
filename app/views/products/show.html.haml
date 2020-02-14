@@ -6,11 +6,10 @@
       = @product.name
     .top-show-main__middle__item-box
       .top-show-main__middle__item-box__main
-        = image_tag @images[0].src.url
+        = image_tag @images[0][:src], size: "560x346"
       .top-show-main__middle__item-box__left
-        = image_tag @images[1].src.url, size: "140x77", class: 'pic-left'
-        = image_tag @images[2].src.url, size: "140x77", class: 'pic-left'
-        = image_tag @images[3].src.url, size: "140x77", class: 'pic-left'
+      - @images.each do |image|
+        = image_tag "#{image[:src]}", size: "114x85", class: "aaaaa"
     .top-show-main__middle__price
       .top-show-main__middle__price__main
         ¥ 
@@ -20,7 +19,7 @@
       .top-show-main__middle__price__box1
         .top-show-main__middle__price__box1__purchase 
           - if user_signed_in? && current_user.id == @product.user_id
-            = link_to "商品の編集", edit_product_path(current_user),class: "btn1"
+            = link_to "商品の編集", edit_product_path(@product),class: "btn1"
             %br/
             %br/
             %br/
