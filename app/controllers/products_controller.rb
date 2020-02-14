@@ -18,7 +18,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if
       @product.destroy
+      flash[:notice] = "削除しました。"
+      "/products/#{@product.id}"
+    else
+      flash[:notice] = "削除失敗しました。"
+      "/products/#{@product.id}"
+    end
   end
 
   def show
