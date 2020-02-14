@@ -1,5 +1,37 @@
 .card_body
-  = render 'layouts/header'
+  .top_body
+    .headerBox
+      .headerBox__upperBox
+        .headerBox__upperBox__furimaIcon
+          = link_to root_path do
+            = image_tag "logo.png", hight:"60px", width: "160px"
+        .headerBox__upperBox__search
+          = form_tag("#", method: :get) do
+            = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "text111"})
+          .headerBox__upperBox__search__searchIcon 
+            = image_submit_tag "icon-search 1.png",width: "50px", height: "44px"
+      .headerBox__lowerBox  
+        .headerBox__lowerBox__leftBox
+          .headerBox__lowerBox__leftBox__category
+            カテゴリー
+          .headerBox__lowerBox__leftBox__brand
+            ブランド
+        .headerBox__lowerBox__pan
+          - breadcrumb :registration 
+          = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"    
+        .headerBox__lowerBox__rightBox
+          .headerBox__lowerBox__rightBox__login
+            - if user_signed_in?
+              .headerBox__lowerBox__rightBox__login__registration
+                = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "logout_btn"
+              .headerBox__lowerBox__rightBox__login__registration
+                = link_to "マイページ",user_path(current_user),class: "logout_btn"
+            - else
+              .headerBox__lowerBox__rightBox__login__registration
+                = link_to "ログイン", new_user_session_path, class: "login_btn"
+              .headerBox__lowerBox__rightBox__login__registration
+                = link_to "新規登録", new_user_registration_path,class: "login_btn"
+
   .credit-update
     .credit-update__box
       .credit-update__box__label

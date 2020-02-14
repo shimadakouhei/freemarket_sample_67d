@@ -5,36 +5,37 @@
         FURIMAについて
       %ul 
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "会社概要", "#"
+          = link_to "会社概要", "#", class:"about1"
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "プライバシーポリシー", "#"
+          = link_to "プライバシーポリシー", "#", class:"about1"
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "FURIMA規約", "#"
+          = link_to "FURIMA規約", "#", class:"about1"
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "ポイントに関する規約", "#"
+          = link_to "ポイントに関する規約", "#", class:"about1"
     %li.F2
       %h1.SeeFURIMA{style: 'padding: 70px 0 12px; text-align: center; font-weight :bold; font-size: 20px'}
         FURIMAを見る
       %ul 
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "カテゴリー一覧", "#"
+          = link_to "カテゴリー一覧", "#", class:"about1"
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "ブランド一覧", "#"
+          = link_to "ブランド一覧", "#", class:"about1"
     %li.F3
       %h1.HelpGuide{style: 'padding: 70px 0 12px; text-align: center; font-weight :bold; font-size: 20px'}
         ヘルプ＆ガイド
       %ul 
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "FURIMAガイド", "#"
+          = link_to "FURIMAガイド", "#", class:"about1"
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "FURIMAロゴ利用ガイドライン", "#"
+          = link_to "FURIMAロゴ利用ガイドライン", "#", class:"about1"
         %li{style: 'padding-top: 10px; text-align: center'}
-          = link_to "お知らせ", "#"
+          = link_to "お知らせ", "#", class:"about1"
 .WhiteFURIMAicon
   = image_submit_tag "logo-white.png", height:"47px", width: "160px"
   %p.sub © FURIMA
 
 %button.fixed_btn
   %h1 出品する
-  = link_to new_top_path do
+  = link_to new_product_path do
     = image_tag "icon_camera.png", height: "62%", width: "62%"
+    

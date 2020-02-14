@@ -39,7 +39,15 @@
       &__leftBox {
         width: 230px;
         height: 60px;
-        display: flex;     
+        display: flex;
+      &__pan {
+        width: 230px;
+        height: 60px;
+        color: red;
+      }
+      .breadcrumbs-list {
+        color: red;
+      }
         &__category{
           width: 80px;
           height: 45px;
@@ -441,10 +449,14 @@
 }
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
+.about1 {
+  color: white;
+  text-decoration: none;
+}
 p.sub {
   color: white;
 }
@@ -474,7 +486,6 @@ p.sub {
   border-radius: 6px;
   background-color: #3CCACE;
 }
-
 .logout_btn{
   color:white;
   font-weight: bold;
