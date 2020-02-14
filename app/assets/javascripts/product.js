@@ -28,6 +28,4 @@ $(function(){
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('.exhibition__contents__main__middle__heart__upload-box__title').append(buildFileField(fileIndex[0]));
   });
-  $('#aa_theme').on('change',function(){
-  });
 });
