@@ -11,14 +11,18 @@
       margin: auto;
       padding-top: 10px;
       &__furimaIcon {
-      padding-right: 30px;
+      padding-right: 50px;
       width: 160px;
       height: 60px;
       }
       &__search {
         width: 900px;
         height: 40px;
-        display: flex;     
+        display: flex;
+        .text111 {
+          width: 600px;
+          height: 40px;
+        }
         &__searchIcon {
         width: 50px;
         height: 44px;
@@ -62,55 +66,50 @@
       }
     }
   }
-.TopImage_main{
-  height: 3520px;
-  
-.TopImage {
-position: relative;  
-  &__mainMessage {
-  width: 100vw;
-  height: 200px;
-  font-size: 60px;
-  position: absolute;
-  top: 200px;
-  left: 60px;
-  color: white;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  .Topimage{
+    height: 3520px;
   }
-  &__subMessage {
-  width: 370px;
-  height: 200px;
-  font-size: 22px;
-  position: absolute;
-  top: 300px;
-  left: 60px;
-  color: white;
-  text-shadow: 0 0 5px rgba(0,0,0,0.4);
-  }
-  &__app-googleBox {
-  width: 400px;
-  height: 100px;
-  position: absolute;
-  top: 370px;
-  display: flex;
-  justify-content:space-around;
-
-  &__app-storeIcon {
-  width: 100px;
-  height: 100px;
-  padding-top: 30px;
-  }
-  &__google-playIcon {
-  width: 100px;
-  height: 100px;
-  padding-top: 19px;
-  }
-  .google-play{
-    width: 180px;
-    height: 65px;
-  }
-  }
-  }
+    .TopImage {
+      position: relative;  
+      &__mainMessage {
+        width: 100vw;
+        height: 200px;
+        font-size: 60px;
+        position: absolute;
+        top: 200px;
+        left: 60px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__subMessage {
+        width: 370px;
+        height: 200px;
+        font-size: 22px;
+        position: absolute;
+        top: 300px;
+        left: 60px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__app-googleBox {
+        width: 400px;
+        height: 100px;
+        position: absolute;
+        top: 370px;
+        display: flex;
+        justify-content:space-around;
+        &__app-storeIcon {
+          width: 100px;
+          height: 100px;
+          padding-top: 30px;
+        }
+        &__google-playIcon {
+          width: 100px;
+          height: 100px;
+          padding-top: 19px;
+        }
+      }
+    }
   .MiddleTop {
     font-size: 24px;
     width: 370px;
@@ -125,57 +124,42 @@ position: relative;
     display: block;
     color:#3CCACE;
   }
+  @mixin PicNum {
+    position: absolute;
+    top: 0px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    color: white;
+    background-color: #3CCACE;
+    text-align: center;
+    border-radius: 3px solid 1px rgb(245, 245, 245);
+  }
+  @mixin Image{
+    width: 300px;
+    height: 300px;
+    position: relative;
+  }
   .PicBox{
     display: flex;
     justify-content: space-around;
     padding: 0 100px;
     &__ImageLeft {
-    width: 300px;
-    height: 300px;
-    position: relative;
-
+      @include Image ;
       &__PicNum1 {
-      position: absolute;
-      top: 0px;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
-      color: white;
-      background-color: #3CCACE;
-      text-align: center;
-      border-radius: 3px;
+        @include PicNum ;
       }
     }
     &__ImageMiddle {
-    position: relative;
-    width: 300px;
-    height: 300px;
+      @include Image ;
       &__PicNum2 {
-      position: absolute;
-      top: 0px;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
-      color: white;
-      background-color: #3CCACE;
-      text-align: center;
-      border-radius: 3px;
+        @include PicNum ;
       }
     }
     &__ImageRight {
-    position: relative;
-    width: 300px;
-    height: 300px;
+      @include Image ;
       &__PicNum3 {
-      position: absolute;
-      top: 0px;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
-      color: white;
-      background-color: #3CCACE;
-      text-align: center;
-      border-radius: 3px;
+        @include PicNum ;
       }
     }
   }
@@ -184,23 +168,22 @@ position: relative;
     justify-content: space-around;
     padding: 0 100px;
     font-weight: bold;
-    &__LeftMessage {
+  .s {
+    color: #3CCACE;
+  }
+    @mixin Message {
       font-size: 24px;
       margin-top: 20px;
       margin-bottom: 20px;
     }
-    .s {
-      color: #3CCACE;
+    &__LeftMessage {
+      @include Message;
     }
     &__MiddleMessage {
-      font-size: 24px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      @include Message;
     }
     &__RightMessage {
-      font-size: 24px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      @include Message;
     }
   }
   .SubMessageBox { 
@@ -208,41 +191,40 @@ position: relative;
     justify-content: space-around;
     padding: 0 100px 40px;
     font-weight: bold;
-    &__LeftSubText {
+    @mixin Text {
       width: 280px;
       text-align: center;
+    }
+    &__LeftSubText {
+      @include Text;
     }
     &__MiddleSubText {
-      width: 280px;
-      text-align: center;
+      @include Text;
     }
     &__RightSubText {
-      width: 280px;
-      text-align: center;
+      @include Text;
     }
   }
   .ContenrMainImage {
     position: relative;
     width: 100vw;
-    &__ContentMainMessage {
-    width: 100vw;
-    height: 200px;
-    font-size: 30px;
-    position: absolute;
-    top: 100px;
-    left: 60px;
-    color: white;
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    @mixin Content {
+      width: 100vw;
+      height: 200px;
+      color: white;
+      position: absolute;
+      left: 60px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__ContentMainMessage {   
+      @include Content;   
+      top: 100px;
+      font-size: 30px;   
     }
     &__ContentSubMessage {
-    width: 100vw;
-    height: 200px;
-    font-size: 20px;
-    position: absolute;
-    top: 150px;
-    left: 60px;
-    color: white;
-    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      @include Content;
+      top: 150px;
+      font-size: 20px;
     }
     &__app-googleBox2 {
       width: 400px;
@@ -251,20 +233,18 @@ position: relative;
       top: 260px;
       left: 68px;
       display: flex;
-
-      &__app-storeIcon2 {
-      width: 100px;
-      height: 100px;
-    }
       .app-store{
         padding-top: 12px;
-      
+      }
+      &__app-storeIcon2 {
+        width: 100px;
+        height: 100px;
       }
       &__google-playIcon2 {
-      width: 100px;
-      height: 100px;
+        width: 100px;
+        height: 100px;
       }
-      }
+    }
   }
   .MiddleTop2 {
     font-size: 24px;
@@ -300,20 +280,19 @@ position: relative;
     justify-content: space-around;
     padding: 0 100px;
     font-weight: bold;
+    @mixin Message {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
     &__LeftMessage2 {
-    font-size: 24px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+      @include Message;
     }
     &__MiddleMessage2 {
-      font-size: 24px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      @include Message;
     }
     &__RightMessage2 {
-      font-size: 24px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      @include Message;
     }
   }
   .SubMessageBox2 { 
@@ -335,79 +314,78 @@ position: relative;
     }
   }
 
-.PicUpCategory {
-  font-weight: bold;
-  font-size: 28px;
-  height: 40px;
-  text-align: center;
-  padding-top: 30px;
-  background-color: #f8f8f8;
-}
-.ProsBox {
-  background-color: #f8f8f8;
-  &__MainTopTopic {
-    font-size: 24px;
+  .PicUpCategory {
     font-weight: bold;
-    height:30px;
+    font-size: 28px;
+    height: 40px;
     text-align: center;
-    color: #3CCACE;
-    margin-bottom: 30px;
+    padding-top: 30px;
+    background-color: #f8f8f8;
   }
-  &__ProsBoxU {
-    height:250px;
-    display: flex;
-    justify-content: space-around;
-    &__ProLeft {
-      width: 200px;
-      height:240px;
-      background-color: white;
-    }
-  }  
-}
-.PicUpBrand {
-  font-size: 28px;
-  font-weight: bold;
-  height: 40px;
-  text-align: center;
-  background-color: #f8f8f8;
-}
-.ProsBox {
-  width: 100vw;
-  height:400px;
-  &__Archiver {
-    font-weight: bold;
-    font-size: 24px;
+  .ProsBox {
     width: 100vw;
-    height:30px;
-    text-align: center;
-    color: #3CCACE;
-    margin-bottom: 30px;
-  }
-  &__ProsBoxU {
-    height:250px;
-    display: flex;
-    justify-content: space-around;
-    padding: 0 130px;
-    &__ProLeft {
-      width: 200px;
-      height:240px;
-      font-size: 20px;
+    height:400px;
+    background-color: #f8f8f8;
+    &__MainTopTopic {
+      font-size: 24px;
       font-weight: bold;
-      color: rgb(51, 47, 47);
+      height:30px;
+      text-align: center;
+      color: #3CCACE;
+      margin-bottom: 30px;
+    }
+    &__ProsBoxU {
+      height:250px;
+      display: flex;
+      justify-content: space-around;
+      &__ProLeft {
+        width: 200px;
+        height:240px;
+        background-color: white;
+      }
+    }  
+  }
+  .PicUpBrand {
+    font-size: 28px;
+    font-weight: bold;
+    height: 40px;
+    text-align: center;
+    background-color: #f8f8f8;
+  }
+  .ProsBox {
+    &__Archiver {
+      font-weight: bold;
+      font-size: 24px;
+      width: 100vw;
+      height:30px;
+      text-align: center;
+      color: #3CCACE;
+      margin-bottom: 30px;
+    }
+    &__ProsBoxU {
+      height:250px;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 130px;
+      &__ProLeft {
+        width: 200px;
+        height:240px;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(51, 47, 47);
+      }
     }
   }
-}
   .ContenrMainImage3 {
     position: relative;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
     &__ContentMainMessage3 {
-    height: 100%;
-    font-size: 30px;
-    position: absolute;
-    top: 100px;
-    left: 60px;
-    color: white;
-  
+      height: 100%;
+      font-size: 30px;
+      position: absolute;
+      top: 100px;
+      left: 60px;
+      color: white;
     }
     &__ContentSubMessage3 {
       height: 200px;
@@ -424,22 +402,18 @@ position: relative;
       top: 240px;
       left: 500px;
       display: flex;
-        &__app-storeIcon3 {
-          width: 100px;
-          height: 100px;
-        }
-        &__google-playIcon3 {
-          width: 100px;
-          height: 100px;
-        }
+      &__app-storeIcon3 {
+        width: 100px;
+        height: 100px;
+      }
+      &__google-playIcon3 {
+        width: 100px;
+        height: 100px;
+      }
     }
   }
 }
-}
-.text111 {
-  width: 600px;
-  height: 40px;
-}
+
 .TopPageFooter{
   width: 100vw;
   height: 150px;
@@ -455,6 +429,7 @@ position: relative;
   background-color:#272727;
   text-align: center;
 }
+
 a {
   color: white;
   text-decoration: none;
@@ -483,5 +458,9 @@ p.sub {
 }
 
 .logaut_btn{
-  color:black;
+  color:white;
+  font-weight: bold;
+  padding: 9px 15px;
+  border-radius: 6px;
+  background-color: #3CCACE;
 }

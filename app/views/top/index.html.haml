@@ -1,33 +1,6 @@
 .top_body
-  .headerBox
-    .headerBox__upperBox
-      .headerBox__upperBox__furimaIcon
-        = image_tag "logo.png", hight:"60px", width: "160px"
-      .headerBox__upperBox__search
-        = form_tag("#", method: :get) do
-          = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "text111"})
-        .headerBox__upperBox__search__searchIcon 
-          = image_submit_tag "icon-search 1.png",width: "50px", height: "44px"
-    .headerBox__lowerBox  
-      .headerBox__lowerBox__leftBox
-        .headerBox__lowerBox__leftBox__category
-          カテゴリー
-        .headerBox__lowerBox__leftBox__brand
-          ブランド
-      .headerBox__lowerBox__rightBox
-        .headerBox__lowerBox__rightBox__login
-          - if user_signed_in?
-            .headerBox__lowerBox__rightBox__login__registration
-              = link_to "ログアウト",destroy_user_session_path, method: :delete, class: "logaut_btn"
-            .headerBox__lowerBox__rightBox__login__registration
-              = link_to "マイページ",user_path(current_user),class: "logaut_btn"
-          - else
-            .headerBox__lowerBox__rightBox__login__registration
-              = link_to "ログイン", new_user_session_path, class: "logaut_btn"
-            .headerBox__lowerBox__rightBox__login__registration
-              = link_to "新規登録", new_user_registration_path,class: "logaut_btn"
-        
-  .TopImage_main
+  = render 'layouts/header'  
+  .Topimage
     .TopImage
       = image_tag "bg-mainVisual-pict_pc.jpg", height:"550px", width: "100%"
       .TopImage__mainMessage
@@ -51,13 +24,11 @@
           1
       .PicBox__ImageMiddle
         = image_tag "pict-reason-02.jpg", height:"300px", width: "300px"
-
         .PicBox__ImageMiddle__PicNum2
           %p{style: 'padding-top: 10px;'}
           2
       .PicBox__ImageRight
         = image_tag "pict-reason-03.jpg", height:"300px", width: "300px"
-
         .PicBox__ImageRight__PicNum3
           %p{style: 'padding-top: 10px;'}
           3
@@ -89,7 +60,7 @@
         %br 
         ほしかったあの商品に出会えるかもしれません。
       .ContenrMainImage__app-googleBox2
-        ._ContenrMainImage_app-googleBox2__app-storeIcon2
+        .ContenrMainImage_app-googleBox2__app-storeIcon2
           = image_tag "AppleStore-icon-438x129.png", width: "186px", height: "54px",class:"app-store"
         .ContenrMainImage__app-googleBox2__google-playIcon2
           = image_tag "google-play-badge.png", width: "198px", height: "79px"
