@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :categories, only: :index, defaults: { format: 'json' }
+  resources :cards, only: [:index, :new, :show]
+  resources :products do
   end
 end

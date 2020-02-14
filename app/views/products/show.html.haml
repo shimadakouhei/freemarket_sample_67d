@@ -1,22 +1,38 @@
 = render 'layouts/header'
+
 .top-show-main
   .top-show-main__middle
     .top-show-main__middle__name
-      あいうえお
+      = @product.name
     .top-show-main__middle__item-box
       .top-show-main__middle__item-box__main
-      = image_tag "pict-reason-01.jpg", size: "560x346"
+        = image_tag @images[0].src.url
       .top-show-main__middle__item-box__left
-        = image_tag "pict-reason-01.jpg", size: "140x77", class: 'pic-left'
-        = image_tag "pict-reason-02.jpg", size: "140x77", class: 'pic-left'
-        = image_tag "pict-reason-03.jpg", size: "140x77", class: 'pic-left'
+        = image_tag @images[1].src.url, size: "140x77", class: 'pic-left'
+        = image_tag @images[2].src.url, size: "140x77", class: 'pic-left'
+        = image_tag @images[3].src.url, size: "140x77", class: 'pic-left'
     .top-show-main__middle__price
       .top-show-main__middle__price__main
-        ¥ 30000
+        ¥ 
+        = @product.price
       .top-show-main__middle__price__sub
         (税込)送料込み
+      .top-show-main__middle__price__box1
+        .top-show-main__middle__price__box1__purchase 
+          - if user_signed_in? && current_user.id == @product.user_id
+            = link_to "商品の編集", edit_product_path(current_user),class: "btn1"
+            %br/
+            %br/
+            %br/
+            or
+            %br/
+            %br/
+            %br/
+            = link_to "商品の削除", root_path,class: "btn2"
+          - else  
+            = link_to "購入画面に進む", cards_buy_path, class: "btn1"
     .top-show-main__middle__title
-      product3
+      = @product.name
     .top-show-main__middle__big-table
       %table.top-show-main-table
         %tr.top-show-main-record
@@ -35,34 +51,29 @@
             = link_to 'ノーカラージャケット', '/#/', class: 'table-category'
         %tr.top-show-main-record
           %th.top-show-main-head
-            ブランド
+            商品説明
           %td.top-show-main-date
-            hoge
-        %tr.top-show-main-record
-          %th.top-show-main-head
-            出品のサイズ
-          %td.top-show-main-date
-            hoge
+            = @product.text
         %tr.top-show-main-record
           %th.top-show-main-head
             商品の状態
           %td.top-show-main-date
-            新品/未使用
+            = @product.conditions
         %tr.top-show-main-record
           %th.top-show-main-head
             配送料の負担
           %td.top-show-main-date
-            着払い（購入者負担）
+            = @product.delivery_charge
         %tr.top-show-main-record
           %th.top-show-main-head
             発送元の地域
           %td.top-show-main-date
-            青森県
+            = @product.prefecture
         %tr.top-show-main-record
           %th.top-show-main-head
             発送日の目安
           %td.top-show-main-date
-            1-2日で発送
+            = @product.delivery_day
     .top-show-main__middle__option
       %li.top-show-main__middle__option__left
         お気に入り

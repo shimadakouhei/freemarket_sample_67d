@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
       @product.images.new
     end
   
+    
     def create
       @product = Product.new(product_params)
       if @product.save
@@ -18,11 +19,11 @@ class ProductsController < ApplicationController
         render :new
       end
     end
-  
+    
     def edit
       @products = Product.find(params[:id])
     end
-  
+    
     def update
       if @product.update(product_params)
         redirect_to root_path
@@ -30,7 +31,12 @@ class ProductsController < ApplicationController
         render :edit
       end
     end
-  
+    
+    def show
+      @product = Product.find(params[:id])
+      @images = @product.images
+    end
+    
     def destroy
     end
     
