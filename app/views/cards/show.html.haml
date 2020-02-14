@@ -1,14 +1,14 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
+-# %label 登録クレジットカード情報
+-# %br
+-# = "**** **** **** " + @default_card_information.last4
+-# %br
+-# - exp_month = @default_card_information.exp_month.to_s
+-# - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+-# = exp_month + " / " + exp_year
 
-= form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+-# = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+-#   %input{ type: "hidden", name: "card_id", value: "" }
+-#   %button 削除する
 .payment
   .payment__header
     = link_to root_path do
@@ -20,12 +20,17 @@
         クレジットカード一覧
       .payment__contents__box__cards
         .payment__contents__box__number
-          %p "**** **** **** " + "1234"
+          %label 登録クレジットカード情報
           %br
-          %p 3/21
+          = "**** **** **** " + @default_card_information.last4
+          %br
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
         .payment__contents__box__cards__delete
-          = link_to "削除", "/", class: "abab"
-
+          = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+            %input{ type: "hidden", name: "card_id", value: "" }
+            %button 削除する
   .payment__footer
     .payment__footer__content
       = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'

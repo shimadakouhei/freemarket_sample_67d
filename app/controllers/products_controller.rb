@@ -34,7 +34,8 @@ class ProductsController < ApplicationController
   def pay
     @product = Product.find_by(params[:id])
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    # Payjp.api_key = "sk_test_46fc730f33ec0cebed8cece5"
     Payjp::Charge.create(
     amount: @product.price,
     customer: card.customer_id,

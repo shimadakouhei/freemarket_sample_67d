@@ -467,10 +467,18 @@ p.sub {
   padding: 15px;
 }
 
-.logaut_btn{
+.login_btn{
   color:white;
   font-weight: bold;
   padding: 9px 15px;
+  border-radius: 6px;
+  background-color: #3CCACE;
+}
+
+.logout_btn{
+  color:white;
+  font-weight: bold;
+  padding: 9px 6px;
   border-radius: 6px;
   background-color: #3CCACE;
 }
