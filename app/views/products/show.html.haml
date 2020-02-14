@@ -28,7 +28,9 @@
             %br/
             %br/
             %br/
-            = link_to "商品の削除", "root_path#{@product.user_id}",method: :delete ,class: "btn2"
+            -# = link_to "商品の削除", root_path, method: :destroy ,class: "btn2"
+            -# = link_to "商品の削除", product_path(params[:id]), method: :delete, class:"btn2"
+            = link_to '削除', "/products/#{@product.id}", method: :delete, class:"btn2"
           - else  
             = link_to "購入画面に進む", cards_buy_path, class: "btn1"
     .top-show-main__middle__title

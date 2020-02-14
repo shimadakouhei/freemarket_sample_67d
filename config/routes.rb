@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'top#index'
   get 'cards/buy'
-  #root 'products#index'
+  # post "destroy", to: 'products#destroy'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
