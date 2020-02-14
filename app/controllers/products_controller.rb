@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
     end
     
     def edit
-      @products = Product.find(params[:id])
     end
     
     def update
@@ -36,7 +35,7 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
       @images = @product.images
     end
-    
+
     def destroy
     end
     

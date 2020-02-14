@@ -16,7 +16,6 @@ $(function(){
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
   $('.exhibition__contents__main__middle__heart__upload-box__title').on('change', '.js-file', function(e) {
-    console.log('hello');
     // fileIndexの先頭の数字を使ってinputを作る
     $('.exhibition__contents__main__middle__heart__upload-box__title').append(buildFileField(fileIndex[0]));
     fileIndex.shift();
@@ -30,6 +29,5 @@ $(function(){
     if ($('.js-file').length == 0) $('.exhibition__contents__main__middle__heart__upload-box__title').append(buildFileField(fileIndex[0]));
   });
   $('#aa_theme').on('change',function(){
-    console.log('hello');
   });
 });
