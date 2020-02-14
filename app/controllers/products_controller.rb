@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-    before_action :set_product, only: [:destroy]
+    before_action :set_product, only: [:destroy :show]
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
@@ -18,14 +18,12 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    if
-      @product.destroy
+    if @product.user_id = current_user.id && @product.destroy
       flash[:notice] = "削除しました。"
-      "/products/#{@product.id}"
     else
       flash[:notice] = "削除失敗しました。"
-      "/products/#{@product.id}"
     end
+    redirect_to  root_path
   end
 
   def show
