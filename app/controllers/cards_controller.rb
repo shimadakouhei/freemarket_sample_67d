@@ -1,12 +1,9 @@
 class CardsController < ApplicationController
   require 'payjp'
-  # before_action :set_card
 
   def index
   end
-  
-  def buy
-  end
+
 
   def new
     card = Card.where(user_id: current_user.id)
@@ -14,7 +11,7 @@ class CardsController < ApplicationController
   end
   
   def pay
-    Payjp.api_key = "sk_test_3ec464cbd1eda662724694ba"
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -24,7 +21,6 @@ class CardsController < ApplicationController
         card: params['payjp-token'],
         metadata: {user_id: current_user.id}
       )
-
     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
@@ -34,17 +30,17 @@ class CardsController < ApplicationController
     end
   end
 
-  def destroy #PayjpとCardのデータベースを削除
-    Payjp.api_key = "sk_test_3ec464cbd1eda662724694ba"
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    customer.delete
-    if @card.destroy #削除に成功した時にポップアップを表示します。
-      redirect_to action: "new", notice: "削除しました"
-    else #削除に失敗した時にアラートを表示します。
-      redirect_to action: "new", alert: "削除できませんでした"
+  def delete #PayjpとCardデータベースを削除します
+    card = Card.where(user_id: current_user.id).first
+    if card.blank?
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+      card.delete
     end
+      redirect_to action: "new"
   end
-
 
 
   def show #Cardのデータpayjpに送り情報を取り出します
@@ -52,16 +48,13 @@ class CardsController < ApplicationController
     if card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = "sk_test_3ec464cbd1eda662724694ba"
+      Payjp.api_key =  ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
   end
-  # private
 
-  # def set_card
-  # @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
-  # end
+
 end
 
   

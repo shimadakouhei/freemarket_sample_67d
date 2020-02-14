@@ -2,7 +2,6 @@
   .confirmation__header
     = link_to root_path do
       = image_tag "logo.png", size: "185x49"
-
   .confirmation__contents
     .confirmation__contents__box
       .confirmation__contents__box__head
@@ -30,7 +29,7 @@
           .confirmation__contents__box__info__methodbox__method
             %p 支払い方法
           .confirmation__contents__box__info__methodbox__registration
-            = link_to "➕登録してください", '/#' , class: 'aaa'
+            = link_to "➕登録してください", 'cards_pash' , class: 'aaa'
 
         .confirmation__contents__box__info__addressbox
           .confirmation__contents__box__info__addressbox__deli
@@ -43,7 +42,8 @@
           %p あいう えお 
         .confirmation__contents__box__info__purchase
           .confirmation__contents__box__info__purchase__button
-            = link_to "購入する", "/#" , class: 'ccc'
+          = form_tag(action: :pay, method: :post) do
+            = submit_tag "購入する", class: 'ccc'
 
   .confirmation__footer
     .confirmation__footer__content
