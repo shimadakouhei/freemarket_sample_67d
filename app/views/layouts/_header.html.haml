@@ -2,7 +2,8 @@
   .headerBox
     .headerBox__upperBox
       .headerBox__upperBox__furimaIcon
-        = image_tag "logo.png", hight:"60px", width: "160px"
+        = link_to root_path do
+          = image_tag "logo.png", hight:"60px", width: "160px"
       .headerBox__upperBox__search
         = form_tag("#", method: :get) do
           = text_field_tag("text", "",{placeholder: "キーワードから探す", class: "text111"})
