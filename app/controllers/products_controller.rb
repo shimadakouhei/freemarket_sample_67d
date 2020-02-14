@@ -18,13 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    if
       @product.destroy
-      flash[:notice] = "削除しました。"
-    else
-      flash[:notice] = "削除失敗しました。"
-    end
-    redirect_to root_path
   end
 
   def show
