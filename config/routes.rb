@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root to: 'products#index'
   get 'cards/buy'
-  #root 'products#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }

@@ -30,13 +30,19 @@ class ProductsController < ApplicationController
         render :edit
       end
     end
-    
-    def show
-      @product = Product.find(params[:id])
-      @images = @product.images
-    end
 
     def destroy
+      if @product.user_id = current_user.id && @product.destroy
+        flash[:notice] = "削除しました。"
+      else
+        flash[:notice] = "削除失敗しました。"
+      end
+      redirect_to  root_path
+    end
+  
+    
+    def show
+      @images = @product.images
     end
     
     private
