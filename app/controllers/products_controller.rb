@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     end
 
     def destroy
-      if @product.user_id = current_user.id && @product.destroy
+      if  @product.destroy
         flash[:notice] = "削除しました。"
       else
         flash[:notice] = "削除失敗しました。"
@@ -52,6 +52,6 @@ class ProductsController < ApplicationController
     end
 
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.find_by(params[:id])
     end
 end
