@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'top#index'
+  root to: 'products#index'
   get 'cards/buy'
   #root 'products#index'
   devise_for :users, controllers: {
@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show,:logout]
   resources :cards, only: [:index, :new]
   resources :products, except: :show
+
+  namespace :api do
+    resources :categories, only: :index, defaults: { format: 'json' }
+  end
 end

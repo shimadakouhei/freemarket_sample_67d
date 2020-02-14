@@ -52,14 +52,10 @@
         .exhibition__contents__main__middle__heart__detail
           商品の詳細
           .exhibition__contents__main__middle__heart__detail__sell-form-box
-            -# ①↓のクラスにカスタムデータ属性を与える
-            -# ②それをcategory.jsにほぼそのまま持ってくる
             .exhibition__contents__main__middle__heart__detail__sell-form-box__category.js-category_box
               カテゴリー
               %span.exhibition-essential 必須
-              = f.collection_select :category_id, Category.roots, :id, :name,  {prompt: "---"}, class: "js-category"
-              -# .exhibition__contents__main__middle__heart__detail__sell-form-box__category__1
-              -# = f.select :category_id, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---", id: 'aa_theme'
+              = f.select :category_id, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---", id: 'aa_theme'
             .exhibition__contents__main__middle__heart__detail__sell-form-box__status
               商品の状態
               %span.exhibition-essential 必須
@@ -114,3 +110,29 @@
     = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
     %br
     %small © FURIMA, Inc.
+
+-# <%# 
+
+
+-# <%= form_for @product do |f| %>
+-#   商品名<%= f.text_field :name %><br>
+-#   価格<%= f.number_field :price %><br>
+-#   <div id="image-box">
+-#     <%= f.fields_for :images do |image| %>
+-#       <div data-index="<%= image.index %>" class="js-file_group">
+-#         <%= image.file_field :src, class: 'js-file' %><br>
+-#         <span class="js-remove">削除</span>
+-#       </div>
+-#       <% if @product.persisted? %>
+-#         <%= image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy' %>
+-#       <% end %>
+-#     <% end %>
+-#     <% if @product.persisted? %>
+-#       <div data-index="<%= @product.images.count %>" class="js-file_group">
+-#         <%= file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file' %>
+-#         <div class="js-remove">削除</div>
+-#       </div>
+-#     <% end %>
+-#   </div>
+-#   <%= f.submit %>
+-# <% end %> %>
