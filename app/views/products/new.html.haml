@@ -1,5 +1,4 @@
 = form_for @product do |f|
-
   .exhibition__header
     = link_to root_path do
       = image_tag "logo.png", size: "185x49"
@@ -9,38 +8,27 @@
         商品の情報を入力
       .exhibition__contents__main__middle__heart
         .exhibition__contents__main__middle__heart__upload-box
-          
           .exhibition__contents__main__middle__heart__upload-box__title
             出品画像
             %span.exhibition-essential
               必須
-              
-
-                          
             .exhibition__contents__main__middle__heart__upload-box__explain
               最大10枚までアップロードできます
-          
               %b
                 ドラッグアンドドロップ
                 %br
                 またはクリックしてファイルをアップロード
-              
-
             = f.fields_for :images do |image|
-              .js-file_group{"data-index":"#{image.index}"} 
+              .js-file_group{"data-index":"#{image.index}"}
                 = image.file_field :src, class: 'js-file'
                 %span.js-remove 削除
-              - if @product.persisted? 
-                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy' 
-
+              - if @product.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
               - if @product.persisted?
                 .js-file_group{"data-index" => "#{@product.images.count}"}
                   = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
                   .js-remove 削除
-
-
         .exhibition__contents__main__middle__heart__sell-content
-          
           .exhibition__contents__main__middle__heart__sell-content__form-one
             商品名
             %span.exhibition-essential 必須
@@ -69,11 +57,11 @@
           .exhibition__contents__main__middle__heart__delivery__sell-form-box
             配送料の負担
             %span.exhibition-essential 必須
-            = f.select :delivery_charge, [ ["送料込み(出品者負担)",1], ["着払い(購入者負担)", 2] ], prompt: "---", id: 'aa_theme'
+            = f.collection_select :delivery_charge, Delivery.all, :id, :name, prompt: "---"
             .exhibition__contents__main__middle__heart__delivery__sell-form-box__area
               発送元の地域
               %span.exhibition-essential 必須
-              = f.collection_select :prefecture, Prefecture.all, :id, :name, {prompt: "---"}
+              = f.collection_select :prefecture, Todoufuken.all, :id, :name, prompt: "---"
             .exhibition__contents__main__middle__heart__delivery__sell-form-box__date
               発送までの日数
               %span.exhibition-essential 必須
@@ -113,3 +101,21 @@
     = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
     %br
     %small © FURIMA, Inc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+yukihiro_hashimoto へのメッセージ
+
+
+ダウンロード
+
