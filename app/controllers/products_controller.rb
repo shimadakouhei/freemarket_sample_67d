@@ -44,7 +44,6 @@ class ProductsController < ApplicationController
       redirect_to
     else
       flash[:notice] = "必須項目が空欄です。"
-      # render :edit
       redirect_to edit_product_path(product.id)
     end
   end
