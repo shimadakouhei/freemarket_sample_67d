@@ -6,11 +6,12 @@
       = @product.name
     .top-show-main__middle__item-box
       .top-show-main__middle__item-box__main
-        = image_tag @images[0].src.url
+        -# = image_tag @images[0].src.url
+        = image_tag "#{@images[0].src}"
       .top-show-main__middle__item-box__left
-        = image_tag @images[1].src.url, size: "140x77", class: 'pic-left'
-        = image_tag @images[2].src.url, size: "140x77", class: 'pic-left'
-        = image_tag @images[3].src.url, size: "140x77", class: 'pic-left'
+        -# = image_tag @images[1].src.url, size: "140x77", class: 'pic-left'
+        -# = image_tag @images[2].src.url, size: "140x77", class: 'pic-left'
+        -# = image_tag @images[3].src.url, size: "140x77", class: 'pic-left'
     .top-show-main__middle__price
       .top-show-main__middle__price__main
         ¥ 

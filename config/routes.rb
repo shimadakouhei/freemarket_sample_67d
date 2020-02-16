@@ -10,10 +10,9 @@ Rails.application.routes.draw do
   resources :top, only: [:index, :new, :create, :show]
   resources :users, only: [:show,:logout]
   
+
   namespace :api do
-    resources :categories, only: :index, defaults: { format: 'json' }
-  end
-  
+  resources :categories, only: :index, defaults: { format: 'json' }
   resources :products do
     collection do
       get 'products/purchase'

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   require 'payjp'
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :update]
   
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.new
   end
-  
+
   def create
     @product = Product.new(product_params)
     if @product.save!
@@ -87,3 +87,8 @@ class ProductsController < ApplicationController
   end
 
 end
+
+ 
+    
+
+    
