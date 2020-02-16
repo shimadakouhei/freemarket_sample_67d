@@ -10,26 +10,35 @@
         .confirmation__contents__box__items__inner
           .confirmation__contents__box__items__inner__box1
             .confirmation__contents__box__items__inner__box1__image
-              = image_tag "a007.png", size: "80x80"
+              = image_tag @product.images[0].src.url, size: "60x80"
             .confirmation__contents__box__items__inner__box1__detail
               .confirmation__contents__box__items__inner__box1__detail__name
-                %p サロンドアルファードファーハンドバッグ
+                = @product.name
               .confirmation__contents__box__items__inner__box1__detail__price
-                %p ¥5000 (税込み)送料込み
+                = @product.price
+                (税込み)送料込み
       .confirmation__contents__box__info
         .confirmation__contents__box__info__paybox
           .confirmation__contents__box__info__paybox__pay
             %p 支払い金額
           .confirmation__contents__box__info__paybox__money
-            %p ¥5000
+            = @product.price 
+            円
         .confirmation__contents__box__info__paybox__point
           %p □ ポイントを使用 (所持ポイント: P0)
-
         .confirmation__contents__box__info__methodbox
           .confirmation__contents__box__info__methodbox__method
             %p 支払い方法
           .confirmation__contents__box__info__methodbox__registration
             = link_to "➕登録してください", "/cards/new" , class: 'aaa'
+          .payment__contents__box__number
+            %label 登録クレジットカード情報
+            %br
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
 
         .confirmation__contents__box__info__addressbox
           .confirmation__contents__box__info__addressbox__deli
@@ -37,9 +46,17 @@
           .confirmation__contents__box__info__addressbox__change
             = link_to "変更する", '/#' , class: 'bbb'
         .confirmation__contents__box__info__individual
-          %p 〒123-4567
-          %p aaa県 bbb市 ccc町123
-          %p あいう えお 
+          〒
+          =  @address.postal_code
+          %p  
+          =  @address.administrative＿divisions
+          =  @address.city
+          =  @address.street_number
+          =  @address.apartment
+          %p
+          =  @user.family_name
+          =  @user.first_name
+
         .confirmation__contents__box__info__purchase
           .confirmation__contents__box__info__purchase__button
           = form_tag(action: :pay, method: :post) do

@@ -2,7 +2,7 @@
   .top_flash
     - if flash[:notice]
       %p= flash[:notice]
-  = render 'layouts/header'  
+  = render 'layouts/header'
   .Topimage
     .TopImage
       = image_tag "bg-mainVisual-pict_pc.jpg", height:"550px", width: "100%"
@@ -37,13 +37,13 @@
           3
     .MainMessageBox
       .MainMessageBox__LeftMessage
-        %span.s 3分 
+        %span.s 3分
         ですぐに出品
       .MainMessageBox__MiddleMessage
-        %span.s シンプル 
+        %span.s シンプル
         で使いやすい
       .MainMessageBox__RightMessage
-        %span.s 手数料 
+        %span.s 手数料
         業界最安
     .SubMessageBox
       .SubMessageBox__LeftSubText
@@ -58,9 +58,9 @@
         会員数日本一位
       .ContenrMainImage__ContentSubMessage
         FURIMAは、フリマアプリで最も人気。
-        %br 
+        %br
         出品・購入回数も業界最多です！
-        %br 
+        %br
         ほしかったあの商品に出会えるかもしれません。
       .ContenrMainImage__app-googleBox2
         .ContenrMainImage_app-googleBox2__app-storeIcon2
@@ -105,13 +105,16 @@
         - @products.first(3).each do |product|
           = link_to product_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
-              = image_tag "#{product.images[0][:src]}", size: "200x140", class: "aaaaa"
-              商品：#{product.name}
+              = image_tag product.images[0].src.url, size: "200x140", class: "aaaaa"
+              = product.name
               %br
-              状態：#{product.conditions}
+              = product.conditions
               %br
-              値段：#{product.price}
-              円   
+              -if product.buyer_id.present? 
+                .items-box_photo__sold__inner SOLD
+              - else
+                = product.price
+                円
     .PicUpBrand
       ピックアップブランド
     .ProsBox
@@ -121,13 +124,16 @@
         - @products.last(3).each do |product|
           = link_to product_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
-              = image_tag "#{product.images[0][:src]}", size: "200x140", class: "aaaaa"
-              商品：#{product.name}
+              = image_tag product.images[0].src.url, size: "200x140", class: "aaaaa"
+              = product.name
               %br
-              状態：#{product.conditions}
+              = product.conditions
               %br
-              値段：#{product.price}
-              円     
+              -if product.buyer_id.present? 
+                .items-box_photo__sold__inner SOLD
+              - else
+                = product.price
+                円
     .ContenrMainImage3
       = image_tag "bg-appBanner-pict.jpg", height:"500px", width: "100%"
       .ContenrMainImage3__ContentMainMessage3

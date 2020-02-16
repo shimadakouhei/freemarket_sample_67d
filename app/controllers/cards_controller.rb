@@ -23,8 +23,10 @@ class CardsController < ApplicationController
     @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "show"
+        flash[:notice] = 'クレジットカードの登録が完了しました'
       else
         redirect_to action: "pay"
+        flash[:alert] = 'クレジットカード登録に失敗しました'
       end
     end
   end
@@ -37,6 +39,7 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
       card.delete
+      flash[:notice] = "削除しました。"
     end
       redirect_to action: "new"
   end

@@ -157,14 +157,16 @@
         width: 620px;
         font-size: 14px;
         &__display {
-          margin: 40px 0 0;
-          height: 50px;
-          width: 100%;
-          background-color: red;
-          text-align: center;
-          line-height: 50px;
-          color: white;
-          cursor: pointer;
+          .exhibition_btn{
+            margin: 40px 0 0;
+            height: 50px;
+            width: 100%;
+            background-color: red;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            cursor: pointer;
+          }
         }
         &__back {
           height: 50px;

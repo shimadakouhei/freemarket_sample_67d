@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   require 'payjp'
-  before_action :set_product, except: [:index, :new, :create, :update]
+  before_action :authenticate_user!, only: [:purchase,:new]
+  before_action :set_product, except: [:index, :new, :create, :update, :purchase,:pay ]
   
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -9,6 +10,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+
   end
 
   def create
@@ -46,31 +48,42 @@ class ProductsController < ApplicationController
   
   
   def show
+    # @seller = User.find(@product.seller_id)
     @images = @product.images
+    @user = User.find_by(params[:id])
   end
   
   def purchase 
+    card = Card.where(user_id: current_user.id).first
+    @product = Product.find_by(params[:id])
+    @address = Address.find_by(params[:id])
+    @user = User.find_by(params[:id])
+    #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
+    if card.blank?
+      #登録された情報がない場合にカード登録画面に移動
+      redirect_to controller: "cards", action: "new"
+      flash[:notice] = '購入にはクレジットカード登録が必要です'
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      #保管した顧客IDでpayjpから情報取得
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+    end
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
-    if card == nil
-      redirect_to controller: "card", action: "new"
-      flash[:alert] = '購入にはクレジットカード登録が必要です'
-    else
-      @product = Product.find_by(params[:id])
       card = Card.where(user_id: current_user.id).first
+      @product = Product.find_by(params[:id])
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-      Payjp::Charge.create(
+      charge = Payjp::Charge.create(
         amount: @product.price,
         customer: card.customer_id,
         currency: 'jpy',
-        )
-    
-      flash[:notice] = '購入成功しました。'
-      redirect_to action: 'index'
-   end
-
+      )
+      @product.update( buyer_id: current_user.id)
+      flash[:notice] = '購入しました。'
+      redirect_to  action: 'index'
   end
       
       
@@ -83,7 +96,7 @@ class ProductsController < ApplicationController
   end
       
   def set_product
-    @product = Product.find_by(params[:id])
+    @product = Product.find(params[:id])
   end
 
 end

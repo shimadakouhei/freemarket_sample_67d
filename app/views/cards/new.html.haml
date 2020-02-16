@@ -1,3 +1,8 @@
+.top_flash
+  - if flash[:notice]
+    %p= flash[:notice]
+  - else flash[:notice] 
+    
 .card_body
   .top_body
     .headerBox

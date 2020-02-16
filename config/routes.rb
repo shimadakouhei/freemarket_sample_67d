@@ -10,13 +10,15 @@ Rails.application.routes.draw do
   resources :top, only: [:index, :new, :create, :show]
   resources :users, only: [:show,:logout]
   
-
   namespace :api do
-  resources :categories, only: :index, defaults: { format: 'json' }
+    resources :categories, only: :index, defaults: { format: 'json' }
+  end
+ 
+
   resources :products do
     collection do
-      get 'products/purchase'
-      post 'products', to: 'products#pay'
+      get 'purchase'
+      post 'pay'
     end
   end
   
