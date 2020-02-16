@@ -1,4 +1,7 @@
 .top_body
+  .top_flash
+    - if flash[:notice]
+      %p= flash[:notice]
   = render 'layouts/header'  
   .Topimage
     .TopImage

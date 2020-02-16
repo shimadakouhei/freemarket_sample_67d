@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   
   def create
     @product = Product.new(product_params)
-    if @product.save
+    if @product.save!
       redirect_to root_path
     else
       render :new
@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "必須項目が空欄です。"
       redirect_to edit_product_path(product.id)
     end
+  end
 
   def destroy
     if @product.user_id = current_user.id && @product.destroy
@@ -51,7 +52,12 @@ class ProductsController < ApplicationController
   def purchase 
   end
 
-    def pay
+  def pay
+    card = Card.where(user_id: current_user.id).first
+    if card == nil
+      redirect_to controller: "card", action: "new"
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    else
       @product = Product.find_by(params[:id])
       card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
@@ -60,20 +66,24 @@ class ProductsController < ApplicationController
         customer: card.customer_id,
         currency: 'jpy',
         )
-        
-        redirect_to controller: "top", action: 'index'
-      end
-      
-      
-      
-      private
-      
-      def product_params
-        params.require(:product).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :price, images_attributes:  [:src, :_destroy, :product_id]).merge(user_id: current_user.id)
-      end
-      
-    def set_product
-      @product = Product.find(params[:id])
-    end
+    
+      flash[:notice] = '購入成功しました。'
+      redirect_to action: 'index'
+   end
+
   end
+      
+      
+      
+  private
   
+  def product_params
+    params.require(:product).permit(:name, :conditions, :delivery_charge, :prefecture, :delivery_day, :text, :user_id, :category_id, :brand_id, :price, images_attributes:  [:src, :_destroy, :product_id]).merge(user_id: current_user.id)
+    
+  end
+      
+  def set_product
+    @product = Product.find_by(params[:id])
+  end
+
+end

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root to: 'products#index'
-  get 'products/purchase'
-  post 'products', to: 'products#pay'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -11,11 +9,16 @@ Rails.application.routes.draw do
   end
   resources :top, only: [:index, :new, :create, :show]
   resources :users, only: [:show,:logout]
-
+  
   namespace :api do
     resources :categories, only: :index, defaults: { format: 'json' }
-    
+  end
+  
   resources :products do
+    collection do
+      get 'products/purchase'
+      post 'products', to: 'products#pay'
+    end
   end
   
   resources :cards, only: [:new, :show,:index ,:delete] do
@@ -25,8 +28,4 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-
-
-  
-  
 end
