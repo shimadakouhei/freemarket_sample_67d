@@ -69,11 +69,11 @@
           .exhibition__contents__main__middle__heart__delivery__sell-form-box
             配送料の負担
             %span.exhibition-essential 必須
-            = f.select :delivery_charge, [ ["送料込み(出品者負担)",1], ["着払い(購入者負担)", 2] ], prompt: "---", id: 'aa_theme'
+            = f.collection_select :delivery_charge, Delivery.all, :id, :name, prompt: "---"
             .exhibition__contents__main__middle__heart__delivery__sell-form-box__area
               発送元の地域
               %span.exhibition-essential 必須
-              = f.collection_select :prefecture, Prefecture.all, :id, :name, {prompt: "---"}
+              = f.collection_select :prefecture, Todoufuken.all, :id, :name, prompt: "---"
             .exhibition__contents__main__middle__heart__delivery__sell-form-box__date
               発送までの日数
               %span.exhibition-essential 必須
