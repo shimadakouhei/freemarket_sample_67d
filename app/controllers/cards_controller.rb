@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   require 'payjp'
-
+  before_action :set_card, only:[:show]
   def index
   end
   
@@ -46,7 +46,6 @@ class CardsController < ApplicationController
 
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new" 
     else
@@ -57,6 +56,10 @@ class CardsController < ApplicationController
   end
 
 
+  private
+  def set_card
+    card = Card.where(user_id: current_user.id).first
+  end
 end
 
   

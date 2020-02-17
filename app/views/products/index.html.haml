@@ -106,7 +106,7 @@
           = link_to product_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
               = image_tag product.images[0].src.url, size: "200x140", class: "aaaaa"
-              商品：#{product.name}
+              = product.name
               %br
               = product.conditions
               %br
