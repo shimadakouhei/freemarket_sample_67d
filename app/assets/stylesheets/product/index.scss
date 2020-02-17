@@ -1,6 +1,6 @@
 .top_body{
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   .headerBox {
     width: 100vw;
     height: 130px;
@@ -352,6 +352,7 @@
       display: flex;
       justify-content: space-around;
       &__ProLeft {
+        overflow: hidden;
         width: 200px;
         height:240px;
         background-color: white;
@@ -417,12 +418,8 @@
     }
     &__app-googleBox3 {
       width: 100vw;
-      // height: 100px;
       position: absolute;
       top: 240px;
-      // left: 600px;
-      
-      
       &__center {
         display: flex;
         width: 280px;
