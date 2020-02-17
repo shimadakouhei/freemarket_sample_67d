@@ -272,7 +272,7 @@
   .PicBox2{
     display: flex;
     justify-content: space-around;
-    padding: 0 100px;
+    padding: 0 250px;
     &__ImageLeft2 {
     position: relative;
     }
@@ -286,7 +286,7 @@
   .MainMessageBox2 {
     display: flex;
     justify-content: space-around;
-    padding: 0 100px;
+    padding: 0 250px;
     font-weight: bold;
     @mixin Message {
       font-size: 24px;
@@ -306,7 +306,7 @@
   .SubMessageBox2 { 
     display: flex;
     justify-content: space-around;
-    padding: 0 100px 40px;
+    padding: 0 250px 40px;
     font-weight: bold;
     &__LeftSubText2 {
       width: 260px;
@@ -374,7 +374,7 @@
       height:250px;
       display: flex;
       justify-content: space-around;
-      padding: 0 130px;
+      padding: 0 400px;
       &__ProLeft {
         width: 200px;
         height:240px;
