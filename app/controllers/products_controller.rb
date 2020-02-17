@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   require 'payjp'
   before_action :authenticate_user!, only: [:purchase,:new]
-  before_action :set_product, except: [:index, :new, :create, :update]
+  before_action :set_product, except: [:index, :new, :create ]
   before_action :set_user, only:[:show,:purchase,:edit ]
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -23,11 +23,9 @@ class ProductsController < ApplicationController
   end
   
   def edit
-    @products = Product.find(params[:id])
   end
   
   def update
-    product = Product.find(params[:id])
     if product.update(product_params)
       flash[:notice] = "編集しました。"
       redirect_to
