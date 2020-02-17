@@ -394,7 +394,7 @@
     width: 100vw;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
     &__ContentMainMessage3 {
-      width: 1350px;
+      width: 100vw;
       height: 200px;
       font-size: 35px;
       font-weight: bold;
@@ -405,7 +405,7 @@
       text-align: center;
     }
     &__ContentSubMessage3 {
-      width: 1300px;
+      width: 100vw;
       height: 200px;
       font-size: 30px;
       font-weight: bold;
@@ -416,23 +416,29 @@
       text-align: center;
     }
     &__app-googleBox3 {
-      width: 380px;
-      height: 100px;
+      width: 100vw;
+      // height: 100px;
       position: absolute;
       top: 240px;
-      left: 500px;
-      display: flex;
-      &__app-storeIcon3 {
-        width: 100px;
-        height: 100px;
-      }
-      .app-store2 {
-        padding-top: 11px;
-      }
-      &__google-playIcon3 {
-        width: 100px;
-        height: 100px;
-      }
+      // left: 600px;
+      
+      
+      &__center {
+        display: flex;
+        width: 280px;
+        text-align: center;
+        margin: 0 auto;
+        &__app-storeIcon3 {
+          width: 100px;
+          height: 100px;
+        }
+        .app-store2 {
+          padding-top: 11px;
+        }
+        &__google-playIcon3 {
+          
+        }
+      }  
     }
   }
 }
