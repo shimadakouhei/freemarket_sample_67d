@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   require 'payjp'
   before_action :authenticate_user!, only: [:purchase,:new]
-  before_action :set_product, except: [:index, :new, :create, :update]
+  before_action :set_product, except: [:index, :new, :create, :update, :destroy]
   
   def index
     @products = Product.includes(:images).order('created_at DESC')
