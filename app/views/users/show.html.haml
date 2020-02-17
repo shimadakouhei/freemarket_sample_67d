@@ -15,9 +15,6 @@
           カテゴリー
         .headerBox__lowerBox__leftBox__brand
           ブランド
-      .headerBox__lowerBox__pan
-        - breadcrumb :mypage
-        = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"
       .headerBox__lowerBox__rightBox
         .headerBox__lowerBox__rightBox__login
           - if user_signed_in?
@@ -30,6 +27,9 @@
               = link_to "ログイン", new_user_session_path, class: "login_btn"
             .headerBox__lowerBox__rightBox__login__registration
               = link_to "新規登録", new_user_registration_path,class: "login_btn"
+    .headerBox__pan
+      - breadcrumb :mypage
+      = breadcrumbs separator: " &rsaquo; ", class: "breadcrumbs-list"
   .mypage
     .mypage__free
       .mypage__free__icon
