@@ -5,6 +5,8 @@ accepts_nested_attributes_for :images, allow_destroy: true
 
 belongs_to :category
 belongs_to :user
+belongs_to :seller, class_name: "User", optional: true
+belongs_to :buyer, class_name: "User", optional: true
 
 validates :delivery_charge, :prefecture, :delivery_day, :text, :price, presence: true
 validates :name,        presence: true,

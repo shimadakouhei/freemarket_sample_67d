@@ -1,27 +1,24 @@
 = render 'layouts/header'
-
 .top-show-main
   .top-show-main__middle
     .top-show-main__middle__name
       = @product.name
     .top-show-main__middle__item-box
       .top-show-main__middle__item-box__main
-        -# = image_tag @images[0].src.url
-        = image_tag "#{@images[0].src}"
+        = image_tag @product.images[0].src.url, size: "560x346"
       .top-show-main__middle__item-box__left
-        -# = image_tag @images[1].src.url, size: "140x77", class: 'pic-left'
-        -# = image_tag @images[2].src.url, size: "140x77", class: 'pic-left'
-        -# = image_tag @images[3].src.url, size: "140x77", class: 'pic-left'
+      - @images.each do |image|
+        = image_tag @product.images[0].src.url, size: "114x85", class: "aaaaa"
     .top-show-main__middle__price
       .top-show-main__middle__price__main
-        ¥ 
+        ¥
         = @product.price
       .top-show-main__middle__price__sub
         (税込)送料込み
       .top-show-main__middle__price__box1
-        .top-show-main__middle__price__box1__purchase 
+        .top-show-main__middle__price__box1__purchase
           - if user_signed_in? && current_user.id == @product.user_id
-            = link_to "商品の編集", edit_product_path(current_user),class: "btn1"
+            = link_to "商品の編集", edit_product_path(@product),class: "btn1"
             %br/
             %br/
             %br/
@@ -29,20 +26,21 @@
             %br/
             %br/
             %br/
-            -# = link_to "商品の削除", root_path, method: :destroy ,class: "btn2"
-            -# = link_to "商品の削除", product_path(params[:id]), method: :delete, class:"btn2"
             = link_to '削除', "/products/#{@product.id}", method: :delete, class:"btn2"
-          - else  
-            = link_to "購入画面に進む", cards_buy_path, class: "btn1"
+          - elsif @product.buyer_id.present? 
+            .disabled-button
+              売り切れました
+          - else
+            = link_to "購入画面に進む",  purchase_product_path, class: "btn1"
+            
     .top-show-main__middle__title
-      = @product.name
     .top-show-main__middle__big-table
       %table.top-show-main-table
         %tr.top-show-main-record
           %th.top-show-main-head
             出品者
           %td.top-show-main-date
-            hoge
+            = @user.nickname
         %tr.top-show-main-record
           %th.top-show-main-head
             カテゴリー
@@ -102,3 +100,13 @@
   .top-show-main__more
     = link_to 'メンズをもっと見る', '/#/', class: 'more-mens'
 = render 'layouts/footer'
+
+
+
+
+
+
+
+
+
+

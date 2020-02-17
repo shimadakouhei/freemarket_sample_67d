@@ -78,8 +78,10 @@ Things you may want to cover:
 ## cards テーブル
 |Column|Type|Options|
 |------|----|-------|
-|pay_id|integer|null:false|
+|card_id|integer|null:false|
 |user_id|integer|null:false foreign_key: true|
+|customer_id|istring|null:false|
+
 
 ## Association
 - belongs_to:user
@@ -88,7 +90,7 @@ Things you may want to cover:
 ## images テーブル
 |Column|Type|Options|
 |------|----|-------|
-|picture|string|null:false|
+|src|string|null:false|
 |products_id|integer|null:false,foreign_key: true|
 
 ## Association
