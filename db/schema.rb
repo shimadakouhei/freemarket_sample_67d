@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_02_14_062911) do
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "product"
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
