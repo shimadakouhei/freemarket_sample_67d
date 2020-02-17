@@ -12,6 +12,8 @@ validates :name,        presence: true,
 validates :conditions,  presence: true,
                         length: { minimum: 1, maximum: 1000 }
 
+validates :images,      presence: true
+
 extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :todoufuken
   belongs_to_active_hash :delivery

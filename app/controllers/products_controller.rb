@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create, :update]
+  before_action :authenticate_user!, only: [:new]
     def index
       @products = Product.includes(:images).order('created_at DESC')
     end
@@ -12,7 +13,7 @@ class ProductsController < ApplicationController
     def create
       @product = Product.new(product_params)
       if @product.save
-        redirect_to root_path
+        redirect_to root_path, notice: 'Event was successfully created.'
       else
         render :new
       end
