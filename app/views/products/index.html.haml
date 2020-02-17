@@ -102,7 +102,7 @@
         - @products.first(3).each do |product|
           = link_to product_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
-              = image_tag "#{product.images[0][:src]}", size: "200x140", class: "aaaaa"
+              = image_tag product.images[0].src.url, size: "200x140", class: "aaaaa"
               商品：#{product.name}
               %br
               状態：#{product.conditions}
@@ -118,7 +118,7 @@
         - @products.last(3).each do |product|
           = link_to product_path(product.id) do
             .ProsBox__ProsBoxU__ProLeft
-              = image_tag "#{product.images[0][:src]}", size: "200x140", class: "aaaaa"
+              = image_tag product.images[0].src.url, size: "200x140", class: "aaaaa"
               商品：#{product.name}
               %br
               状態：#{product.conditions}
