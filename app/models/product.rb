@@ -8,6 +8,14 @@ belongs_to :user
 belongs_to :seller, class_name: "User", optional: true
 belongs_to :buyer, class_name: "User", optional: true
 
+validates :delivery_charge, :prefecture, :delivery_day, :text, :price, presence: true
+validates :name,        presence: true,
+                        length: { minimum: 1, maximum: 40 }
+validates :conditions,  presence: true,
+                        length: { minimum: 1, maximum: 1000 }
+
+validates :images,      presence: true
+
 extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :todoufuken
   belongs_to_active_hash :delivery

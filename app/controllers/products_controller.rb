@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   require 'payjp'
   before_action :authenticate_user!, only: [:purchase,:new]
   before_action :set_product, except: [:index, :new, :create ]
@@ -11,14 +12,18 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.new
 
+
   end
 
-  def create
-    @product = Product.new(product_params)
-    if @product.save!
-      redirect_to root_path
-    else
-      render :new
+
+    def create
+      @product = Product.new(product_params)
+      if @product.save
+        redirect_to root_path, notice: 'Event was successfully created.'
+      else
+        render :new
+      end
+
     end
   end
   
