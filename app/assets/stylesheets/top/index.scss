@@ -80,6 +80,7 @@
     .TopImage {
       position: relative;  
       &__mainMessage {
+        padding-left: 100px;
         width: 100vw;
         height: 200px;
         font-size: 60px;
@@ -90,6 +91,7 @@
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
       }
       &__subMessage {
+        padding-left: 100px;
         width: 370px;
         height: 200px;
         font-size: 22px;
@@ -105,6 +107,7 @@
         position: absolute;
         top: 370px;
         display: flex;
+        padding-left: 100px;
         justify-content:space-around;
         &__app-storeIcon {
           width: 100px;
@@ -217,6 +220,7 @@
     position: relative;
     width: 100vw;
     @mixin Content {
+      padding-left: 100px;
       width: 100vw;
       height: 200px;
       color: white;
@@ -241,6 +245,7 @@
       top: 260px;
       left: 68px;
       display: flex;
+      padding-left: 80px;
       .app-store{
         padding-top: 12px;
       }
@@ -272,7 +277,7 @@
   .PicBox2{
     display: flex;
     justify-content: space-around;
-    padding: 0 100px;
+    padding: 0 250px;
     &__ImageLeft2 {
     position: relative;
     }
@@ -286,7 +291,7 @@
   .MainMessageBox2 {
     display: flex;
     justify-content: space-around;
-    padding: 0 100px;
+    padding: 0 250px;
     font-weight: bold;
     @mixin Message {
       font-size: 24px;
@@ -306,7 +311,7 @@
   .SubMessageBox2 { 
     display: flex;
     justify-content: space-around;
-    padding: 0 100px 40px;
+    padding: 0 250px 40px;
     font-weight: bold;
     &__LeftSubText2 {
       width: 260px;
@@ -374,7 +379,7 @@
       height:250px;
       display: flex;
       justify-content: space-around;
-      padding: 0 130px;
+      padding: 0 200px;
       &__ProLeft {
         width: 200px;
         height:240px;
@@ -389,7 +394,7 @@
     width: 100vw;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
     &__ContentMainMessage3 {
-      width: 1350px;
+      width: 100vw;
       height: 200px;
       font-size: 35px;
       font-weight: bold;
@@ -400,7 +405,7 @@
       text-align: center;
     }
     &__ContentSubMessage3 {
-      width: 1300px;
+      width: 100vw;
       height: 200px;
       font-size: 30px;
       font-weight: bold;
@@ -411,23 +416,29 @@
       text-align: center;
     }
     &__app-googleBox3 {
-      width: 380px;
-      height: 100px;
+      width: 100vw;
+      // height: 100px;
       position: absolute;
       top: 240px;
-      left: 500px;
-      display: flex;
-      &__app-storeIcon3 {
-        width: 100px;
-        height: 100px;
-      }
-      .app-store2 {
-        padding-top: 11px;
-      }
-      &__google-playIcon3 {
-        width: 100px;
-        height: 100px;
-      }
+      // left: 600px;
+      
+      
+      &__center {
+        display: flex;
+        width: 280px;
+        text-align: center;
+        margin: 0 auto;
+        &__app-storeIcon3 {
+          width: 100px;
+          height: 100px;
+        }
+        .app-store2 {
+          padding-top: 11px;
+        }
+        &__google-playIcon3 {
+          
+        }
+      }  
     }
   }
 }
