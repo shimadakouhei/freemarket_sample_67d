@@ -12,10 +12,6 @@ class ProductsController < ApplicationController
     @product.images.new
   end
 
-  
-
-    
-
   def create
     @product = Product.new(product_params)
     if @product.save
