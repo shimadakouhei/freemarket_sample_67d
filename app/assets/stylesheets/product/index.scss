@@ -3,7 +3,7 @@
   overflow: hidden;
   .headerBox {
     width: 100vw;
-    height: 130px;
+    height: 180px;
     &__upperBox {
       width:900px;
       height: 70px;
@@ -40,14 +40,6 @@
         width: 230px;
         height: 60px;
         display: flex;
-      &__pan {
-        width: 230px;
-        height: 60px;
-        color: red;
-      }
-      .breadcrumbs-list {
-        color: red;
-      }
         &__category{
           width: 80px;
           height: 45px;
@@ -72,6 +64,14 @@
           }
         }
       }
+    }
+    &__pan {
+ 
+    }
+    .breadcrumbs-list {
+      color: black;
+      width: 100%;
+      text-align: center;
     }
   }
   .Topimage{

@@ -83,3 +83,4 @@ gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'active_hash'
 gem "gretel"
+gem 'dotenv-rails'

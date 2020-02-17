@@ -12,14 +12,19 @@ class ProductsController < ApplicationController
     @product.images.new
   end
 
+  
+
+    
+
   def create
     @product = Product.new(product_params)
-    if @product.save!
-      redirect_to root_path
+    if @product.save
+      redirect_to root_path, notice: 'Event was successfully created.'
     else
       render :new
     end
   end
+ 
   
   def edit
     @products = Product.find(params[:id])
