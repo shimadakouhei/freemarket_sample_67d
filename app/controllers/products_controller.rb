@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   require 'payjp'
   before_action :authenticate_user!, only: [:purchase,:new]
-  before_action :set_product, except: [:index, :new, :create ]
-  before_action :set_user, only:[:show,:purchase,:edit ]
+  before_action :set_product, except: [:index, :new, :create, :update]
+  
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
@@ -23,9 +23,11 @@ class ProductsController < ApplicationController
   end
   
   def edit
+    @products = Product.find(params[:id])
   end
   
   def update
+    product = Product.find(params[:id])
     if product.update(product_params)
       flash[:notice] = "編集しました。"
       redirect_to
@@ -36,7 +38,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-
     if @product.user_id = current_user.id && @product.destroy
       flash[:notice] = "削除しました。"
     else
@@ -48,11 +49,14 @@ class ProductsController < ApplicationController
   
   def show
     @images = @product.images
+    @user = User.find_by(params[:id])
   end
   
   def purchase 
     card = Card.where(user_id: current_user.id).first
+    # @product = Product.find_by(id:params[:id])
     @address = Address.find_by(params[:id])
+    @user = User.find_by(params[:id])
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -91,10 +95,6 @@ class ProductsController < ApplicationController
       
   def set_product
     @product = Product.find(params[:id])
-  end
-
-  def set_user
-    @user = User.find_by(params[:id])
   end
 
 end
