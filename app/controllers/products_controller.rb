@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
   
   def purchase 
     card = Card.where(user_id: current_user.id).first
-    @product = Product.find_by(params[:id])
+    @product = Product.find_by(id:params[:id])
     @address = Address.find_by(params[:id])
     @user = User.find_by(params[:id])
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
@@ -74,7 +74,7 @@ class ProductsController < ApplicationController
 
   def pay
       card = Card.where(user_id: current_user.id).first
-      @product = Product.find_by(params[:id])
+      @product = Product.find_by(id: params[:id])
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       charge = Payjp::Charge.create(
         amount: @product.price,
