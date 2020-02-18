@@ -16,25 +16,23 @@
         = @product.price
       .top-show-main__middle__price__sub
         (税込)送料込み
-      .top-show-main__middle__price__box1
-        .top-show-main__middle__price__box1__purchase
-          - if user_signed_in? && current_user.id == @product.user_id
-            = link_to "商品の編集", edit_product_path(@product),class: "btn1"
-            %br/
-            %br/
-            %br/
-            or
-            %br/
-            %br/
-            %br/
-            = link_to '削除', "/products/#{@product.id}", method: :delete, class:"btn2"
-          - elsif @product.buyer_id.present? 
-            .disabled-button
-              売り切れました
-          - else
-            = link_to "購入画面に進む",  purchase_product_path, class: "btn1"
+    .top-show-main__middle__box1
+      .top-show-main__middle__box1__purchase
+        - if user_signed_in? && current_user.id == @product.user_id
+          = link_to "商品の編集", edit_product_path(@product),class: "btn1"
+          %br/
+          %br/
+          or
+          %br/
+          %br/
+          = link_to '削除', "/products/#{@product.id}", method: :delete, class:"btn2"
+        - elsif @product.buyer_id.present? 
+          .disabled-button
+            売り切れました
+        - else
+          = link_to "購入画面に進む",  purchase_product_path, class: "btn1"
             
-    .top-show-main__middle__title
+    .top-show-main__middle
     .top-show-main__middle__big-table
       %table.top-show-main-table
         %tr.top-show-main-record
@@ -46,7 +44,7 @@
           %th.top-show-main-head
             カテゴリー
           %td.top-show-main-date
-            = @product.category.name
+            = @categories.name
         %tr.top-show-main-record
           %th.top-show-main-head
             商品説明

@@ -50,6 +50,7 @@ class ProductsController < ApplicationController
   
   def show
     @images = @product.images
+    @categories = Category.find(params[:id])
     @user = User.find_by(params[:id])
 
   end
