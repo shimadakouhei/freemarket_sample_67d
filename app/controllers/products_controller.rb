@@ -38,6 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
     if  @product.destroy
       flash[:notice] = "削除しました。"
     else
