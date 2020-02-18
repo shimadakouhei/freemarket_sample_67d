@@ -50,6 +50,7 @@ class ProductsController < ApplicationController
   def show
     @images = @product.images
     @user = User.find_by(params[:id])
+
   end
   
   def purchase 
