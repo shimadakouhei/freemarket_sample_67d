@@ -29,7 +29,6 @@ $(function(){
         }
     })
     .fail(function(){
-
     })
 
   })

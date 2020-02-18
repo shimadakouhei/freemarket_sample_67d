@@ -1,0 +1,566 @@
+.top_body{
+  width: 100vw;
+  overflow-x: hidden;
+}
+.headerBox {
+  width: 100vw;
+  height: 130px;
+  &__upperBox {
+    width:900px;
+    height: 70px;
+    display: flex;
+    margin: auto;
+    padding-top: 10px;
+    &__furimaIcon {
+    padding-right: 30px;
+    width: 160px;
+    height: 60px;
+    }
+    &__search {
+    width: 900px;
+    height: 40px;
+    display: flex;
+      &__text {
+      width: 600px;
+      height: 40px;
+      }
+    }
+    &__searchIcon {
+    width: 50px;
+    height: 44px;
+    background-color: #3CCACE;
+
+    }
+  }
+  &__lowerBox {
+    width: 900px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    &__leftBox{
+      width: 230px;
+      height: 60px;
+      display: flex;
+      
+      &__category{
+        width: 80px;
+        height: 45px;
+        padding-right: 30px;
+    }
+      &__brand{
+        width: 80px;
+        height: 45px;
+      }
+  }
+    &__rightBox{
+      width: 230px;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      &__login {
+        display: flex;
+        height: 45px; 
+      }
+      &__registration {
+        width: 100px;
+        height: 45px;
+      }
+    }
+  }
+}
+.TopImage_main{
+  height: 3520px;
+  
+.TopImage {
+position: relative;
+  &__mainMessage {
+  width: 100vw;
+  height: 200px;
+  font-size: 60px;
+  position: absolute;
+  top: 200px;
+  left: 60px;
+  color: white;
+  }
+  &__subMessage {
+  width: 370px;
+  height: 200px;
+  font-size: 18px;
+  position: absolute;
+  top: 300px;
+  left: 60px;
+  color: white;
+  }
+  &__app-googleBox {
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: 370px;
+  display: flex;
+  justify-content:space-around;
+
+  &__app-storeIcon {
+  width: 100px;
+  height: 100px;
+  padding-top: 30px;
+  }
+  &__google-playIcon {
+  width: 100px;
+  height: 100px;
+  padding-top: 19px;
+  }
+  .google-play{
+    width: 180px;
+    height: 65px;
+  }
+  }
+  }
+  .MiddleTop {
+    font-size: 24px;
+    width: 370px;
+    height: 40px;
+    margin-left: 282px;
+    margin-top: 55px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin: auto;
+  }
+  .MiddleTop:after {
+    content:'________';
+    display: block;
+    color:#3CCACE;
+
+  }
+  .PicBox{
+    display: flex;
+    justify-content: space-around;
+    &__ImageLeft {
+    width: 300px;
+    height: 300px;
+    position: relative;
+
+      &__PicNum1 {
+      position: absolute;
+      top: 0px;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      color: white;
+      background-color: #3CCACE;
+      text-align: center;
+      }
+    }
+    &__ImageMiddle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+      &__PicNum2 {
+      position: absolute;
+      top: 0px;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      color: white;
+      background-color: #3CCACE;
+      text-align: center;
+      }
+    }
+    &__ImageRight {
+    position: relative;
+    width: 300px;
+    height: 300px;
+      &__PicNum3 {
+      position: absolute;
+      top: 0px;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      color: white;
+      background-color: #3CCACE;
+      text-align: center;
+      }
+    }
+  }
+  .MainMessageBox {
+    display: flex;
+    justify-content: space-around;
+    &__LeftMessage {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .s {
+      color: #3CCACE;
+    }
+    &__MiddleMessage {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    &__RightMessage {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .SubMessageBox { 
+    display: flex;
+    justify-content: space-around;
+    &__LeftSubText {
+      width: 280px;
+    }
+    &__MiddleSubText {
+      width: 280px;
+    }
+    &__RightSubText {
+      width: 280px;
+    }
+  }
+  .ContenrMainImage {
+    position: relative;
+    width: 100vw;
+    &__ContentMainMessage {
+    width: 100vw;
+    height: 200px;
+    font-size: 30px;
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    color: white;
+    }
+    &__ContentSubMessage {
+    width: 100vw;
+    height: 200px;
+    font-size: 20px;
+    position: absolute;
+    top: 150px;
+    left: 60px;
+    color: white;
+    }
+    &__app-googleBox2 {
+      width: 400px;
+      height: 100px;
+      position: absolute;
+      top: 260px;
+      left: 68px;
+      display: flex;
+
+      &__app-storeIcon2 {
+      width: 100px;
+      height: 100px;
+    }
+      .app-store{
+        padding-top: 12px;
+      
+      }
+      &__google-playIcon2 {
+      width: 100px;
+      height: 100px;
+      }
+      }
+  }
+  .MiddleTop2 {
+    font-size: 24px;
+    width: 370px;
+    height: 40px;
+    margin-left: 360px;
+    margin-top: 55px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin: auto;
+  }
+  .MiddleTop2::after {
+    content:'_______';
+    color:#3CCACE;
+    display: block;
+
+  }
+  .PicBox2{
+    display: flex;
+    justify-content: space-around;
+    &__ImageLeft2 {
+    width: 300px;
+    height: 300px;
+    position: relative;
+
+      
+    }
+    &__ImageMiddle2 {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    }
+    &__ImageRight2 {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    }
+  }
+  .MainMessageBox2 {
+    display: flex;
+    justify-content: space-around;
+    &__LeftMessage2 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+    &__MiddleMessage2 {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    &__RightMessage2 {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .SubMessageBox2 { 
+    display: flex;
+    justify-content: space-around;
+    &__LeftSubText2 {
+      width: 260px;
+    }
+    &__MiddleSubText2 {
+      width: 260px;
+    }
+    &__RightSubText2 {
+      width: 260px;
+    }
+  }
+
+.PicUpCategory {
+  font-size: 24px;
+  width: 100vw;
+  height: 40px;
+  text-align: center;
+  padding-top: 30px;
+  background-color: gainsboro
+}
+.ProsBox {
+width: 100vw;
+height:800px;
+background-color: gainsboro;
+  &__MainTopTopic {
+  font-size: 24px;
+  width: 100vw;
+  height:30px;
+  text-align: center;
+  color: #3CCACE;
+
+  }
+  &__ProsBoxU {
+  width: 100vw;
+  height:250px;
+  display: flex;
+  justify-content: space-around;
+    &__ProLeft {
+    width: 200px;
+    height:240px;
+    background-color: ghostwhite;
+      &__Info1 {
+      width: 200px;
+      height:60px;
+        &__UnderInfo1 ul li{
+          display: inline-block;  
+        }
+        .z {
+          padding-right: 95px;
+        }
+
+
+      }
+    }
+    &__ProMiddle {
+    width: 200px;
+    height:240px;
+    background-color: ghostwhite;
+      &__Info2 {
+        &__UnderInfo2 ul li{
+          display: inline-block;  
+        }
+        .z {
+          padding-right: 95px;
+        }
+      }
+    }
+    &__ProRight {
+    width: 200px;
+    height:240px;
+    background-color: ghostwhite;
+      &__Info3 {
+        &__UnderInfo3 ul li{
+          display: inline-block;  
+        }
+        .z {
+          padding-right: 95px;
+        }
+      }
+    }
+  }
+}
+.PicUpBrand {
+  font-size: 24px;
+  width: 100vw;
+  height: 40px;
+  text-align: center;
+  background-color: gainsboro
+}
+.ProsBox {
+width: 100vw;
+height:400px;
+  &__Archiver {
+  font-size: 24px;
+  width: 100vw;
+  height:30px;
+  text-align: center;
+  color: #3CCACE;
+
+  }
+  &__ProsBoxU {
+  width: 100vw;
+  height:250px;
+  display: flex;
+  justify-content: space-around;
+
+    &__ProLeft {
+    width: 200px;
+    height:240px;
+    font-size: 15px;
+    color: black;
+      &__Info1 {
+      width: 200px;
+      height:60px;
+        &__UnderInfo1 ul li{
+          display: inline-block;  
+        }
+        .z {
+          padding-right: 95px;
+        }
+
+
+      }
+    }
+    &__ProMiddle {
+    width: 200px;
+    height:240px;
+      &__Info2 {
+        &__UnderInfo2 ul li{
+          display: inline-block;  
+        }
+        .z {
+          padding-right: 95px;
+        }
+      }
+    }
+    &__ProRight {
+    width: 200px;
+    height:240px;
+      &__Info3 {
+        &__UnderInfo3 ul li{
+          display: inline-block;  
+        }
+        .z {
+          padding-right: 95px;
+        }
+      }
+    }
+  }
+}
+.ContenrMainImage3 {
+  position: relative;
+  width: 100vw;
+  &__ContentMainMessage3 {
+  width: 1350px;
+  height: 200px;
+  font-size: 30px;
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  text-align: center;
+  color: white;
+ 
+  }
+  &__ContentSubMessage3 {
+  width: 1300px;
+  height: 200px;
+  font-size: 20px;
+  position: absolute;
+  top: 150px;
+  left: 60px;
+  text-align: center;
+  color: white;
+  }
+  &__app-googleBox3 {
+    width: 380px;
+    height: 100px;
+    position: absolute;
+    top: 240px;
+    left: 500px;
+    display: flex;
+    &__app-storeIcon3 {
+    width: 100px;
+    height: 100px;
+    }
+    .app-store2{
+      padding-top: 11px;
+    }
+    &__google-playIcon3 {
+    width: 100px;
+    height: 100px;
+    }
+    }
+}
+}
+.TopPageFooter{
+  width: 100vw;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #272727;
+  color: white;
+}
+
+.WhiteFURIMAicon {
+  width: 100vw;
+  height: 100px;
+  background-color:#272727;
+  text-align: center;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+p.sub {
+  color: white;
+}
+
+.fixed_btn{
+  h1 {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  width: 120px;
+  background: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.logaut_btn{
+  color:black;
+}
+
+.notification{
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
