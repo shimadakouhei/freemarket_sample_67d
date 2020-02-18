@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   require 'payjp'
   before_action :authenticate_user!, only: [:purchase,:new]
-  before_action :set_product, except: [:index, :new, :create, :update, :destroy]
+  before_action :set_product, except: [:index, :new, :create, :update]
   
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -38,6 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
     if  @product.destroy
       flash[:notice] = "削除しました。"
     else
