@@ -16,6 +16,7 @@ validates :conditions,  presence: true,
 
 validates :images,      presence: true
 
+  validates :name, :price, :text, presence: true
 extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :todoufuken
   belongs_to_active_hash :delivery
