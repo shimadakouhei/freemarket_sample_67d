@@ -12,28 +12,27 @@
             出品画像
             %span.exhibition-essential
               必須
-            .exhibition__contents__main__middle__heart__upload-box__title_a  
+            .exhibition__contents__main__middle__heart__upload-box__title_a
               最大10枚までアップロードできます
             .exhibition__contents__main__middle__heart__upload-box__explain
             .exhibition__contents__main__middle__heart__upload-box__item
-              - @images.each do |image|
-                = image_tag @product.images[0].src.url, size: "114x85", class: "aaaaa"
-            -# = f.fields_for :images do |i|
-            -#   =i.file_field :images
-            -#   %b
-            -#     ドラッグアンドドロップ
-            -#     %br
-            -#     またはクリックしてファイルをアップロード
-            = f.fields_for :images do |image|
-              .js-file_group{"data-index":"#{image.index}"}
-                = image.file_field :src, class: 'js-file'
-                %span.js-remove 削除
-              - if @product.persisted?
-                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              - @product.images.each do |image|
+                = image_tag image.src.url, size: "114x85", class: "aaaaa"
+              = f.fields_for :images do |image|
+                -# = image.file_field :images
+
+                
+                .js-file_group{"data-index":"#{image.index}"}
+                  = image.file_field :src, class: 'js-file'
+                  %span.js-remove 削除
+                - if @product.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
               - if @product.persisted?
                 .js-file_group{"data-index" => "#{@product.images.count}"}
                   = file_field_tag :src, name: "product[images_attributes][#{@product.images.count}][src]", class: 'js-file'
-                  .js-remove 削除
+                  %span.js-remove 削除
+             
+
         .exhibition__contents__main__middle__heart__sell-content
           .exhibition__contents__main__middle__heart__sell-content__form-one
             商品名
@@ -46,28 +45,28 @@
         .exhibition__contents__main__middle__heart__detail
           商品の詳細
           .exhibition__contents__main__middle__heart__detail__sell-form-box
-            .exhibition__contents__main__middle__heart__detail__sell-form-box__category
+            .exhibition__contents__main__middle__heart__detail__sell-form-box__category.js-category_box
               カテゴリー
               %span.exhibition-essential 必須
-              = f.select :category_id, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---", id: 'aa_theme'
+              = f.collection_select :category_id, Category.roots, :id, :name,  {prompt: "---"}, class: "js-category"
             .exhibition__contents__main__middle__heart__detail__sell-form-box__status
               商品の状態
               %span.exhibition-essential 必須
-              = f.select :conditions, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], prompt: "---", id: 'aa_theme'
+              = f.select :conditions, [ ["新品、未使用","新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], prompt: "---", id: 'aa_theme'
         .exhibition__contents__main__middle__heart__delivery
           配送について
           .exhibition__contents__main__middle__heart__delivery__sell-form-box
             配送料の負担
             %span.exhibition-essential 必須
-            = f.select :delivery_charge, [ ["送料込み(出品者負担)",1], ["着払い(購入者負担)", 2] ], prompt: "---", id: 'aa_theme'
+            = f.select :delivery_charge, [ ["送料込み(出品者負担)","送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"] ], prompt: "---", id: 'aa_theme'
             .exhibition__contents__main__middle__heart__delivery__sell-form-box__area
               発送元の地域
               %span.exhibition-essential 必須
-              = f.select :prefecture, [ ["北海道",1], ["青森県", 2], ["岩手県", 3], ["宮城県", 4], ["秋田県", 5], ["山形県", 6], ["福島県", 7], ["茨城県", 8], ["栃木県", 9], ["群馬県", 10], ["埼玉県", 11], ["千葉県", 12], ["東京都", 13], ["神奈川県", 14], ["新潟県", 15], ["富山県", 16], ["石川県", 17], ["福井県", 18], ["山梨県", 19], ["長野県", 20], ["岐阜県", 21], ["静岡県", 22], ["愛知県", 23], ["三重県", 24], ["滋賀県", 25], ["京都府", 26], ["大阪府", 27], ["京都府", 28], ["奈良県", 29], ["和歌山県", 30], ["鳥取県", 31], ["島根県", 32], ["岡山県", 33], ["広島県", 34], ["山口県", 35], ["徳島県", 36], ["香川県", 37], ["愛媛県", 38], ["高知県", 39], ["福岡県", 40], ["佐賀県", 41], ["長崎県", 42], ["熊本県", 43], ["大分県", 44], ["宮崎県", 45], ["鹿児島県", 46], ["沖縄県", 47], ["未定", 48] ], prompt: "---", id: 'aa_theme'
+              = f.select :prefecture, [ ["北海道","北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県","千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県","新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県","山梨県"], ["長野県","長野県"], ["岐阜県","岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["京都府", "京都府"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"], ["岡山県", "岡山県"], ["広島県", "広島県"], ["山口県", "山口県"], ["徳島県", "徳島県"], ["香川県", "香川県"], ["愛媛県", "愛媛県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮崎県", "宮崎県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"], ["未定", "未定"] ], prompt: "---", id: 'aa_theme'
             .exhibition__contents__main__middle__heart__delivery__sell-form-box__date
               発送までの日数
               %span.exhibition-essential 必須
-              = f.select :delivery_day, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], prompt: "---", id: 'aa_theme'
+              = f.select :delivery_day, [ ["1~2日で発送","1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"] ], prompt: "---", id: 'aa_theme'
         .exhibition__contents__main__middle__heart__money
           販売価格(300~9,999,999)
           .exhibition__contents__main__middle__heart__money__sell-box
@@ -92,7 +91,7 @@
           に同意したことになります。
           .exhibition__contents__main__middle__heart__bottom__display
             -# = link_to '出品する', '/#/', class: 'hoge-btn'
-            = f.submit "編集する"
+            = f.submit "編集する", class: 'exhibition_btn'
           .exhibition__contents__main__middle__heart__bottom__back
             = link_to 'もどる', '/#/', class: 'hoge-btn'
   .exhibition__footer

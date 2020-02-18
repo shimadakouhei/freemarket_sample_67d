@@ -51,7 +51,7 @@
             .exhibition__contents__main__middle__heart__detail__sell-form-box__status
               商品の状態
               %span.exhibition-essential 必須
-              = f.select :conditions, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], prompt: "---", id: 'aa_theme'
+              = f.select :conditions, [ ["新品、未使用","新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], prompt: "---", id: 'aa_theme'
         .exhibition__contents__main__middle__heart__delivery
           配送について
           .exhibition__contents__main__middle__heart__delivery__sell-form-box
@@ -65,7 +65,7 @@
             .exhibition__contents__main__middle__heart__delivery__sell-form-box__date
               発送までの日数
               %span.exhibition-essential 必須
-              = f.select :delivery_day, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], prompt: "---", id: 'aa_theme'
+              = f.select :delivery_day, [ ["1.1~2日で発送","1~2日で発送"], ["2.2~3日で発送","2~3日で発送" ], ["3.4~7日で発送", "4~7日で発送"] ], prompt: "---", id: 'aa_theme'
         .exhibition__contents__main__middle__heart__money
           販売価格(300~9,999,999)
           .exhibition__contents__main__middle__heart__money__sell-box
@@ -101,21 +101,3 @@
     = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
     %br
     %small © FURIMA, Inc.
-
-
-
-
-
-
-
-
-
-
-
-
-
-yukihiro_hashimoto へのメッセージ
-
-
-ダウンロード
-
