@@ -27,5 +27,5 @@
 /config/master.key
 .DS_Store
 app/assets/.DS_Store
-public/uploads/
 /.env
+public/uploads/
