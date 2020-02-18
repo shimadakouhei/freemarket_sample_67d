@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
-  resources :top, only: [:index, :new, :create, :show]
+  resources :top, only: [:index, :new, :create, :show, :edit, :update]
   resources :users, only: [:show,:logout]
   
   namespace :api do
