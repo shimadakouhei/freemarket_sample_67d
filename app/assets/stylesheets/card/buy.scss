@@ -55,7 +55,7 @@
       }  
       &__info {
         font-size: 22px;
-        height: 500px;
+    
         margin: 0 auto;
         padding: 40px 180px;
         &__paybox{
@@ -106,10 +106,8 @@
           padding-bottom: 20px;
         }
         &__purchase {
-          padding-top: 20px;  
+          padding-top: 40px;
           &__button{
-            border: 1px solid #ea352d;
-            background: #ea352d;
           }
         }
       }
@@ -148,12 +146,11 @@
   color: rgb(12, 170, 218);
 }
 .ccc {
-  padding: 15px 50px;
-  text-decoration: none;
-  font-size: 14px;
-  color: white;
+  padding: 15px 40px;
+  font-size: 20px;
   margin: 0 auto;
   display: block;
-  text-align: center;
-  font-weight: bolder;
+  width: 300px;
+  color: white;
+  background-color: red;
 }

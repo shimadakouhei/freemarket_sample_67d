@@ -1,9 +1,9 @@
 .top_body{
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   .headerBox {
     width: 100vw;
-    height: 130px;
+    height: 180px;
     &__upperBox {
       width:900px;
       height: 70px;
@@ -40,14 +40,6 @@
         width: 230px;
         height: 60px;
         display: flex;
-      &__pan {
-        width: 230px;
-        height: 60px;
-        color: red;
-      }
-      .breadcrumbs-list {
-        color: red;
-      }
         &__category{
           width: 80px;
           height: 45px;
@@ -73,6 +65,14 @@
         }
       }
     }
+    &__pan {
+ 
+    }
+    .breadcrumbs-list {
+      color: black;
+      width: 100%;
+      text-align: center;
+    }
   }
   .Topimage{
     height: 3520px;
@@ -80,6 +80,7 @@
     .TopImage {
       position: relative;  
       &__mainMessage {
+        padding-left: 100px;
         width: 100vw;
         height: 200px;
         font-size: 60px;
@@ -90,6 +91,7 @@
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
       }
       &__subMessage {
+        padding-left: 100px;
         width: 370px;
         height: 200px;
         font-size: 22px;
@@ -105,6 +107,7 @@
         position: absolute;
         top: 370px;
         display: flex;
+        padding-left: 100px;
         justify-content:space-around;
         &__app-storeIcon {
           width: 100px;
@@ -217,6 +220,7 @@
     position: relative;
     width: 100vw;
     @mixin Content {
+      padding-left: 100px;
       width: 100vw;
       height: 200px;
       color: white;
@@ -241,6 +245,7 @@
       top: 260px;
       left: 68px;
       display: flex;
+      padding-left: 80px;
       .app-store{
         padding-top: 12px;
       }
@@ -272,7 +277,7 @@
   .PicBox2{
     display: flex;
     justify-content: space-around;
-    padding: 0 100px;
+    padding: 0 250px;
     &__ImageLeft2 {
     position: relative;
     }
@@ -286,7 +291,7 @@
   .MainMessageBox2 {
     display: flex;
     justify-content: space-around;
-    padding: 0 100px;
+    padding: 0 250px;
     font-weight: bold;
     @mixin Message {
       font-size: 24px;
@@ -306,7 +311,7 @@
   .SubMessageBox2 { 
     display: flex;
     justify-content: space-around;
-    padding: 0 100px 40px;
+    padding: 0 250px 40px;
     font-weight: bold;
     &__LeftSubText2 {
       width: 260px;
@@ -347,6 +352,7 @@
       display: flex;
       justify-content: space-around;
       &__ProLeft {
+        overflow: hidden;
         width: 200px;
         height:240px;
         background-color: white;
@@ -374,7 +380,7 @@
       height:250px;
       display: flex;
       justify-content: space-around;
-      padding: 0 130px;
+      padding: 0 200px;
       &__ProLeft {
         width: 200px;
         height:240px;
@@ -389,7 +395,7 @@
     width: 100vw;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
     &__ContentMainMessage3 {
-      width: 1350px;
+      width: 100vw;
       height: 200px;
       font-size: 35px;
       font-weight: bold;
@@ -400,7 +406,7 @@
       text-align: center;
     }
     &__ContentSubMessage3 {
-      width: 1300px;
+      width: 100vw;
       height: 200px;
       font-size: 30px;
       font-weight: bold;
@@ -411,23 +417,25 @@
       text-align: center;
     }
     &__app-googleBox3 {
-      width: 380px;
-      height: 100px;
+      width: 100vw;
       position: absolute;
       top: 240px;
-      left: 500px;
-      display: flex;
-      &__app-storeIcon3 {
-        width: 100px;
-        height: 100px;
-      }
-      .app-store2 {
-        padding-top: 11px;
-      }
-      &__google-playIcon3 {
-        width: 100px;
-        height: 100px;
-      }
+      &__center {
+        display: flex;
+        width: 280px;
+        text-align: center;
+        margin: 0 auto;
+        &__app-storeIcon3 {
+          width: 100px;
+          height: 100px;
+        }
+        .app-store2 {
+          padding-top: 11px;
+        }
+        &__google-playIcon3 {
+          
+        }
+      }  
     }
   }
 }
@@ -492,4 +500,11 @@ p.sub {
   padding: 9px 6px;
   border-radius: 6px;
   background-color: #3CCACE;
+}
+
+
+.items-box_photo__sold__inner{
+ text-align: center;
+ color: white;
+ background-color: red;
 }

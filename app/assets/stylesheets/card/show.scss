@@ -11,7 +11,9 @@
 
   &__contents{
     background-color: rgb(245, 245, 245);
+    height: 400px;
     &__box{
+      height: 100%;
       width: 700px;
       margin: 0 auto;
       background-color: white;
@@ -25,7 +27,7 @@
         font-weight: bold;
       }
       &__cards {
-        padding: 30px 130px 30px;
+        padding: 100px 130px 100px;
         font-size: 20px;
         font-weight: bold;
         display: flex;
@@ -42,6 +44,7 @@
           font-size: 18px;
           // margin-top: 10px;
           line-height: 30px;
+          padding-top: 20px;
         } 
       }  
     }
@@ -73,4 +76,13 @@
   color: white;
   background-color: red;
   border-radius: 6px;
+}
+.destroy_btn{
+  width: 130px;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  line-height: 48px;
+  font-size: 14px;
 }

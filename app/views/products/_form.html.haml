@@ -73,7 +73,7 @@
             .exhibition__contents__main__middle__heart__delivery__sell-form-box__date
               発送までの日数
               %span.exhibition-essential 必須
-              = f.select :delivery_day, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 2] ], prompt: "---", id: 'aa_theme'
+              = f.select :delivery_day, [ ["1~2日で発送",1], ["2~3日で発送", 2], ["4~7日で発送", 3] ], prompt: "---", id: 'aa_theme'
         .exhibition__contents__main__middle__heart__money
           販売価格(300~9,999,999)
           .exhibition__contents__main__middle__heart__money__sell-box
@@ -101,11 +101,11 @@
           .exhibition__contents__main__middle__heart__bottom__back
             = link_to 'もどる', '/#/', class: 'hoge-btn'
   .exhibition__footer
-  .exhibition__footer__content
-    = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'
-    = link_to 'メルカリ利用規約', '/#', class: 'hoge-last'
-    = link_to '特定商取引に関する表記', '/#', class: 'hoge-last'
-    %br
-    = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
-    %br
-    %small © FURIMA, Inc.
+    .exhibition__footer__content
+      = link_to 'プライバシーポリシー', '/#', class: 'hoge-last'
+      = link_to 'メルカリ利用規約', '/#', class: 'hoge-last'
+      = link_to '特定商取引に関する表記', '/#', class: 'hoge-last'
+      %br
+      = image_tag "logo-white.png", size: "185x49", class: 'hoge-last'
+      %br
+      %small © FURIMA, Inc.

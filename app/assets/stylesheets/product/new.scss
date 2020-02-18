@@ -11,12 +11,10 @@
 }
 .exhibition__contents__main {
   background-color: rgb(245, 245, 245);
-  height: 240vh;
   width: 100%;
   &__middle {
     width: 700px;
     margin: 0 auto;
-    height: 250vh;
     background-color: white;
     &__head {
       padding: 32px 16px;
@@ -48,7 +46,7 @@
         }
       }
       &__sell-content {
-        padding: 40px;
+        padding: 0 40px 40px;
         height: 315px;
         width: 620px;
         &__form-one {
@@ -73,7 +71,7 @@
       }
       &__detail {
         @include exhibition-1;
-        height: 181px;
+        height: 90px;
         width: 620px;
         color: #888;
         font-size: 14px;
@@ -92,13 +90,12 @@
       }
       &__delivery {
         @include exhibition-1;
-        height: 291px;
+        height: 170px;
         width: 620px;
         color: #888;
         font-size: 14px;
         &__sell-form-box {
           float: right;
-          height: 290px;
           width: 400px;
           color: black;
           &__area {
@@ -106,6 +103,7 @@
           }
           &__date {
             margin: 40px 0 0;
+            
           }
         }
       }
@@ -155,14 +153,16 @@
         width: 620px;
         font-size: 14px;
         &__display {
-          margin: 40px 0 0;
-          height: 50px;
-          width: 100%;
-          background-color: red;
-          text-align: center;
-          line-height: 50px;
-          color: white;
-          cursor: pointer;
+          .exhibition_btn{
+            margin: 40px 0 0;
+            height: 50px;
+            width: 100%;
+            background-color: red;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            cursor: pointer;
+          }
         }
         &__back {
           height: 50px;
@@ -180,7 +180,6 @@
 }
 .exhibition__footer {
   width: 100%;
-  height: 220px;
   background-color: rgb(245, 245, 245);
   &__content {
     height: 140px;

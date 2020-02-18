@@ -78,8 +78,10 @@ gem 'payjp'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
-gem 'jquery-rails'
+gem "jquery-rails"
+gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'active_hash'
 gem "gretel"
-gem 'dotenv-rails' 
+gem 'dotenv-rails'
+gem 'fog-aws'

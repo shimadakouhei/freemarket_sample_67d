@@ -177,3 +177,17 @@
   padding: 20px 200px;
   background-color: blue;
 }
+.field_with_errors {
+  display: inline;
+}
+.disabled-button{
+  text-align: center;
+  margin: 16px 0 0;
+  background: red;
+  color: #fff;
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  line-height: 60px;
+  cursor: not-allowed;
+}
