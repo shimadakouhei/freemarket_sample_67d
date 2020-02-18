@@ -45,11 +45,7 @@
           %th.top-show-main-head
             カテゴリー
           %td.top-show-main-date
-            = link_to 'メンズ', '/#/', class: 'table-category'
-            %br
-            = link_to 'ジャケット/アウター', '/#/', class: 'table-category'
-            %br
-            = link_to 'ノーカラージャケット', '/#/', class: 'table-category'
+            = @categories.name
         %tr.top-show-main-record
           %th.top-show-main-head
             商品説明
