@@ -1,8 +1,6 @@
 class TopController < ApplicationController
   def index
     @products = Product.all.includes(:images)
-   
-
   end
 
   def new
@@ -19,9 +17,7 @@ class TopController < ApplicationController
   
 
   def show
-    
   end  
-  
 
 
  private
