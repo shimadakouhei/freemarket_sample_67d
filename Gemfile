@@ -84,3 +84,4 @@ gem 'pry-rails'
 gem 'active_hash'
 gem "gretel"
 gem 'dotenv-rails'
+gem 'fog-aws'
