@@ -1,5 +1,5 @@
 @mixin exhibition-1 {
-  padding: 40px;
+  padding: 40px 40px 80px;
   border-bottom: solid 1px rgb(245, 245, 245);
 }
 .exhibition__header {
@@ -46,7 +46,7 @@
         }
       }
       &__sell-content {
-        padding: 0 40px 40px;
+        padding: 40px;
         height: 315px;
         width: 620px;
         &__form-one {
