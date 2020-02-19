@@ -25,7 +25,7 @@
           or
           %br/
           %br/
-          = link_to '削除', "/products/#{@product.id}", method: :delete, class:"btn2"
+          = link_to '削除', product_path(@product), method: :delete, class:"btn2"
         - elsif @product.buyer_id.present? 
           .disabled-button
             売り切れました
@@ -44,6 +44,10 @@
           %th.top-show-main-head
             カテゴリー
           %td.top-show-main-date
+            = @product.category.root.name
+            、
+            = @product.category.parent.name
+            、
             = @product.category.name
         %tr.top-show-main-record
           %th.top-show-main-head
