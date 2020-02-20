@@ -55,8 +55,8 @@ class ProductsController < ApplicationController
   end
   
   def purchase 
-    @user = User.find(params[:id])
-    @address = Address.find(params[:id])
+    @user = User.find_by(params[:id])
+    @address = Address.find_by(id:2)
     card = Card.where(user_id: current_user.id).first
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
